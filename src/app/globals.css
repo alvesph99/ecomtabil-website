@@ -1061,9 +1061,11 @@ section.ecosystem {
   padding-block: clamp(110px, 13vw, 185px);
   text-align: left;
 }
-.process.process .process-intro {
-  position: sticky;
-  top: 42px;
+@media (min-width: 801px) {
+  .process.process .process-intro {
+    position: sticky;
+    top: 112px;
+  }
 }
 .process.process h2 {
   max-width: 490px;
