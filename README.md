@@ -156,3 +156,4 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Mantida uma lista vertical convencional em telas menores e para pessoas com `prefers-reduced-motion` ativo.
 - Adicionado o quarto passo no processo consultivo, que recomenda o plano ideal conforme regime tributario, faturamento, volume operacional e necessidades da empresa.
 - Mantida a coluna de introducao do processo sticky no desktop enquanto os passos avancam na coluna direita; em telas menores, a secao permanece em fluxo vertical.
+- Adicionada uma boundary propria para a secao de operacao, permitindo que ela permaneça sticky somente durante seu trecho de scroll antes de a secao laranja avancar por cima no desktop.

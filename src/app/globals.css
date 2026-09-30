@@ -2450,3 +2450,30 @@ p {
     margin-bottom: 14px;
   }
 }
+
+/* Keep the operational overview in place while the following narrative layer advances. */
+@media (min-width: 801px) {
+  .whole-boundary {
+    position: relative;
+    height: 180vh;
+    z-index: 0;
+  }
+
+  section.whole {
+    position: sticky;
+    top: 92px;
+    z-index: auto;
+  }
+
+  section.growth {
+    position: relative;
+    z-index: 1;
+    margin-top: -80vh;
+  }
+}
+
+@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
+  section.whole {
+    position: relative;
+  }
+}

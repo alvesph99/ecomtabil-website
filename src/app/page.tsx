@@ -202,27 +202,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="whole" aria-labelledby="whole-title">
-        <div className="shell">
-          <div className="whole-top">
-            <div>
-              <p className="marker">
-                A operação inteira, não um problema isolado.
-              </p>
-              <h2 id="whole-title">
-                Uma operação de ecommerce não deveria ser tratada como uma
-                empresa qualquer.
-              </h2>
-            </div>
-            <div>
-              <p>
-                Quando a operação cresce, fiscal, ERP, estoque e logística
-                deixam de funcionar isoladamente.
-              </p>
+      <div className="whole-boundary">
+        <section className="whole" aria-labelledby="whole-title">
+          <div className="shell">
+            <div className="whole-top">
+              <div>
+                <p className="marker">
+                  A operação inteira, não um problema isolado.
+                </p>
+                <h2 id="whole-title">
+                  Uma operação de ecommerce não deveria ser tratada como uma
+                  empresa qualquer.
+                </h2>
+              </div>
+              <div>
+                <p>
+                  Quando a operação cresce, fiscal, ERP, estoque e logística
+                  deixam de funcionar isoladamente.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* <section className="fulfillment" aria-labelledby="fulfillment-title">
         <div className="shell fulfillment-inner">
