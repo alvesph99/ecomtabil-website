@@ -125,3 +125,19 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Reorganizada a narrativa de posicionamento, com diagrama operacional em light theme e logo da Ecomtabil no centro.
 - Adicionados halo pulsante no diagrama, cards de autoridade, secao de marketplaces e esteira animada de logos.
 - Ajustadas as composicoes de processo, especializacao e operacao para melhorar hierarquia, ritmo e responsividade.
+
+### Refinamentos de identidade e temas
+
+- Atualizados header e footer com os logos oficiais da Ecomtabil; o header alterna de branco para colorido apos a rolagem.
+- Configurados favicons especificos para os modos claro e escuro do sistema.
+- Invertidos os temas das secoes de conhecimento e operacao, mantendo contraste, elementos graficos e responsividade adequados.
+- Intensificados de forma sutil os aneis em teal na secao clara de operacao e aperfeicoado o hover da lista de especializacoes.
+
+### Navegacao, conversao e conteudo editorial
+
+- Centralizada a navegacao do header, com links para Home, Sobre, Planos, Blog e Afiliados, alem do CTA de Area do cliente.
+- Mantidos os CTAs ativos mesmo sem URLs externas configuradas; enquanto isso, eles retornam temporariamente ao inicio da pagina.
+- Criada uma secao de perguntas frequentes com acordeao acessivel, uma resposta aberta por vez e transicoes de abertura, fechamento e hover.
+- Convertida a CTA final para dark mode com token proprio de fundo (`--closing-bg`).
+- Reestruturada a secao de vivencia operacional em split-screen: titulo sticky e tres cards empilhados no desktop, simplificados para leitura vertical no mobile e em `prefers-reduced-motion`.
+- Adicionadas imagens editoriais locais para os cards de seller, experiencia contabil e operacao de ecommerce.

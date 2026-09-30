@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Faq } from "@/components/faq";
 
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_URL;
 const scheduling = process.env.NEXT_PUBLIC_SCHEDULING_URL;
@@ -25,24 +26,17 @@ function Cta({
   children: React.ReactNode;
   ghost?: boolean;
 }) {
-  return href ? (
+  const destination = href ?? "#inicio";
+
+  return (
     <a
       className={`button${ghost ? " button--ghost" : ""}`}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
+      href={destination}
+      {...(href ? { target: "_blank", rel: "noreferrer" } : {})}
     >
       {children}
       <Arrow />
     </a>
-  ) : (
-    <span
-      className={`button button--off${ghost ? " button--ghost" : ""}`}
-      aria-disabled="true"
-    >
-      {children}
-      <Arrow />
-    </span>
   );
 }
 
@@ -182,18 +176,18 @@ export default function HomePage() {
       >
         <div className="shell section">
           <div className="special-head">
-          <div>
-            <p className="marker">Conhecimento aplicado à rotina.</p>
-            <h2 id="special-title">
-              Seu contador entende de ecommerce ou apenas recebe suas notas?
-            </h2>
-          </div>
-          <p>
-            A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
-            todos os dias. Nossa especialização está em entender as
-            particularidades de operações que vendem por marketplaces, lojas
-            próprias e diferentes canais digitais.
-          </p>
+            <div>
+              <p className="marker">Conhecimento aplicado à rotina.</p>
+              <h2 id="special-title">
+                Seu contador entende de ecommerce ou apenas recebe suas notas?
+              </h2>
+            </div>
+            <p>
+              A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
+              todos os dias. Nossa especialização está em entender as
+              particularidades de operações que vendem por marketplaces, lojas
+              próprias e diferentes canais digitais.
+            </p>
           </div>
           <div className="special-list">
             {expertise.map(([title, text], i) => (
@@ -292,22 +286,60 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="seller-copy">
-          <p>
-            A Ecomtabil é liderada por quem reúne duas experiências que
-            raramente estão do mesmo lado da mesa: seller e contador.
-          </p>
-          <div className="years">
-            <b>+20</b>
-            <span>
-              anos de experiência
-              <br />
-              contábil
-            </span>
-          </div>
-          <p>
-            Você não precisa explicar do zero como funciona sua operação para
-            depois falar sobre contabilidade. Nós já conhecemos esse mundo.
-          </p>
+          <article className="seller-card">
+            <div className="seller-card__image">
+              <Image
+                src="/images/seller-operator.png"
+                alt="Operação de ecommerce em uma estação de expedição"
+                fill
+                sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
+              />
+            </div>
+            <div className="seller-card__body">
+              <h3>Seller e contador, na mesma mesa.</h3>
+              <p>
+                Uma visão que conecta a rotina de vendas aos impactos fiscais e
+                contábeis de cada decisão.
+              </p>
+            </div>
+          </article>
+          <article className="seller-card seller-card--years">
+            <div className="seller-card__image">
+              <Image
+                src="/images/seller-experience.png"
+                alt="Mesa de trabalho com documentos e ferramentas contábeis"
+                fill
+                sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
+              />
+            </div>
+            <div className="seller-card__body">
+              <b>+20</b>
+              <div>
+                <h3>anos de experiência contábil.</h3>
+                <p>
+                  Prática para organizar obrigações e dar mais segurança às
+                  decisões da empresa.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article className="seller-card">
+            <div className="seller-card__image">
+              <Image
+                src="/images/seller-operation.png"
+                alt="Rotina de expedição com itens de ecommerce organizados"
+                fill
+                sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
+              />
+            </div>
+            <div className="seller-card__body">
+              <h3>Conhecimento que acompanha a operação.</h3>
+              <p>
+                Marketplaces, ERP, estoque e logística já fazem parte do contexto
+                antes da primeira conversa.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -450,16 +482,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Faq />
+
       <section className="closing" aria-labelledby="closing-title">
         <div className="shell">
-          <p className="marker">Vamos entender a sua operação.</p>
           <h2 id="closing-title">
-            Sua operação já pensa como ecommerce. Sua contabilidade também
-            deveria.
+            Simplifique já a gestão contábil do seu negócio online
           </h2>
           <p>
-            Converse com quem entende marketplaces, ERP, fiscal, tributário e a
-            realidade de quem vende todos os dias.
+            Receba um diagnóstico gratuito da sua operação e descubra como a
+            E-comtabil pode ajudar.
           </p>
           <div className="actions">
             <Cta href={whatsapp}>Falar com um especialista no WhatsApp</Cta>
@@ -467,9 +499,6 @@ export default function HomePage() {
               Agendar uma conversa
             </Cta>
           </div>
-          <small>
-            Sem compromisso. Primeiro, queremos entender sua operação.
-          </small>
         </div>
       </section>
       <footer className="site-footer">
