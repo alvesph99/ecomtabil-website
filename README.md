@@ -141,3 +141,9 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Convertida a CTA final para dark mode com token proprio de fundo (`--closing-bg`).
 - Reestruturada a secao de vivencia operacional em split-screen: titulo sticky e tres cards empilhados no desktop, simplificados para leitura vertical no mobile e em `prefers-reduced-motion`.
 - Adicionadas imagens editoriais locais para os cards de seller, experiencia contabil e operacao de ecommerce.
+
+### Servicos em faixa horizontal
+
+- Simplificado o cabecalho da secao de ecossistema, removendo o texto complementar de "Uma visao integrada".
+- Atualizados os cards de servico com imagem no topo, titulo e descricao abaixo, cantos arredondados e superficie dark uniforme.
+- Transformada a grade de servicos em uma lista horizontal sem quebra de linha, que alcanca a borda direita da viewport e permite scroll com snap para acessar todos os itens.

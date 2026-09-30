@@ -219,7 +219,6 @@ export default function HomePage() {
                 Quando a operação cresce, fiscal, ERP, estoque e logística
                 deixam de funcionar isoladamente.
               </p>
-              <strong>Nós enxergamos a operação inteira.</strong>
             </div>
           </div>
         </div>
@@ -335,8 +334,8 @@ export default function HomePage() {
             <div className="seller-card__body">
               <h3>Conhecimento que acompanha a operação.</h3>
               <p>
-                Marketplaces, ERP, estoque e logística já fazem parte do contexto
-                antes da primeira conversa.
+                Marketplaces, ERP, estoque e logística já fazem parte do
+                contexto antes da primeira conversa.
               </p>
             </div>
           </article>
@@ -421,10 +420,6 @@ export default function HomePage() {
                 Especialização para diferentes partes da sua operação.
               </h2>
             </div>
-            <p>
-              Conhecimento contábil e operacional para empresas que vendem
-              online.
-            </p>
           </div>
           <div className="service-grid">
             {services.map(([title, description], i) => (
@@ -434,10 +429,8 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <div className="service-card__content">
-                  <span>{String(i + 1).padStart(2, "0")}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <Arrow />
                 </div>
               </article>
             ))}
