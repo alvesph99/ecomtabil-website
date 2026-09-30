@@ -463,6 +463,10 @@ export default function HomePage() {
               "Definimos o próximo passo",
               "Um especialista apresenta a estrutura adequada para o momento da sua empresa.",
             ],
+            [
+              "Escolhemos o plano ideal",
+              "Recomendamos o plano mais adequado considerando regime tributário, faturamento, volume da operação e necessidades da sua empresa.",
+            ],
           ].map(([t, d], i) => (
             <article key={t}>
               <span>0{i + 1}</span>

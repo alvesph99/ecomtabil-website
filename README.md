@@ -154,3 +154,4 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Ajustados o tema claro da secao, a altura dos cards e a escala tipografica dos paragrafos para melhorar leitura e presenca visual.
 - Convertidos os itens da secao de especializacao em cards sticky empilhados no desktop, com profundidade sutil e espacamento final reduzido antes da proxima secao.
 - Mantida uma lista vertical convencional em telas menores e para pessoas com `prefers-reduced-motion` ativo.
+- Adicionado o quarto passo no processo consultivo, que recomenda o plano ideal conforme regime tributario, faturamento, volume operacional e necessidades da empresa.
