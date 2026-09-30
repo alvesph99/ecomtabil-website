@@ -119,3 +119,9 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Incluida a secao de marketplaces com esteira de logos; Mercado Livre aparece duas vezes por ciclo sem alterar sua escala.
 - Preparada uma area de carrossel para banners futuros e header fixo, transparente no topo e branco apos a rolagem.
 - Validacoes executadas: `npm run lint`, `npm run typecheck` e `npm run build`.
+
+### Iteracoes de layout
+
+- Reorganizada a narrativa de posicionamento, com diagrama operacional em light theme e logo da Ecomtabil no centro.
+- Adicionados halo pulsante no diagrama, cards de autoridade, secao de marketplaces e esteira animada de logos.
+- Ajustadas as composicoes de processo, especializacao e operacao para melhorar hierarquia, ritmo e responsividade.
