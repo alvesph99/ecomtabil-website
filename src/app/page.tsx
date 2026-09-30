@@ -271,11 +271,6 @@ export default function HomePage() {
             integrações. Mais decisões tributárias. Mais responsabilidade sobre
             margem e fluxo de caixa.
           </p>
-          <strong>
-            Do marketplace à gestão.
-            <br />
-            Do fiscal à estratégia.
-          </strong>
         </div>
       </section>
 
