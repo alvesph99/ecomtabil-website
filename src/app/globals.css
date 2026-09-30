@@ -1,5 +1,44 @@
 @import "tailwindcss";
 
+section.special {
+  background: var(--ink);
+  color: #fff;
+}
+section.special .special-head {
+  display: block;
+  max-width: 1040px;
+}
+section.special .special-head h2 {
+  max-width: 980px;
+}
+section.special .special-head > p {
+  max-width: 760px;
+  padding-top: 25px;
+  color: #c1cfce;
+  font-size: 15px;
+  line-height: 1.75;
+}
+section.special .marker {
+  color: #82d0d0;
+}
+section.special .special-list {
+  border-color: #ffffff2e;
+}
+section.special .special-list article {
+  border-color: #ffffff2e;
+  transition: transform 0.25s ease;
+}
+section.special .special-list article:hover {
+  padding-inline: 0;
+  transform: translateX(12px);
+}
+section.special .special-list h3 {
+  color: #fff;
+}
+section.special .special-list p {
+  color: #c1cfce;
+}
+
 .intro .hub {
   isolation: isolate;
 }
@@ -211,6 +250,11 @@ section.marketplaces {
 
 section.whole {
   padding-bottom: clamp(88px, 10vw, 140px);
+  color: var(--ink);
+  background: #edf4f4;
+}
+section.whole .marker {
+  color: #247a7b;
 }
 .whole .whole-top {
   display: block;
@@ -218,7 +262,7 @@ section.whole {
 }
 .whole .whole-top > div:last-child {
   padding-top: 29px;
-  color: #c1cfce;
+  color: var(--muted);
 }
 .whole .whole-top > div:last-child p {
   max-width: 565px;
@@ -227,7 +271,7 @@ section.whole {
 .whole .whole-top > div:last-child strong {
   display: block;
   margin-top: 20px;
-  color: #91d9d8;
+  color: var(--teal);
   font-size: 17px;
 }
 
@@ -235,19 +279,19 @@ section.whole {
   position: relative;
   isolation: isolate;
 }
-.whole:before {
+section.whole:before {
   content: "";
   position: absolute;
   z-index: -2;
   inset: 0;
-  opacity: 0.38;
+  opacity: 0.54;
   background-image:
-    linear-gradient(#6a97951a 1px, transparent 1px),
-    linear-gradient(90deg, #6a97951a 1px, transparent 1px);
+    linear-gradient(#6a979528 1px, transparent 1px),
+    linear-gradient(90deg, #6a979528 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(ellipse at 18% 52%, black, transparent 61%);
 }
-.whole:after {
+section.whole:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -255,12 +299,12 @@ section.whole {
   top: 50%;
   width: min(54vw, 600px);
   aspect-ratio: 1;
-  border: 1px solid #62c8c842;
+  border: 1px solid #37a3a470;
   border-radius: 50%;
   transform: translateY(-48%);
   box-shadow:
-    0 0 0 74px #62c8c812,
-    0 0 0 148px #62c8c808;
+    0 0 0 74px #37a3a428,
+    0 0 0 148px #37a3a416;
   pointer-events: none;
 }
 .whole > .shell,
@@ -269,15 +313,15 @@ section.whole {
   z-index: 1;
 }
 @media (max-width: 800px) {
-  .whole:after {
+  section.whole:after {
     left: -33vw;
     top: 58%;
     width: 125vw;
     box-shadow:
-      0 0 0 50px #62c8c812,
-      0 0 0 100px #62c8c808;
+      0 0 0 50px #37a3a428,
+      0 0 0 100px #37a3a416;
   }
-  .whole:before {
+  section.whole:before {
     mask-image: radial-gradient(ellipse at 40% 58%, black, transparent 70%);
   }
 }
@@ -298,6 +342,9 @@ section.whole {
 .site-header .nav {
   height: 92px;
 }
+.site-header__logo { position: relative; display: block; width: 148px; height: 38px; }
+.site-header__logo img { position: absolute; inset: 0; width: 148px; height: 38px; object-fit: contain; transition: opacity .28s ease; }
+.site-header__logo-color { opacity: 0; }
 .site-header .nav nav {
   margin-right: 0;
 }
@@ -310,9 +357,8 @@ section.whole {
   color: var(--ink);
   box-shadow: 0 8px 28px #26323812;
 }
-.site-header--scrolled .brand {
-  color: var(--ink);
-}
+.site-header--scrolled .site-header__logo-white { opacity: 0; }
+.site-header--scrolled .site-header__logo-color { opacity: 1; }
 .site-header--scrolled .nav nav a {
   color: #435354;
 }
@@ -847,7 +893,6 @@ section.ecosystem {
     padding-right: 26px;
   }
 }
-
 .process.process {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
@@ -939,10 +984,8 @@ section.ecosystem {
   gap: clamp(56px, 9vw, 132px);
   padding-bottom: 68px;
 }
-.footer-brand > .brand {
-  display: inline-block;
-  font-size: 32px;
-}
+.footer-logo { display: inline-flex; width: 190px; height: 48px; align-items: center; }
+.footer-logo img { display: block; width: 190px; height: 48px; object-fit: contain; }
 .footer-brand > p {
   max-width: 315px;
   margin-top: 20px;
@@ -1477,10 +1520,10 @@ p {
   align-items: center;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
-  transition: padding 0.25s;
+  transition: transform 0.25s ease;
 }
 .special-list article:hover {
-  padding-inline: 12px;
+  transform: translateX(12px);
 }
 .special-list span {
   font-size: 11px;

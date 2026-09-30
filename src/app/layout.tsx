@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     template: "%s | Ecomtabil",
   },
   description: "Contabilidade especializada em ecommerce, marketplaces e ERPs.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/images/favicon-white.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

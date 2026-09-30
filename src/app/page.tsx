@@ -64,6 +64,7 @@ const expertise = [
     "Obrigações organizadas sem perder de vista aquilo que os números dizem sobre o negócio.",
   ],
 ];
+
 const services = [
   [
     "Contabilidade especializada",
@@ -174,6 +175,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section
+        className="special"
+        id="especializacao"
+        aria-labelledby="special-title"
+      >
+        <div className="shell section">
+          <div className="special-head">
+          <div>
+            <p className="marker">Conhecimento aplicado à rotina.</p>
+            <h2 id="special-title">
+              Seu contador entende de ecommerce ou apenas recebe suas notas?
+            </h2>
+          </div>
+          <p>
+            A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
+            todos os dias. Nossa especialização está em entender as
+            particularidades de operações que vendem por marketplaces, lojas
+            próprias e diferentes canais digitais.
+          </p>
+          </div>
+          <div className="special-list">
+            {expertise.map(([title, text], i) => (
+              <article key={title}>
+                <span>0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <Arrow />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="whole" aria-labelledby="whole-title">
         <div className="shell">
           <div className="whole-top">
@@ -192,6 +226,119 @@ export default function HomePage() {
                 deixam de funcionar isoladamente.
               </p>
               <strong>Nós enxergamos a operação inteira.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="fulfillment" aria-labelledby="fulfillment-title">
+        <div className="shell fulfillment-inner">
+          <div className="fulfillment-art" aria-hidden="true">
+            <div className="box big">F</div>
+            <div className="box small" />
+            <span>
+              ESTRUTURA
+              <br />
+              PARA AVANÇAR
+            </span>
+          </div>
+          <div>
+            <p className="marker">Fulfillment é evolução de operação.</p>
+            <h2 id="fulfillment-title">
+              Quer levar sua operação para o fulfillment? A contabilidade também
+              faz parte desse caminho.
+            </h2>
+            <p>
+              Por trás da evolução logística existem processos, documentos,
+              configurações fiscais e uma operação que precisa estar preparada
+              para atender às exigências desse novo estágio.
+            </p>
+            <p>
+              A Ecomtabil conhece esse caminho e ajuda sua empresa a identificar
+              e organizar os pontos necessários para avançar com mais segurança.
+            </p>
+            <Cta href={whatsapp}>Conversar com um especialista</Cta>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="growth" aria-labelledby="growth-title">
+        <div className="shell">
+          <div>
+            <p className="marker">Estrutura para o próximo estágio.</p>
+            <h2 id="growth-title">
+              A contabilidade que serviu para começar pode não ser a que você
+              precisa para crescer.
+            </h2>
+          </div>
+          <p>
+            Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
+            integrações. Mais decisões tributárias. Mais responsabilidade sobre
+            margem e fluxo de caixa.
+          </p>
+          <strong>
+            Do marketplace à gestão.
+            <br />
+            Do fiscal à estratégia.
+          </strong>
+        </div>
+      </section>
+
+      <section className="seller shell section" aria-labelledby="seller-title">
+        <div className="quote">
+          <span>“</span>
+          <h2 id="seller-title">
+            Antes de entender seu balanço, nós entendemos sua operação.
+          </h2>
+        </div>
+        <div className="seller-copy">
+          <p>
+            A Ecomtabil é liderada por quem reúne duas experiências que
+            raramente estão do mesmo lado da mesa: seller e contador.
+          </p>
+          <div className="years">
+            <b>+20</b>
+            <span>
+              anos de experiência
+              <br />
+              contábil
+            </span>
+          </div>
+          <p>
+            Você não precisa explicar do zero como funciona sua operação para
+            depois falar sobre contabilidade. Nós já conhecemos esse mundo.
+          </p>
+        </div>
+      </section>
+
+      <section className="authority" aria-labelledby="authority-title">
+        <div className="shell">
+          <p className="marker">Especialização comprovada pela prática.</p>
+          <h2 id="authority-title">
+            Experiência contábil.
+            <br />
+            <em>Vivência de ecommerce.</em>
+          </h2>
+          <div className="facts">
+            <div>
+              <b>+20 anos</b>
+              <span>de experiência contábil</span>
+            </div>
+            <div>
+              <b>Seller + Contador</b>
+              <span>visão dos dois lados da operação</span>
+            </div>
+            <div>
+              <b>Ecommerce e Marketplaces</b>
+              <span>
+                especialização no ambiente em que nossos clientes vendem
+              </span>
+            </div>
+            <div>
+              <b>Atendimento nacional</b>
+              <span>
+                estrutura digital para atender sellers em todo o Brasil
+              </span>
             </div>
           </div>
         </div>
@@ -226,117 +373,6 @@ export default function HomePage() {
               )}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section
-        className="special shell section"
-        id="especializacao"
-        aria-labelledby="special-title"
-      >
-        <div className="special-head">
-          <div>
-            <p className="marker">Conhecimento aplicado à rotina.</p>
-            <h2 id="special-title">
-              Seu contador entende de ecommerce ou apenas recebe suas notas?
-            </h2>
-          </div>
-          <p>
-            A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
-            todos os dias. Nossa especialização está em entender as
-            particularidades de operações que vendem por marketplaces, lojas
-            próprias e diferentes canais digitais.
-          </p>
-        </div>
-        <div className="special-list">
-          {expertise.map(([title, text], i) => (
-            <article key={title}>
-              <span>0{i + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              <Arrow />
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="fulfillment" aria-labelledby="fulfillment-title">
-        <div className="shell fulfillment-inner">
-          <div className="fulfillment-art" aria-hidden="true">
-            <div className="box big">F</div>
-            <div className="box small" />
-            <span>
-              ESTRUTURA
-              <br />
-              PARA AVANÇAR
-            </span>
-          </div>
-          <div>
-            <p className="marker">Fulfillment é evolução de operação.</p>
-            <h2 id="fulfillment-title">
-              Quer levar sua operação para o fulfillment? A contabilidade também
-              faz parte desse caminho.
-            </h2>
-            <p>
-              Por trás da evolução logística existem processos, documentos,
-              configurações fiscais e uma operação que precisa estar preparada
-              para atender às exigências desse novo estágio.
-            </p>
-            <p>
-              A Ecomtabil conhece esse caminho e ajuda sua empresa a identificar
-              e organizar os pontos necessários para avançar com mais segurança.
-            </p>
-            <Cta href={whatsapp}>Conversar com um especialista</Cta>
-          </div>
-        </div>
-      </section>
-
-      <section className="seller shell section" aria-labelledby="seller-title">
-        <div className="quote">
-          <span>“</span>
-          <h2 id="seller-title">
-            Antes de entender seu balanço, nós entendemos sua operação.
-          </h2>
-        </div>
-        <div className="seller-copy">
-          <p>
-            A Ecomtabil é liderada por quem reúne duas experiências que
-            raramente estão do mesmo lado da mesa: seller e contador.
-          </p>
-          <div className="years">
-            <b>+20</b>
-            <span>
-              anos de experiência
-              <br />
-              contábil
-            </span>
-          </div>
-          <p>
-            Você não precisa explicar do zero como funciona sua operação para
-            depois falar sobre contabilidade. Nós já conhecemos esse mundo.
-          </p>
-        </div>
-      </section>
-
-      <section className="growth" aria-labelledby="growth-title">
-        <div className="shell">
-          <div>
-            <p className="marker">Estrutura para o próximo estágio.</p>
-            <h2 id="growth-title">
-              A contabilidade que serviu para começar pode não ser a que você
-              precisa para crescer.
-            </h2>
-          </div>
-          <p>
-            Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
-            integrações. Mais decisões tributárias. Mais responsabilidade sobre
-            margem e fluxo de caixa.
-          </p>
-          <strong>
-            Do marketplace à gestão.
-            <br />
-            Do fiscal à estratégia.
-          </strong>
         </div>
       </section>
 
@@ -414,39 +450,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="authority" aria-labelledby="authority-title">
-        <div className="shell">
-          <p className="marker">Especialização comprovada pela prática.</p>
-          <h2 id="authority-title">
-            Experiência contábil.
-            <br />
-            <em>Vivência de ecommerce.</em>
-          </h2>
-          <div className="facts">
-            <div>
-              <b>+20 anos</b>
-              <span>de experiência contábil</span>
-            </div>
-            <div>
-              <b>Seller + Contador</b>
-              <span>visão dos dois lados da operação</span>
-            </div>
-            <div>
-              <b>Ecommerce e Marketplaces</b>
-              <span>
-                especialização no ambiente em que nossos clientes vendem
-              </span>
-            </div>
-            <div>
-              <b>Atendimento nacional</b>
-              <span>
-                estrutura digital para atender sellers em todo o Brasil
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="closing" aria-labelledby="closing-title">
         <div className="shell">
           <p className="marker">Vamos entender a sua operação.</p>
@@ -472,8 +475,18 @@ export default function HomePage() {
       <footer className="site-footer">
         <div className="footer-main shell">
           <div className="footer-brand">
-            <a className="brand" href="#inicio">
-              eco<span>m</span>tabil<b>.</b>
+            <a
+              className="footer-logo"
+              href="#inicio"
+              aria-label="Ecomtabil, início"
+            >
+              <Image
+                src="/images/logo-ecomtabil-white.svg"
+                alt="Ecomtabil"
+                width={190}
+                height={48}
+                unoptimized
+              />
             </a>
             <p>
               Contabilidade especializada para quem vende, integra e cresce no
