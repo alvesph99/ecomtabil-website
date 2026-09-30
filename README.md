@@ -147,3 +147,10 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Simplificado o cabecalho da secao de ecossistema, removendo o texto complementar de "Uma visao integrada".
 - Atualizados os cards de servico com imagem no topo, titulo e descricao abaixo, cantos arredondados e superficie dark uniforme.
 - Transformada a grade de servicos em uma lista horizontal sem quebra de linha, que alcanca a borda direita da viewport e permite scroll com snap para acessar todos os itens.
+
+### Composicao de ecossistema e especializacao
+
+- Reorganizada a secao de ecossistema em duas colunas no desktop, com titulo a esquerda e a faixa horizontal de servicos deslocada para a direita.
+- Ajustados o tema claro da secao, a altura dos cards e a escala tipografica dos paragrafos para melhorar leitura e presenca visual.
+- Convertidos os itens da secao de especializacao em cards sticky empilhados no desktop, com profundidade sutil e espacamento final reduzido antes da proxima secao.
+- Mantida uma lista vertical convencional em telas menores e para pessoas com `prefers-reduced-motion` ativo.
