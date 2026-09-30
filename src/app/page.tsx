@@ -565,9 +565,10 @@ export default function HomePage() {
               </a>
             </div>
             <div className="footer-company">
-              <strong>Ecomtabil</strong>
+              <strong>Multi BPO E-Comtabil LTDA</strong>
               <span>Atendimento especializado em todo o Brasil.</span>
-              <span>Dados institucionais em atualização.</span>
+              <span>CNPJ N° 65.298.538/0001-70</span>
+              <span>CRC/SP N° 364.261</span>
             </div>
           </div>
           <div className="footer-links">
