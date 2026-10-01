@@ -488,7 +488,7 @@ export default function HomePage() {
             E-comtabil pode ajudar.
           </p>
           <div className="actions">
-            <Cta href={whatsapp}>Falar com um especialista no WhatsApp</Cta>
+            <Cta href={whatsapp}>Agende agora um diagnóstico </Cta>
             <Cta href={scheduling} ghost>
               Agendar uma conversa
             </Cta>

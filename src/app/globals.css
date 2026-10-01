@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* -------------------------------------------------------------------------- */
+/* Component refinements                                                     */
+/* -------------------------------------------------------------------------- */
+
+/* Specialization */
 section.special {
   background: var(--ink);
   color: #fff;
@@ -39,6 +44,7 @@ section.special .special-list p {
   color: #c1cfce;
 }
 
+/* Introductory operation diagram */
 .intro .hub {
   isolation: isolate;
 }
@@ -65,6 +71,7 @@ section.special .special-list p {
   }
 }
 
+/* Marketplace logo belt */
 section.marketplaces .marketplaces__logos {
   display: block;
   min-height: 132px;
@@ -248,6 +255,7 @@ section.marketplaces {
   }
 }
 
+/* Operational overview */
 section.whole {
   padding-bottom: clamp(88px, 10vw, 140px);
   color: var(--ink);
@@ -312,6 +320,34 @@ section.whole:after {
   position: relative;
   z-index: 1;
 }
+
+/* The boundary owns the sticky duration; the growth section layers above it. */
+@media (min-width: 801px) {
+  .whole-boundary {
+    position: relative;
+    height: 180vh;
+    z-index: 0;
+  }
+
+  section.whole {
+    position: sticky;
+    top: 92px;
+    z-index: auto;
+  }
+
+  section.growth {
+    position: relative;
+    z-index: 1;
+    margin-top: -80vh;
+  }
+}
+
+@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
+  section.whole {
+    position: relative;
+  }
+}
+
 @media (max-width: 800px) {
   section.whole:after {
     left: -33vw;
@@ -326,6 +362,7 @@ section.whole:after {
   }
 }
 
+/* Fixed site header */
 .site-header {
   position: fixed;
   z-index: 50;
@@ -432,10 +469,10 @@ section.whole:after {
   }
 }
 
+/* Home banner carousel */
 .banner-carousel {
   background: var(--ink);
   color: #fff;
-  padding-bottom: 25px;
 }
 .banner-carousel .nav {
   height: 92px;
@@ -444,11 +481,22 @@ section.whole:after {
   margin-right: 0;
 }
 .banner-carousel__stage {
-  padding-top: 16px;
+  position: relative;
+  width: min(100%, 1920px);
+  margin-inline: auto;
+}
+.banner-carousel__viewport {
+  overflow: hidden;
+}
+.banner-carousel__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
 }
 .banner-carousel__slide {
   position: relative;
-  min-height: clamp(360px, 42vw, 580px);
+  flex: 0 0 100%;
+  height: 680px;
+  min-width: 0;
   overflow: hidden;
   background: #1d2a2f;
 }
@@ -457,121 +505,102 @@ section.whole:after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
-.banner-carousel__placeholder {
-  position: relative;
-  display: flex;
-  min-height: clamp(360px, 42vw, 580px);
-  padding: clamp(32px, 5vw, 74px);
-  align-items: flex-end;
-  justify-content: space-between;
-  overflow: hidden;
-  background: #1d2a2f;
-  border: 1px solid #ffffff24;
-}
-.banner-carousel__placeholder-grid {
+.banner-carousel__control {
   position: absolute;
-  inset: 0;
-  opacity: 0.45;
-  background-image:
-    linear-gradient(#7aa5a31c 1px, transparent 1px),
-    linear-gradient(90deg, #7aa5a31c 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse at 75% 35%, black, transparent 68%);
-}
-.banner-carousel__placeholder:after {
-  content: "";
-  position: absolute;
-  right: 8%;
-  top: 50%;
-  width: min(30vw, 410px);
-  aspect-ratio: 1;
-  border: 1px solid #62c8c844;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  box-shadow:
-    0 0 0 65px #62c8c813,
-    0 0 0 130px #62c8c809;
-}
-.banner-carousel__placeholder > div:not(.banner-carousel__placeholder-grid),
-.banner-carousel__placeholder > p {
-  position: relative;
   z-index: 1;
-}
-.banner-carousel__placeholder > div:not(.banner-carousel__placeholder-grid) {
+  top: 50%;
   display: grid;
-  gap: 14px;
-  max-width: 480px;
-}
-.banner-carousel__placeholder span {
-  color: #8bd7d6;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.banner-carousel__placeholder strong {
-  font:
-    600 clamp(1.8rem, 3vw, 3.4rem)/1.08 "Plus Jakarta Sans",
-    Arial,
-    sans-serif;
-  letter-spacing: -0.055em;
-}
-.banner-carousel__placeholder p {
-  max-width: 165px;
-  margin: 0;
-  color: #b8cccc;
-  font-size: 14px;
-  line-height: 1.65;
-}
-.banner-carousel__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 18px;
-  color: #93abaa;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.banner-carousel__arrows {
-  display: flex;
-  gap: 8px;
-}
-.banner-carousel__arrows button {
-  display: grid;
-  width: 31px;
-  height: 31px;
+  width: 46px;
+  height: 46px;
   place-items: center;
   padding: 0;
-  border: 1px solid #6d8585;
-  background: transparent;
-  color: #8fa7a6;
+  border: 1px solid #ffffff8a;
+  background: #10262ab8;
+  color: #fff;
   border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
-.banner-carousel__arrows button:disabled {
-  opacity: 0.55;
+.banner-carousel__control--previous {
+  left: clamp(12px, 2vw, 30px);
+}
+.banner-carousel__control--next {
+  right: clamp(12px, 2vw, 30px);
+}
+.banner-carousel__control:hover:not(:disabled) {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+.banner-carousel__control:focus-visible,
+.banner-carousel__dot:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.banner-carousel__control:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
 }
-.banner-carousel__arrows svg {
-  width: 15px;
-  height: 15px;
+.banner-carousel__control svg {
+  width: 18px;
+  height: 18px;
+}
+.banner-carousel__dots {
+  position: absolute;
+  z-index: 1;
+  bottom: clamp(16px, 2vw, 28px);
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+.banner-carousel__dot {
+  width: 42px;
+  height: 4px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #ffffff55;
+  cursor: pointer;
+}
+.banner-carousel__dot span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.banner-carousel__dot.is-active span {
+  animation: banner-progress 6s linear infinite;
+}
+@keyframes banner-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 @media (max-width: 800px) {
-  .banner-carousel__placeholder {
-    min-height: 410px;
-    padding: 28px;
+  .banner-carousel__slide {
+    height: auto;
+    aspect-ratio: 24 / 11;
   }
-  .banner-carousel__placeholder:after {
-    right: -20%;
-    top: 42%;
-    width: 310px;
+  .banner-carousel__control {
+    width: 38px;
+    height: 38px;
   }
-  .banner-carousel__placeholder p {
-    display: none;
-  }
-  .banner-carousel__placeholder strong {
-    max-width: 360px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .banner-carousel__dot.is-active span {
+    animation: none;
+    transform: scaleX(1);
   }
 }
 @media (max-width: 800px) {
@@ -580,6 +609,7 @@ section.whole:after {
   }
 }
 
+/* Carousel variants */
 .hero-carousel {
   position: relative;
 }
@@ -759,6 +789,7 @@ section.whole:after {
   }
 }
 
+/* Ecosystem service rail */
 .service-card .service-card__image {
   background-size: cover;
   background-position: center;
@@ -1053,6 +1084,7 @@ section.ecosystem {
     margin-top: 0;
   }
 }
+/* Consultation process */
 .process.process {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
@@ -1064,7 +1096,7 @@ section.ecosystem {
 @media (min-width: 801px) {
   .process.process .process-intro {
     position: sticky;
-    top: 112px;
+    top: 160px;
   }
 }
 .process.process h2 {
@@ -1135,6 +1167,7 @@ section.ecosystem {
   }
 }
 
+/* Footer */
 .site-footer {
   padding-top: clamp(76px, 9vw, 112px);
   background: var(--ink);
@@ -1291,6 +1324,10 @@ section.ecosystem {
     max-width: 290px;
   }
 }
+/* -------------------------------------------------------------------------- */
+/* Foundations and shared primitives                                          */
+/* -------------------------------------------------------------------------- */
+
 :root {
   --ink: #263238;
   --closing-bg: #273238;
@@ -1407,6 +1444,7 @@ p {
   opacity: 0.45;
   cursor: not-allowed;
 }
+/* Home presentation and section building blocks */
 .hero {
   min-height: 760px;
   background: var(--ink);
@@ -1614,6 +1652,7 @@ p {
   height: 20px;
   background: var(--teal);
 }
+/* Introductory positioning */
 .intro > div {
   display: grid;
   grid-template-columns: 1.1fr 0.7fr;
@@ -1629,6 +1668,7 @@ p {
 .body-copy strong {
   font-size: 16px;
 }
+/* Operational overview */
 .whole {
   padding: clamp(86px, 11vw, 144px) 0 0;
   color: #fff;
@@ -1673,6 +1713,7 @@ p {
   margin: 0 13px;
   background: linear-gradient(90deg, var(--teal), var(--orange));
 }
+/* Specialization */
 .special-head {
   display: grid;
   grid-template-columns: 1.1fr 0.8fr;
@@ -1716,6 +1757,72 @@ p {
 .ecosystem svg {
   color: var(--orange);
 }
+
+/* Sticky specialization cards keep the original list on smaller screens. */
+@media (min-width: 801px) {
+  section.special .special-list {
+    margin-top: 72px;
+    padding-bottom: clamp(72px, 10vh, 128px);
+    border-top: 0;
+  }
+
+  section.special .special-list article {
+    position: sticky;
+    top: 112px;
+    z-index: 1;
+    grid-template-columns: 64px minmax(180px, 0.86fr) minmax(280px, 1.3fr) 22px;
+    gap: clamp(22px, 3vw, 42px);
+    min-height: 174px;
+    margin-bottom: 15vh;
+    padding: clamp(27px, 3vw, 38px);
+    background: #2b393d;
+    border: 1px solid #ffffff20;
+    border-radius: 16px;
+    box-shadow: 0 18px 34px #111a1e3b;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  section.special .special-list article:nth-child(2) {
+    top: 134px;
+    z-index: 2;
+  }
+
+  section.special .special-list article:nth-child(3) {
+    top: 156px;
+    z-index: 3;
+  }
+
+  section.special .special-list article:nth-child(4) {
+    top: 178px;
+    z-index: 4;
+    margin-bottom: 0;
+  }
+
+  section.special .special-list article:hover {
+    padding-inline: clamp(27px, 3vw, 38px);
+    transform: none;
+    background: #314247;
+    border-color: #82d0d066;
+    box-shadow: 0 22px 40px #111a1e52;
+  }
+}
+
+@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
+  section.special .special-list {
+    padding-bottom: 0;
+  }
+
+  section.special .special-list article,
+  section.special .special-list article:nth-child(n) {
+    position: static;
+    margin-bottom: 14px;
+  }
+}
+
+/* Fulfillment */
 .fulfillment {
   padding-block: clamp(80px, 11vw, 150px);
   background: #e4f1ef;
@@ -1777,6 +1884,7 @@ p {
 .fulfillment .button {
   margin-top: 32px;
 }
+/* Seller experience */
 .seller {
   display: grid;
   grid-template-columns: 1.15fr 0.68fr;
@@ -1904,6 +2012,7 @@ p {
     margin-bottom: 14px;
   }
 }
+/* Growth narrative */
 .growth {
   padding-block: clamp(80px, 11vw, 140px);
   background: var(--orange);
@@ -1927,6 +2036,7 @@ p {
   font: 600 clamp(1.25rem, 2.3vw, 2rem)/1.15 "Plus Jakarta Sans";
   letter-spacing: -0.04em;
 }
+/* Ecosystem list helpers */
 .ecosystem {
   display: grid;
   grid-template-columns: 0.8fr 1.1fr;
@@ -1959,6 +2069,7 @@ p {
 .ecosystem li svg {
   margin-left: auto;
 }
+/* Process grid helpers */
 .process {
   text-align: center;
 }
@@ -1993,6 +2104,7 @@ p {
   line-height: 1.7;
   color: var(--muted);
 }
+/* Authority */
 .authority {
   padding-block: clamp(80px, 11vw, 140px);
   background: var(--ink);
@@ -2053,6 +2165,7 @@ p {
   font-size: 12px;
   line-height: 1.55;
 }
+/* Final call to action */
 .closing {
   padding-block: clamp(96px, 12vw, 170px);
   background: #1d2a30;
@@ -2090,6 +2203,7 @@ p {
   color: #a9bcbb;
   font-size: 11px;
 }
+/* Frequently asked questions */
 .faq {
   padding-block: clamp(88px, 11vw, 152px);
   background: #fff;
@@ -2194,6 +2308,24 @@ p {
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.55;
 }
+
+@media (min-width: 801px) {
+  .faq__inner {
+    align-items: start;
+  }
+
+  .faq__intro {
+    position: sticky;
+    top: 160px;
+  }
+}
+
+@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
+  .faq__intro {
+    position: static;
+  }
+}
+
 .faq__item button:focus-visible {
   outline: 3px solid #37a3a46b;
   outline-offset: -3px;
@@ -2219,6 +2351,7 @@ p {
     font-size: 15px;
   }
 }
+/* Footer helpers */
 .footer {
   min-height: 150px;
   display: grid;
@@ -2244,6 +2377,7 @@ p {
     transform: translateY(-11px);
   }
 }
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *:before,
@@ -2254,6 +2388,7 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+/* Shared responsive rules */
 @media (max-width: 800px) {
   .shell {
     width: min(100% - 40px, 620px);
@@ -2384,96 +2519,5 @@ p {
   .box.small {
     right: 9%;
     top: 70px;
-  }
-}
-
-/* Specialization: the cards advance as a single stacked sequence on larger screens. */
-@media (min-width: 801px) {
-  section.special .special-list {
-    margin-top: 72px;
-    padding-bottom: clamp(72px, 10vh, 128px);
-    border-top: 0;
-  }
-
-  section.special .special-list article {
-    position: sticky;
-    top: 112px;
-    z-index: 1;
-    grid-template-columns: 64px minmax(180px, 0.86fr) minmax(280px, 1.3fr) 22px;
-    gap: clamp(22px, 3vw, 42px);
-    min-height: 174px;
-    margin-bottom: 15vh;
-    padding: clamp(27px, 3vw, 38px);
-    background: #2b393d;
-    border: 1px solid #ffffff20;
-    border-radius: 16px;
-    box-shadow: 0 18px 34px #111a1e3b;
-    transition:
-      background-color 180ms ease,
-      border-color 180ms ease,
-      box-shadow 180ms ease;
-  }
-
-  section.special .special-list article:nth-child(2) {
-    top: 134px;
-    z-index: 2;
-  }
-
-  section.special .special-list article:nth-child(3) {
-    top: 156px;
-    z-index: 3;
-  }
-
-  section.special .special-list article:nth-child(4) {
-    top: 178px;
-    z-index: 4;
-    margin-bottom: 0;
-  }
-
-  section.special .special-list article:hover {
-    padding-inline: clamp(27px, 3vw, 38px);
-    transform: none;
-    background: #314247;
-    border-color: #82d0d066;
-    box-shadow: 0 22px 40px #111a1e52;
-  }
-}
-
-@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
-  section.special .special-list {
-    padding-bottom: 0;
-  }
-
-  section.special .special-list article,
-  section.special .special-list article:nth-child(n) {
-    position: static;
-    margin-bottom: 14px;
-  }
-}
-
-/* Keep the operational overview in place while the following narrative layer advances. */
-@media (min-width: 801px) {
-  .whole-boundary {
-    position: relative;
-    height: 180vh;
-    z-index: 0;
-  }
-
-  section.whole {
-    position: sticky;
-    top: 92px;
-    z-index: auto;
-  }
-
-  section.growth {
-    position: relative;
-    z-index: 1;
-    margin-top: -80vh;
-  }
-}
-
-@media (min-width: 801px) and (prefers-reduced-motion: reduce) {
-  section.whole {
-    position: relative;
   }
 }

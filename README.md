@@ -158,3 +158,11 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Mantida a coluna de introducao do processo sticky no desktop enquanto os passos avancam na coluna direita; em telas menores, a secao permanece em fluxo vertical.
 - Atualizados os dados institucionais no footer com a razao social, CNPJ e CRC/SP da empresa.
 - Adicionada uma boundary propria para a secao de operacao, permitindo que ela permaneça sticky somente durante seu trecho de scroll antes de a secao laranja avancar por cima no desktop.
+
+### Hero e carrossel de campanhas
+
+- Substituido o placeholder da hero por um carrossel funcional com Embla Carousel e plugin de autoplay.
+- Adicionados controles laterais, navegacao por dots e suporte a arraste; os controles ficam ativos automaticamente quando houver mais de um banner.
+- Incluidos os banners de Lucro Real e beneficio fiscal em Minas Gerais, exportados em 3840 x 1360 para a hero desktop de 1920 x 680.
+- Mantido o header transparente sobre a arte e aplicado recorte responsivo para telas menores.
+- Reorganizado o CSS da pagina com blocos comentados e seletores relacionados agrupados, preservando os estilos ainda utilizados.
