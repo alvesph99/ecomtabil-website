@@ -166,3 +166,8 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Incluidos os banners de Lucro Real e beneficio fiscal em Minas Gerais, exportados em 3840 x 1360 para a hero desktop de 1920 x 680.
 - Mantido o header transparente sobre a arte e aplicado recorte responsivo para telas menores.
 - Reorganizado o CSS da pagina com blocos comentados e seletores relacionados agrupados, preservando os estilos ainda utilizados.
+
+### Ajustes de marketplaces e tipografia
+
+- Incluido o TikTok Shop na esteira animada de marketplaces.
+- Reduzida de forma proporcional a escala dos titulos `h1` e `h2`, incluindo as variacoes de processo, ecossistema, marketplaces e CTA final.

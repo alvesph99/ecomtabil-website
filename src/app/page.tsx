@@ -97,6 +97,7 @@ const marketplaces = [
   ["Mercado Livre", "/images/marketplaces/mercado-livre-logo.svg"],
   ["Shopee", "/images/marketplaces/shopee-logo.svg"],
   ["Shopify", "/images/marketplaces/shopify-logo.svg"],
+  ["TikTok Shop", "/images/marketplaces/tiktokshop-logo.svg"],
   ["Loja Integrada", "/images/marketplaces/loja-integrada-logo.svg"],
   ["Magalu", "/images/marketplaces/magalu-logo.svg"],
 ];
@@ -108,6 +109,7 @@ const marketplaceBelt = [
   marketplaces[3],
   marketplaces[4],
   marketplaces[5],
+  marketplaces[8],
   marketplaces[3],
   marketplaces[6],
   marketplaces[7],

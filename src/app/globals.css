@@ -166,7 +166,7 @@ section.marketplaces {
   text-align: center;
 }
 .marketplaces__heading h2 {
-  font-size: clamp(2.45rem, 4.6vw, 4.6rem);
+  font-size: clamp(2.3rem, 4.25vw, 4.25rem);
 }
 .marketplaces__heading > p:last-child {
   max-width: 570px;
@@ -1073,7 +1073,7 @@ section.ecosystem {
     grid-column: 1;
   }
   .ecosystem .ecosystem__heading h2 {
-    font-size: clamp(2rem, 3.55vw, 3.75rem);
+    font-size: clamp(1.9rem, 3.25vw, 3.45rem);
   }
   .ecosystem .service-grid {
     grid-column: 2;
@@ -1101,7 +1101,7 @@ section.ecosystem {
 }
 .process.process h2 {
   max-width: 490px;
-  font-size: clamp(2.85rem, 4.45vw, 5rem);
+  font-size: clamp(2.65rem, 4.1vw, 4.6rem);
   line-height: 1.07;
 }
 .process.process .process-intro > p {
@@ -1386,7 +1386,7 @@ h3,
   font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 h2 {
-  font-size: clamp(2.25rem, 4.6vw, 4.6rem);
+  font-size: clamp(2.1rem, 4.25vw, 4.25rem);
   line-height: 1.02;
   letter-spacing: -0.06em;
 }
@@ -1498,7 +1498,7 @@ p {
   color: #8dd8d7;
 }
 .hero h1 {
-  font-size: clamp(3.2rem, 5.7vw, 5.8rem);
+  font-size: clamp(3rem, 5.25vw, 5.35rem);
   line-height: 0.99;
   letter-spacing: -0.07em;
 }
@@ -2043,7 +2043,7 @@ p {
   gap: 13%;
 }
 .ecosystem h2 {
-  font-size: clamp(2.2rem, 3.9vw, 3.9rem);
+  font-size: clamp(2.05rem, 3.6vw, 3.6rem);
 }
 .ecosystem ul {
   padding: 0;
@@ -2176,7 +2176,7 @@ p {
   max-width: 900px;
 }
 .closing h2 {
-  font-size: clamp(2.55rem, 5vw, 4.9rem);
+  font-size: clamp(2.35rem, 4.6vw, 4.5rem);
 }
 .closing h2 + p {
   max-width: 600px;
