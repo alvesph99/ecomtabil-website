@@ -209,7 +209,7 @@ export default function HomePage() {
 
       <div className="whole-boundary">
         <section className="whole" aria-labelledby="whole-title">
-          <div className="shell">
+          <div className="shell whole-layout">
             <div className="whole-top">
               <div>
                 <p className="marker">
@@ -226,6 +226,28 @@ export default function HomePage() {
                   deixam de funcionar isoladamente.
                 </p>
               </div>
+            </div>
+            <div className="whole-marketplaces" aria-hidden="true">
+              {[
+                "mercado-livre-box-logo.png",
+                "amazon-box-logo.png",
+                "shopee-box-logo.png",
+                "shopify-box-logo.png",
+                "magalu-box-logo.png",
+                "shein-box-logo.png",
+                "tiktokshop-box-logo.png",
+                "aliexpress--box-logo.png",
+              ].map((logo) => (
+                <Image
+                  key={logo}
+                  className="whole-marketplaces__logo"
+                  src={`/images/marketplaces-box-logos/${logo}`}
+                  alt=""
+                  width={150}
+                  height={150}
+                  sizes="(max-width: 800px) 100px, 130px"
+                />
+              ))}
             </div>
           </div>
         </section>

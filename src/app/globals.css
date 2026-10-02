@@ -305,6 +305,78 @@ section.marketplaces {
 }
 
 /* Operational overview */
+/* Marketplace boxes are decorative and stay within their own column. */
+.whole .whole-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+}
+.whole-marketplaces {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1.15;
+  justify-self: center;
+  pointer-events: none;
+}
+.whole-marketplaces__logo {
+  position: absolute;
+  width: 27%;
+  height: auto;
+  object-fit: contain;
+}
+.whole-marketplaces__logo:nth-child(1) {
+  left: 34%;
+  top: 1%;
+  width: 31%;
+  transform: rotate(-8deg);
+}
+.whole-marketplaces__logo:nth-child(2) {
+  left: 2%;
+  top: 18%;
+  transform: rotate(-12deg);
+}
+.whole-marketplaces__logo:nth-child(3) {
+  right: 0;
+  top: 24%;
+  transform: rotate(10deg);
+}
+.whole-marketplaces__logo:nth-child(4) {
+  left: 35%;
+  top: 36%;
+  transform: rotate(6deg);
+}
+.whole-marketplaces__logo:nth-child(5) {
+  left: 0;
+  top: 53%;
+  transform: rotate(-6deg);
+}
+.whole-marketplaces__logo:nth-child(6) {
+  right: 1%;
+  top: 58%;
+  transform: rotate(12deg);
+}
+.whole-marketplaces__logo:nth-child(7) {
+  left: 28%;
+  top: 75%;
+  transform: rotate(-9deg);
+}
+.whole-marketplaces__logo:nth-child(8) {
+  right: 1%;
+  top: 86%;
+  width: 22%;
+  transform: rotate(5deg);
+}
+@media (max-width: 800px) {
+  .whole .whole-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .whole-marketplaces {
+    max-width: 360px;
+  }
+}
 section.whole {
   padding-bottom: clamp(88px, 10vw, 140px);
   color: var(--ink);
@@ -387,7 +459,7 @@ section.whole:after {
   section.growth {
     position: relative;
     z-index: 1;
-    margin-top: -80vh;
+    margin-top: -60vh;
   }
 }
 
@@ -561,8 +633,8 @@ section.whole:after {
   z-index: 1;
   top: 50%;
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   padding: 0;
   border: 1px solid #ffffff8a;
@@ -596,8 +668,8 @@ section.whole:after {
   cursor: not-allowed;
 }
 .banner-carousel__control svg {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
 }
 .banner-carousel__dots {
   position: absolute;
@@ -642,8 +714,8 @@ section.whole:after {
     aspect-ratio: 24 / 11;
   }
   .banner-carousel__control {
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -717,8 +789,8 @@ section.whole:after {
   color: var(--teal);
 }
 .carousel-controls svg {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
 }
 .carousel-controls span {
   color: #a8bbba;
