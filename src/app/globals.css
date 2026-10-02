@@ -6,7 +6,7 @@
 
 /* Specialization */
 section.special {
-  background: var(--ink);
+  background: #23353e;
   color: #fff;
 }
 section.special .special-head {
@@ -252,6 +252,55 @@ section.marketplaces {
   }
   .marketplaces__heading > p:last-child {
     font-size: 16px;
+  }
+}
+
+/* Floating WhatsApp CTA */
+.whatsapp-float {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 30;
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 12px 24px #12272b42;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-float:hover {
+  background: #20bd5b;
+  box-shadow: 0 16px 30px #12272b56;
+  transform: translateY(-3px);
+}
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+@media (max-width: 650px) {
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
+  }
+  .whatsapp-float img {
+    width: 31px;
+    height: 31px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    transition: none;
   }
 }
 
@@ -1326,7 +1375,8 @@ section.ecosystem {
 /* -------------------------------------------------------------------------- */
 
 :root {
-  --ink: #263238;
+  --ink: #223239;
+  --light-ink: #293d48;
   --closing-bg: #273238;
   --teal: #37a3a4;
   --orange: #ff5200;
@@ -1773,7 +1823,7 @@ p {
     min-height: 174px;
     margin-bottom: 10vh;
     padding: clamp(27px, 3vw, 38px);
-    background: #2b393d;
+    background: var(--light-ink);
     border: 1px solid #ffffff20;
     border-radius: 16px;
     box-shadow: 0 18px 34px #111a1e3b;
@@ -2164,7 +2214,7 @@ p {
 /* Final call to action */
 .closing {
   padding-block: clamp(96px, 12vw, 170px);
-  background: #1d2a30;
+  background: var(--light-ink);
   color: #fff;
   text-align: center;
 }

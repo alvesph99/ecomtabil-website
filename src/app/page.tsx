@@ -4,7 +4,7 @@ import { Faq } from "@/components/faq";
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_URL;
 const scheduling = process.env.NEXT_PUBLIC_SCHEDULING_URL;
 const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
-  "Olá! Quero agendar um diagnóstico gratuito da minha operação de ecommerce.",
+  "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
 )}`;
 
 function Arrow() {
@@ -65,7 +65,7 @@ const expertise = [
 const services = [
   [
     "Contabilidade especializada",
-    "Rotinas contábeis estruturadas para empresas que vivem o ecommerce.",
+    "Rotinas contábeis estruturadas para empresas que vivem o E-commerce.",
   ],
   [
     "Fiscal e tributário",
@@ -135,7 +135,7 @@ export default function HomePage() {
           </div>
           <div
             className="hero-art intro-art"
-            aria-label="Uma operação de ecommerce conectada"
+            aria-label="Uma operação de E-commerce conectada"
           >
             <div className="grid" />
             <div className="orbit orbit-a" />
@@ -184,7 +184,7 @@ export default function HomePage() {
             <div>
               <p className="marker">Conhecimento aplicado à rotina.</p>
               <h2 id="special-title">
-                Seu contador entende de ecommerce ou apenas recebe suas notas?
+                Seu contador entende de E-commerce ou apenas recebe suas notas?
               </h2>
             </div>
             <p>
@@ -216,7 +216,7 @@ export default function HomePage() {
                   A operação inteira, não um problema isolado.
                 </p>
                 <h2 id="whole-title">
-                  Uma operação de ecommerce não deveria ser tratada como uma
+                  Uma operação de E-commerce não deveria ser tratada como uma
                   empresa qualquer.
                 </h2>
               </div>
@@ -292,7 +292,7 @@ export default function HomePage() {
             <div className="seller-card__image">
               <Image
                 src="/images/seller-operator.png"
-                alt="Operação de ecommerce em uma estação de expedição"
+                alt="Operação de E-commerce em uma estação de expedição"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
               />
@@ -329,7 +329,7 @@ export default function HomePage() {
             <div className="seller-card__image">
               <Image
                 src="/images/seller-operation.png"
-                alt="Rotina de expedição com itens de ecommerce organizados"
+                alt="Rotina de expedição com itens de E-commerce organizados"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
               />
@@ -351,19 +351,19 @@ export default function HomePage() {
           <h2 id="authority-title">
             Experiência contábil.
             <br />
-            <em>Vivência de ecommerce.</em>
+            <em>Vivência de E-commerce.</em>
           </h2>
           <div className="facts">
             <div>
-              <b>+20 anos</b>
-              <span>de experiência contábil</span>
+              <b>Com mais de 20 anos</b>
+              <span>em experiência como seller</span>
             </div>
             <div>
-              <b>Seller + Contador</b>
-              <span>visão dos dois lados da operação</span>
+              <b>Seller + Contador + Tributarista</b>
+              <span>visão dos dois lados da sua operação</span>
             </div>
             <div>
-              <b>Ecommerce e Marketplaces</b>
+              <b>E-commerce e Marketplaces</b>
               <span>
                 especialização no ambiente em que nossos clientes vendem
               </span>
@@ -386,7 +386,7 @@ export default function HomePage() {
               Trabalhamos com os principais marketplaces do Brasil.
             </h2>
             <p>
-              Especialização contábil para ecommerce que vende nos principais
+              Especialização contábil para E-commerce que vende nos principais
               canais digitais.
             </p>
           </div>
@@ -518,7 +518,7 @@ export default function HomePage() {
             </a>
             <p>
               Contabilidade especializada para quem vende, integra e cresce no
-              ecommerce.
+              E-commerce.
             </p>
             <div className="socials">
               <a href="#inicio" aria-label="Facebook">
@@ -586,7 +586,7 @@ export default function HomePage() {
             </div>
             <div>
               <h3>Serviços</h3>
-              <a href="#especializacao">Contabilidade para ecommerce</a>
+              <a href="#especializacao">Contabilidade para E-commerce</a>
               <a href="#especializacao">Fiscal e tributário</a>
               <a href="#especializacao">ERP e integrações</a>
               <a href="#especializacao">Marketplaces</a>
@@ -611,6 +611,22 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      <a
+        className="whatsapp-float"
+        href={closingWhatsapp}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Agendar um diagnóstico pelo WhatsApp"
+      >
+        <Image
+          src="/images/whatsapp-icon.svg"
+          alt=""
+          aria-hidden="true"
+          width={32}
+          height={32}
+          unoptimized
+        />
+      </a>
     </main>
   );
 }

@@ -179,3 +179,9 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Adicionada uma CTA para analise operacional na secao de vivencia de seller.
 - Ajustados espacamento, icones e numeracao dos cards de especializacao para reforcar a leitura da sequencia.
 - Incluidos assets de logos em caixa para os principais marketplaces, incluindo TikTok Shop.
+
+### Atualizacao visual e WhatsApp
+
+- Atualizados banners da hero e arquivos editoriais relacionados a campanhas da Ecomtabil.
+- Refinadas cores das superfícies escuras e textos de posicionamento para manter consistência na comunicação de E-commerce.
+- Adicionado atalho flutuante de WhatsApp com ícone oficial local, levando ao mesmo diagnóstico com mensagem pré-preenchida usado nos CTAs da página.
