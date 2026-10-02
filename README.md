@@ -171,3 +171,11 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 
 - Incluido o TikTok Shop na esteira animada de marketplaces.
 - Reduzida de forma proporcional a escala dos titulos `h1` e `h2`, incluindo as variacoes de processo, ecossistema, marketplaces e CTA final.
+
+### CTAs e especializacao
+
+- Centralizados os CTAs de conversao no WhatsApp de diagnostico, com mensagem pre-preenchida e sem o agendamento secundario na CTA final.
+- Substituido o texto de apoio da secao de processo por uma CTA para troca de contador.
+- Adicionada uma CTA para analise operacional na secao de vivencia de seller.
+- Ajustados espacamento, icones e numeracao dos cards de especializacao para reforcar a leitura da sequencia.
+- Incluidos assets de logos em caixa para os principais marketplaces, incluindo TikTok Shop.

@@ -3,6 +3,9 @@ import { Faq } from "@/components/faq";
 
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_URL;
 const scheduling = process.env.NEXT_PUBLIC_SCHEDULING_URL;
+const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
+  "Olá! Quero agendar um diagnóstico gratuito da minha operação de ecommerce.",
+)}`;
 
 function Arrow() {
   return (
@@ -282,6 +285,7 @@ export default function HomePage() {
           <h2 id="seller-title">
             Antes de entender seu balanço, nós entendemos sua operação.
           </h2>
+          <Cta href={closingWhatsapp}>Quero Analisar Minha Operação</Cta>
         </div>
         <div className="seller-copy">
           <article className="seller-card">
@@ -446,7 +450,9 @@ export default function HomePage() {
           <h2 id="process-title">
             Você não precisa trocar de contador no escuro.
           </h2>
-          <p>Entendemos sua operação antes de falar em plano.</p>
+          <div className="process-intro__action">
+            <Cta href={closingWhatsapp}>Quero Trocar de Contador</Cta>
+          </div>
         </div>
         <div className="steps">
           {[
@@ -483,17 +489,14 @@ export default function HomePage() {
       <section className="closing" aria-labelledby="closing-title">
         <div className="shell">
           <h2 id="closing-title">
-            Simplifique já a gestão contábil do seu negócio online
+            Não deixe a contabilidade limitar seu crescimento.
           </h2>
           <p>
             Receba um diagnóstico gratuito da sua operação e descubra como a
             E-comtabil pode ajudar.
           </p>
           <div className="actions">
-            <Cta href={whatsapp}>Agende agora um diagnóstico </Cta>
-            <Cta href={scheduling} ghost>
-              Agendar uma conversa
-            </Cta>
+            <Cta href={closingWhatsapp}>Agende agora um diagnóstico</Cta>
           </div>
         </div>
       </section>

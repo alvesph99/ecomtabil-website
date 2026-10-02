@@ -420,7 +420,7 @@ section.whole:after {
   border: 1px solid #ffffff8c;
   border-radius: 999px;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -1104,12 +1104,8 @@ section.ecosystem {
   font-size: clamp(2.65rem, 4.1vw, 4.6rem);
   line-height: 1.07;
 }
-.process.process .process-intro > p {
-  max-width: 365px;
+.process.process .process-intro__action {
   margin-top: 23px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
 }
 .process.process .steps {
   display: block;
@@ -1131,8 +1127,9 @@ section.ecosystem {
 .process.process .steps article > span {
   padding-top: 5px;
   color: var(--orange);
-  font-size: 11px;
   letter-spacing: 0.12em;
+  font-size: 16px;
+  font-weight: 600;
 }
 .process.process .steps h3 {
   margin: 0 0 11px;
@@ -1428,8 +1425,8 @@ p {
 .button svg,
 .special-list svg,
 .ecosystem svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 .button:hover {
   transform: translateY(-2px);
@@ -1740,7 +1737,8 @@ p {
   transform: translateX(12px);
 }
 .special-list span {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   color: var(--teal);
 }
@@ -1755,7 +1753,7 @@ p {
 }
 .special-list svg,
 .ecosystem svg {
-  color: var(--orange);
+  color: var(--teal);
 }
 
 /* Sticky specialization cards keep the original list on smaller screens. */
@@ -1773,7 +1771,7 @@ p {
     grid-template-columns: 64px minmax(180px, 0.86fr) minmax(280px, 1.3fr) 22px;
     gap: clamp(22px, 3vw, 42px);
     min-height: 174px;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
     padding: clamp(27px, 3vw, 38px);
     background: #2b393d;
     border: 1px solid #ffffff20;
@@ -1896,6 +1894,9 @@ p {
   margin-left: -9px;
   color: var(--orange);
   font: 700 150px/0.6 Georgia;
+}
+.quote .button {
+  margin-top: 32px;
 }
 .seller-copy {
   padding-top: 111px;
@@ -2088,12 +2089,7 @@ p {
   border-top: 2px solid var(--teal);
   padding-top: 19px;
 }
-.steps span {
-  color: var(--orange);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-}
+
 .steps h3 {
   margin: 18px 0 12px;
   font-size: 19px;
