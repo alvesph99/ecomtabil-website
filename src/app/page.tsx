@@ -66,30 +66,42 @@ const services = [
   [
     "Contabilidade especializada",
     "Rotinas contábeis estruturadas para empresas que vivem o E-commerce.",
+    "accounting",
   ],
   [
     "Fiscal e tributário",
     "Apuração e acompanhamento alinhados à realidade da sua operação.",
+    "tax",
   ],
   [
     "Marketplaces",
     "Conhecimento das particularidades de quem vende nos principais canais digitais.",
+    "marketplaces",
   ],
   [
     "ERP e integrações",
     "Operação, sistemas e contabilidade trabalhando com informações consistentes.",
+    "erp",
   ],
   [
-    "Folha e pró-labore",
+    "Certificado digital",
+    "Emissão e renovação simplificadas para manter a rotina da sua empresa em dia.",
+    "digital-certificate",
+  ],
+  [
+    "Folha de pagamento e pró-labore",
     "Estrutura para acompanhar o crescimento da equipe e dos sócios.",
+    "payroll",
   ],
   [
     "Consultoria",
     "Análise especializada para decisões que vão além da rotina contábil.",
+    "consulting",
   ],
   [
     "Regularização empresarial",
     "Base empresarial organizada para acompanhar o próximo estágio do negócio.",
+    "regularization",
   ],
 ];
 
@@ -132,6 +144,7 @@ export default function HomePage() {
               operação.
             </h2>
             <p>De seller para seller. Com visão de contador.</p>
+            <Cta href={closingWhatsapp}>Agendar um diagnóstico</Cta>
           </div>
           <div
             className="hero-art intro-art"
@@ -209,7 +222,7 @@ export default function HomePage() {
 
       <div className="whole-boundary">
         <section className="whole" aria-labelledby="whole-title">
-          <div className="shell whole-layout">
+          <div className="shell">
             <div className="whole-top">
               <div>
                 <p className="marker">
@@ -227,28 +240,27 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="whole-marketplaces" aria-hidden="true">
-              {[
-                "mercado-livre-box-logo.png",
-                "amazon-box-logo.png",
-                "shopee-box-logo.png",
-                "shopify-box-logo.png",
-                "magalu-box-logo.png",
-                "shein-box-logo.png",
-                "tiktokshop-box-logo.png",
-                "aliexpress--box-logo.png",
-              ].map((logo) => (
-                <Image
-                  key={logo}
-                  className="whole-marketplaces__logo"
-                  src={`/images/marketplaces-box-logos/${logo}`}
-                  alt=""
-                  width={150}
-                  height={150}
-                  sizes="(max-width: 800px) 100px, 130px"
-                />
-              ))}
-            </div>
+          </div>
+          <div className="whole-marketplaces" aria-hidden="true">
+            {[
+              "mercado-livre-box-logo.png",
+              "amazon-box-logo.png",
+              "shopee-box-logo.png",
+              "shopify-box-logo.png",
+              "magalu-box-logo.png",
+              "shein-box-logo.png",
+              "tiktokshop-box-logo.png",
+            ].map((logo) => (
+              <Image
+                key={logo}
+                className="whole-marketplaces__logo"
+                src={`/images/marketplaces-box-logos/${logo}`}
+                alt=""
+                width={150}
+                height={150}
+                sizes="(max-width: 800px) 100px, 120px"
+              />
+            ))}
           </div>
         </section>
       </div>
@@ -377,7 +389,7 @@ export default function HomePage() {
           </h2>
           <div className="facts">
             <div>
-              <b>Com mais de 20 anos</b>
+              <b>Mais de 20 anos</b>
               <span>em experiência como seller</span>
             </div>
             <div>
@@ -391,9 +403,23 @@ export default function HomePage() {
               </span>
             </div>
             <div>
-              <b>Atendimento nacional</b>
+              <b>Planejamento Tributário</b>
               <span>
-                estrutura digital para atender sellers em todo o Brasil
+                decisões tributárias alinhadas ao momento e aos objetivos do
+                negócio
+              </span>
+            </div>
+            <div>
+              <b>Consultoria de E-commerce</b>
+              <span>
+                orientação prática para conectar operação, margem e crescimento
+              </span>
+            </div>
+            <div>
+              <b>Pague Menos Imposto</b>
+              <span>
+                revisão da estrutura tributária para reduzir custos dentro da
+                lei
               </span>
             </div>
           </div>
@@ -447,10 +473,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="service-grid">
-            {services.map(([title, description], i) => (
+            {services.map(([title, description, image]) => (
               <article key={title} className="service-card">
                 <div
-                  className={`service-card__image service-card__image--${i % 4}`}
+                  className={`service-card__image service-card__image--${image}`}
                   aria-hidden="true"
                 />
                 <div className="service-card__content">
@@ -459,6 +485,52 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="about section"
+        id="sobre"
+        aria-labelledby="about-title"
+      >
+        <div className="about__inner shell">
+          <div className="about__copy">
+            <p className="marker">Sobre nós</p>
+            <h2 id="about-title">
+              Um pouco da história da{" "}
+              <span className="highlight">E- comtabil</span>
+            </h2>
+            <p className="about__lead">
+              Quem vende online precisa de uma contabilidade que entenda sua
+              operação.
+            </p>
+            <p>
+              Por trás da marca está Andre Braga, contador e tributarista, com
+              mais de 20 anos de experiência como seller.
+            </p>
+            <p>
+              Uma trajetória que une conhecimento técnico à experiência prática
+              de quem conhece os desafios dos marketplaces: comissões, fretes,
+              repasses, devoluções e impostos que impactam a margem.
+            </p>
+            <p>
+              Sabemos que faturar mais exige atenção aos números. E que crescer
+              com segurança começa por entender o resultado do negócio.
+            </p>
+            <p>
+              É com essa visão que a E-comtabil se apresenta: contabilidade
+              especializada em e-commerce e marketplaces, com clareza na
+              comunicação e foco na realidade do seller.
+            </p>
+          </div>
+          <div className="about__visual">
+            <Image
+              src="/images/about-us.png"
+              alt="Operação de e-commerce em atividade"
+              fill
+              sizes="(max-width: 800px) calc(100vw - 48px), 44vw"
+            />
           </div>
         </div>
       </section>
@@ -515,7 +587,8 @@ export default function HomePage() {
           </h2>
           <p>
             Receba um diagnóstico gratuito da sua operação e descubra como a
-            E-comtabil pode ajudar.
+            <span style={{ whiteSpace: "nowrap" }}> E-comtabil</span> pode
+            ajudar.
           </p>
           <div className="actions">
             <Cta href={closingWhatsapp}>Agende agora um diagnóstico</Cta>
@@ -601,7 +674,7 @@ export default function HomePage() {
           <div className="footer-links">
             <div>
               <h3>Empresa</h3>
-              <a href="#inicio">Sobre nós</a>
+              <a href="#sobre">Sobre nós</a>
               <a href="#especializacao">Nossos serviços</a>
               <a href="#processo">Como funciona</a>
               <a href="#ecossistema">Ecossistema</a>
@@ -617,7 +690,7 @@ export default function HomePage() {
               <h3>Suporte</h3>
               <a href={whatsapp ?? "#inicio"}>Fale conosco</a>
               <a href={scheduling ?? "#inicio"}>Agendar conversa</a>
-              <a href="#processo">Dúvidas frequentes</a>
+              <a href="#faq">Dúvidas frequentes</a>
             </div>
           </div>
         </div>

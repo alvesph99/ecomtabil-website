@@ -191,3 +191,12 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Adicionadas as logos dos marketplaces em caixas na lateral direita da secao “A operacao inteira, nao um problema isolado.”
 - Ajustada a composicao para manter o texto em destaque e reorganizar as caixas responsivamente abaixo do conteudo em telas menores.
 - Reduzidas discretamente as setas de navegacao do carrossel de banners.
+
+### Conteudo editorial e servicos
+
+- Adicionada a secao "Um pouco da historia da E-comtabil", com conteudo institucional, imagem editorial e navegacao direta pelo header e footer.
+- Atualizados os links de suporte para o FAQ e para a Area do cliente no Onvio; incluidos CTAs de diagnostico nas secoes de introducao e encerramento.
+- Expandida a secao de autoridade com Planejamento Tributario, Consultoria de E-commerce e Pague Menos Imposto.
+- Incluido o banner MEI ao carrossel principal.
+- Adicionado o servico de Certificado digital e definido um asset exclusivo para cada card de servico, incluindo Contabilidade especializada, Fiscal e tributario, ERP, Folha de pagamento, Consultoria e Regularizacao empresarial.
+- Refinadas a composicao das caixas de marketplaces na secao operacional e a escala de titulos e subtitulos da pagina.

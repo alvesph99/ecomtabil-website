@@ -16,6 +16,10 @@ const banners = [
     alt: "Ecomtabil: benefício fiscal para operações de ecommerce em Minas Gerais",
     image: "/images/banners/beneficio-fiscal-minas-gerais.png",
   },
+  {
+    alt: "Ecomtabil: plano MEI para organizar a contabilidade do seu ecommerce",
+    image: "/images/banners/mei-ao-full.png",
+  },
 ];
 
 function Arrow({ direction }: { direction: "previous" | "next" }) {
@@ -128,12 +132,17 @@ export function HeroCarousel() {
           </a>
           <nav aria-label="Navegação principal">
             <a href="#inicio">Home</a>
-            <a href="/sobre">Sobre</a>
+            <a href="#sobre">Sobre</a>
             <a href="/planos">Planos</a>
             <a href="/blog">Blog</a>
             <a href="/afiliados">Afiliados</a>
           </nav>
-          <a className="site-header__client" href="/area-do-cliente">
+          <a
+            className="site-header__client"
+            href="https://onvio.com.br/clientcenter/pt/home"
+            target="_blank"
+            rel="noreferrer"
+          >
             Área do cliente
           </a>
         </div>

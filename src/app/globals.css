@@ -166,7 +166,7 @@ section.marketplaces {
   text-align: center;
 }
 .marketplaces__heading h2 {
-  font-size: clamp(2.3rem, 4.25vw, 4.25rem);
+  font-size: clamp(calc(2.3rem - 6px), calc(4.25vw - 6px), calc(4.25rem - 6px));
 }
 .marketplaces__heading > p:last-child {
   max-width: 570px;
@@ -305,78 +305,6 @@ section.marketplaces {
 }
 
 /* Operational overview */
-/* Marketplace boxes are decorative and stay within their own column. */
-.whole .whole-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(32px, 5vw, 80px);
-}
-.whole-marketplaces {
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 1 / 1.15;
-  justify-self: center;
-  pointer-events: none;
-}
-.whole-marketplaces__logo {
-  position: absolute;
-  width: 27%;
-  height: auto;
-  object-fit: contain;
-}
-.whole-marketplaces__logo:nth-child(1) {
-  left: 34%;
-  top: 1%;
-  width: 31%;
-  transform: rotate(-8deg);
-}
-.whole-marketplaces__logo:nth-child(2) {
-  left: 2%;
-  top: 18%;
-  transform: rotate(-12deg);
-}
-.whole-marketplaces__logo:nth-child(3) {
-  right: 0;
-  top: 24%;
-  transform: rotate(10deg);
-}
-.whole-marketplaces__logo:nth-child(4) {
-  left: 35%;
-  top: 36%;
-  transform: rotate(6deg);
-}
-.whole-marketplaces__logo:nth-child(5) {
-  left: 0;
-  top: 53%;
-  transform: rotate(-6deg);
-}
-.whole-marketplaces__logo:nth-child(6) {
-  right: 1%;
-  top: 58%;
-  transform: rotate(12deg);
-}
-.whole-marketplaces__logo:nth-child(7) {
-  left: 28%;
-  top: 75%;
-  transform: rotate(-9deg);
-}
-.whole-marketplaces__logo:nth-child(8) {
-  right: 1%;
-  top: 86%;
-  width: 22%;
-  transform: rotate(5deg);
-}
-@media (max-width: 800px) {
-  .whole .whole-layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
-  }
-  .whole-marketplaces {
-    max-width: 360px;
-  }
-}
 section.whole {
   padding-bottom: clamp(88px, 10vw, 140px);
   color: var(--ink);
@@ -436,6 +364,58 @@ section.whole:after {
     0 0 0 148px #37a3a416;
   pointer-events: none;
 }
+.whole-marketplaces {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: clamp(20px, 5vw, 96px);
+  width: min(37vw, 450px);
+  aspect-ratio: 1 / 1.15;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.whole-marketplaces__logo {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  object-fit: contain;
+}
+.whole-marketplaces__logo:nth-child(1) {
+  top: 1%;
+  left: 34%;
+  width: 26%;
+  transform: rotate(-8deg);
+}
+.whole-marketplaces__logo:nth-child(2) {
+  top: 18%;
+  left: 2%;
+  transform: rotate(-12deg);
+}
+.whole-marketplaces__logo:nth-child(3) {
+  top: 24%;
+  right: 0;
+  transform: rotate(10deg);
+}
+.whole-marketplaces__logo:nth-child(4) {
+  top: 36%;
+  left: 35%;
+  transform: rotate(6deg);
+}
+.whole-marketplaces__logo:nth-child(5) {
+  top: 53%;
+  left: 0;
+  transform: rotate(-6deg);
+}
+.whole-marketplaces__logo:nth-child(6) {
+  top: 58%;
+  right: 1%;
+  transform: rotate(12deg);
+}
+.whole-marketplaces__logo:nth-child(7) {
+  top: 75%;
+  left: 28%;
+  transform: rotate(-9deg);
+}
 .whole > .shell,
 .whole > .chain {
   position: relative;
@@ -470,6 +450,15 @@ section.whole:after {
 }
 
 @media (max-width: 800px) {
+  .whole-marketplaces {
+    position: relative;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    width: min(100% - 48px, 360px);
+    margin: 42px auto 0;
+    transform: none;
+  }
   section.whole:after {
     left: -33vw;
     top: 58%;
@@ -829,6 +818,9 @@ section.whole:after {
   line-height: 1.55;
   font-weight: 600;
 }
+.intro .intro-copy > .button {
+  margin-top: 28px;
+}
 .intro .intro-art {
   min-height: 400px;
   max-width: 510px;
@@ -910,22 +902,102 @@ section.whole:after {
   }
 }
 
+/* About Ecomtabil */
+.about {
+  background: #fff;
+  color: var(--ink);
+}
+.about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 0.72fr);
+  align-items: center;
+  gap: clamp(50px, 11vw, 150px);
+}
+.about .marker {
+  color: var(--teal);
+  font-size: 11px;
+}
+.about h2 {
+  max-width: 620px;
+  margin-top: 16px;
+  color: #31383a;
+}
+.about__copy > p {
+  max-width: 610px;
+  margin-top: 14px;
+  color: #455a60;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.about__copy > .about__lead {
+  margin-top: 22px;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.about__visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 7 / 9;
+  justify-self: end;
+  overflow: hidden;
+  border-radius: 28px;
+}
+.about__visual > img {
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .about__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+  .about__visual {
+    justify-self: center;
+  }
+}
+@media (max-width: 480px) {
+  .about__copy > p {
+    font-size: 16px;
+  }
+  .about__copy > .about__lead {
+    font-size: 18px;
+  }
+  .about__visual {
+    max-width: none;
+    border-radius: 20px;
+  }
+}
+
 /* Ecosystem service rail */
 .service-card .service-card__image {
   background-size: cover;
   background-position: center;
 }
-.service-card .service-card__image--0 {
-  background-image: url("/images/service-packing.png");
+.service-card .service-card__image--accounting {
+  background-image: url("/images/contabilidade-especializada.webp");
 }
-.service-card .service-card__image--1 {
-  background-image: url("/images/service-analytics.png");
+.service-card .service-card__image--tax {
+  background-image: url("/images/fiscal-tributario.png");
 }
-.service-card .service-card__image--2 {
-  background-image: url("/images/service-warehouse.png");
+.service-card .service-card__image--marketplaces {
+  background-image: url("/images/marketplaces-image.png");
 }
-.service-card .service-card__image--3 {
-  background-image: url("/images/service-consulting.png");
+.service-card .service-card__image--erp {
+  background-image: url("/images/erp-integracoes.png");
+}
+.service-card .service-card__image--digital-certificate {
+  background-image: url("/images/digital-certificate.webp");
+}
+.service-card .service-card__image--payroll {
+  background-image: url("/images/folha-de-pagamento.png");
+}
+.service-card .service-card__image--consulting {
+  background-image: url("/images/consultoria.jpg");
+}
+.service-card .service-card__image--regularization {
+  background-image: url("/images/regularizacao-empresarial.jpg");
 }
 
 section.ecosystem {
@@ -983,13 +1055,13 @@ section.ecosystem {
     #111a1ef0 100%
   );
 }
-.service-card__image--0 {
+.service-card__image--accounting {
   background-position: left center;
 }
-.service-card__image--1 {
+.service-card__image--tax {
   background-position: center center;
 }
-.service-card__image--2 {
+.service-card__image--marketplaces {
   background-position: right center;
 }
 .service-card__content {
@@ -1008,7 +1080,7 @@ section.ecosystem {
 .service-card h3 {
   max-width: 255px;
   color: #fff;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.1;
   letter-spacing: -0.045em;
 }
@@ -1126,7 +1198,7 @@ section.ecosystem {
 .service-card h3 {
   max-width: none;
   color: var(--ink);
-  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+  font-size: clamp(calc(1.3rem - 6px), calc(1.8vw - 6px), calc(1.65rem - 6px));
   line-height: 1.08;
 }
 .service-card p {
@@ -1194,7 +1266,11 @@ section.ecosystem {
     grid-column: 1;
   }
   .ecosystem .ecosystem__heading h2 {
-    font-size: clamp(1.9rem, 3.25vw, 3.45rem);
+    font-size: clamp(
+      calc(1.9rem - 6px),
+      calc(3.25vw - 6px),
+      calc(3.45rem - 6px)
+    );
   }
   .ecosystem .service-grid {
     grid-column: 2;
@@ -1222,7 +1298,7 @@ section.ecosystem {
 }
 .process.process h2 {
   max-width: 490px;
-  font-size: clamp(2.65rem, 4.1vw, 4.6rem);
+  font-size: clamp(calc(2.65rem - 6px), calc(4.1vw - 6px), calc(4.6rem - 6px));
   line-height: 1.07;
 }
 .process.process .process-intro__action {
@@ -1254,7 +1330,7 @@ section.ecosystem {
 }
 .process.process .steps h3 {
   margin: 0 0 11px;
-  font-size: 21px;
+  font-size: 15px;
   line-height: 1.25;
   letter-spacing: -0.045em;
 }
@@ -1281,7 +1357,7 @@ section.ecosystem {
     padding-block: 23px;
   }
   .process.process .steps h3 {
-    font-size: 19px;
+    font-size: 13px;
   }
 }
 
@@ -1364,7 +1440,7 @@ section.ecosystem {
 }
 .footer-links h3 {
   margin: 0 0 22px;
-  font-size: 18px;
+  font-size: 12px;
   letter-spacing: -0.035em;
   color: #fff;
 }
@@ -1505,7 +1581,7 @@ h3,
   font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 h2 {
-  font-size: clamp(2.1rem, 4.25vw, 4.25rem);
+  font-size: clamp(calc(2.1rem - 6px), calc(4.25vw - 6px), calc(4.25rem - 6px));
   line-height: 1.02;
   letter-spacing: -0.06em;
 }
@@ -1617,7 +1693,7 @@ p {
   color: #8dd8d7;
 }
 .hero h1 {
-  font-size: clamp(3rem, 5.25vw, 5.35rem);
+  font-size: clamp(calc(3rem - 6px), calc(5.25vw - 6px), calc(5.35rem - 6px));
   line-height: 0.99;
   letter-spacing: -0.07em;
 }
@@ -1865,7 +1941,7 @@ p {
   color: var(--teal);
 }
 .special-list h3 {
-  font-size: 22px;
+  font-size: 16px;
   letter-spacing: -0.04em;
 }
 .special-list p {
@@ -2063,7 +2139,7 @@ p {
   max-width: 350px;
   margin-bottom: 13px;
   color: var(--ink);
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-size: clamp(calc(1.35rem - 6px), calc(2vw - 6px), calc(1.8rem - 6px));
   line-height: 1.08;
   letter-spacing: -0.045em;
 }
@@ -2091,7 +2167,7 @@ p {
   max-width: 170px;
   margin-bottom: 10px;
   color: #fff;
-  font-size: clamp(1.15rem, 1.55vw, 1.4rem);
+  font-size: clamp(calc(1.15rem - 6px), calc(1.55vw - 6px), calc(1.4rem - 6px));
 }
 .seller-card--years p {
   max-width: 195px;
@@ -2137,7 +2213,7 @@ p {
 }
 /* Growth narrative */
 .growth {
-  padding-block: clamp(80px, 11vw, 140px);
+  padding-block: clamp(80px, 13vw, 190px);
   background: var(--orange);
   color: #fff;
 }
@@ -2166,7 +2242,7 @@ p {
   gap: 13%;
 }
 .ecosystem h2 {
-  font-size: clamp(2.05rem, 3.6vw, 3.6rem);
+  font-size: clamp(calc(2.05rem - 6px), calc(3.6vw - 6px), calc(3.6rem - 6px));
 }
 .ecosystem ul {
   padding: 0;
@@ -2214,7 +2290,7 @@ p {
 
 .steps h3 {
   margin: 18px 0 12px;
-  font-size: 19px;
+  font-size: 13px;
   letter-spacing: -0.035em;
 }
 .steps p {
@@ -2294,7 +2370,7 @@ p {
   max-width: 900px;
 }
 .closing h2 {
-  font-size: clamp(2.35rem, 4.6vw, 4.5rem);
+  font-size: clamp(calc(2.35rem - 6px), calc(4.6vw - 6px), calc(4.5rem - 6px));
 }
 .closing h2 + p {
   max-width: 600px;
@@ -2353,7 +2429,8 @@ p {
   cursor: pointer;
   text-align: left;
   font:
-    600 clamp(1.05rem, 1.55vw, 1.34rem)/1.3 "Plus Jakarta Sans",
+    600 clamp(calc(1.05rem - 6px), calc(1.55vw - 6px), calc(1.34rem - 6px))/1.3
+      "Plus Jakarta Sans",
     Arial,
     sans-serif;
   letter-spacing: -0.025em;
@@ -2462,7 +2539,7 @@ p {
   }
   .faq__item button {
     min-height: 82px;
-    font-size: 1rem;
+    font-size: calc(1rem - 6px);
   }
   .faq__answer p {
     padding: 0 25px 24px 0;
