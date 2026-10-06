@@ -85,20 +85,15 @@ const questions = [
 export default function AffiliatePage() {
   return (
     <main className="affiliate-page">
-      <SiteHeader activeLink="affiliates" rootPath="/" transparent />
+      <SiteHeader
+        activeLink="affiliates"
+        lightBackground
+        rootPath="/"
+        transparent
+      />
 
       <section className="affiliate-hero">
-        <div className="affiliate-hero__grid" aria-hidden="true" />
-        <div
-          className="affiliate-hero__orb affiliate-hero__orb--one"
-          aria-hidden="true"
-        />
-        <div
-          className="affiliate-hero__orb affiliate-hero__orb--two"
-          aria-hidden="true"
-        />
         <div className="affiliate-hero__content shell">
-          <p className="marker">Programa de afiliados</p>
           <h1>
             Ganhe dinheiro indicando a melhor contabilidade para{" "}
             <em>E-commerce.</em>
@@ -113,7 +108,7 @@ export default function AffiliatePage() {
               Quero ser afiliado
             </a>
             <a className="affiliate-hero__secondary" href="#como-funciona">
-              Saber mais <span aria-hidden="true">↓</span>
+              Saber mais
             </a>
           </div>
         </div>

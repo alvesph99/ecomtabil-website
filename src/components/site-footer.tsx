@@ -120,6 +120,15 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
             <a href={scheduling ?? toHome("#inicio")}>Agendar conversa</a>
             <Link href={toHome("#faq")}>Dúvidas frequentes</Link>
           </div>
+          <div>
+            <h3>Unidades</h3>
+            <Link href="/unidades">Matriz | Alphaville - SP</Link>
+            <Link href="/unidades">São Paulo - SP</Link>
+            <Link href="/unidades">Araraquara - SP</Link>
+            <Link href="/unidades">Ibitinga - SP</Link>
+            <Link href="/unidades">Extrema - MG</Link>
+            <Link href="/unidades">Nova Serrana - MG</Link>
+          </div>
         </div>
       </div>
       <div className="footer-bottom shell">

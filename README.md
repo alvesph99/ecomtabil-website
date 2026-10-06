@@ -224,3 +224,11 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Reorganizado o `globals.css` para acompanhar a ordem das secoes da pagina inicial.
 - Agrupados seletores-base, refinamentos e regras responsivas relacionados, sem alterar os valores visuais existentes.
 - Adicionados divisores comentados para facilitar a manutencao dos estilos compartilhados, da home e da pagina de afiliados.
+
+### Conteudo, navegacao e estados institucionais
+
+- Redesenhado o hover dos cards de especializacao com elevacao, destaque de borda e respostas sutis no numero e na seta.
+- Atualizada a hero de `/afiliados` para 600px, usando `afiliados-background.png`, tipografia escura e uma variacao clara do header transparente.
+- Adicionada uma secao de blog na home com tres conteudos editoriais, cards responsivos e navegacao direta pelo link Blog do header.
+- Reformulada a pagina `not-found` com header, footer, mensagem centralizada e CTA para retornar a home.
+- Incluida no footer a navegacao de unidades em Sao Paulo e Minas Gerais, apontando temporariamente para a pagina de indisponibilidade.

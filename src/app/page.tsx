@@ -129,6 +129,27 @@ const marketplaceBelt = [
   marketplaces[7],
 ];
 
+const blogPosts = [
+  {
+    category: "Tributação",
+    readingTime: "6 min de leitura",
+    title: "Lucro Real para E-commerce: quando esse regime faz sentido?",
+    image: "/images/service-analytics.png",
+  },
+  {
+    category: "Marketplaces",
+    readingTime: "5 min de leitura",
+    title: "Como vender em marketplaces sem perder sua margem de vista",
+    image: "/images/marketplaces-image.png",
+  },
+  {
+    category: "Gestão",
+    readingTime: "7 min de leitura",
+    title: "ERP e contabilidade: por que integrar os dados da operação?",
+    image: "/images/erp-integracoes.png",
+  },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -543,6 +564,52 @@ export default function HomePage() {
                 André iniciou sua carreira como seller no Mercado Livre no início dos anos 2000.
               </p>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="blog-preview section"
+        id="blog"
+        aria-labelledby="blog-title"
+      >
+        <div className="shell">
+          <div className="blog-preview__heading">
+            <div>
+              <p className="marker">Conteúdo para quem vende online</p>
+              <h2 id="blog-title">
+                Decisões melhores começam com informação que faz sentido.
+              </h2>
+            </div>
+            <p>
+              Conteúdos práticos sobre contabilidade, tributação e gestão para
+              a rotina de E-commerce.
+            </p>
+          </div>
+
+          <div className="blog-preview__grid">
+            {blogPosts.map(({ category, readingTime, title, image }) => (
+              <article className="blog-card" key={title}>
+                <a className="blog-card__image" href="/blog" tabIndex={-1}>
+                  <Image
+                    src={image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 800px) calc(100vw - 40px), 33vw"
+                  />
+                  <span>{readingTime}</span>
+                </a>
+                <div className="blog-card__content">
+                  <p>{category}</p>
+                  <h3>
+                    <a href="/blog">{title}</a>
+                  </h3>
+                  <a className="blog-card__link" href="/blog">
+                    Ler artigo <Arrow />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

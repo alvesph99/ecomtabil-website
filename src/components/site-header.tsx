@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 
 type SiteHeaderProps = {
   activeLink?: "affiliates";
+  lightBackground?: boolean;
   rootPath?: string;
   transparent?: boolean;
 };
 
 export function SiteHeader({
   activeLink,
+  lightBackground = false,
   rootPath = "",
   transparent = false,
 }: SiteHeaderProps) {
@@ -33,7 +35,7 @@ export function SiteHeader({
 
   return (
     <header
-      className={`site-header${hasScrolled ? " site-header--scrolled" : ""}`}
+      className={`site-header${lightBackground ? " site-header--on-light" : ""}${hasScrolled ? " site-header--scrolled" : ""}`}
     >
       <div className="nav shell">
         <Link className="site-header__logo" href={toHome("#inicio")} aria-label="Ecomtabil, início">
@@ -44,7 +46,7 @@ export function SiteHeader({
           <Link href={toHome("#inicio")}>Home</Link>
           <Link href={toHome("#sobre")}>Sobre</Link>
           <Link href="/planos">Planos</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href={toHome("#blog")}>Blog</Link>
           <Link href="/afiliados" aria-current={activeLink === "affiliates" ? "page" : undefined}>Afiliados</Link>
         </nav>
         <a className="site-header__client" href="https://onvio.com.br/clientcenter/pt/home" target="_blank" rel="noreferrer">
