@@ -94,17 +94,21 @@ export function HeroCarousel() {
       setIsAutoplayPlaying(false);
     }
 
+    function onAutoplayTimerSet() {
+      setProgressKey((key) => key + 1);
+    }
+
     onInit();
     api.on("reInit", onInit);
     api.on("select", onSelect);
-    api.on("autoplay:timerset", onInit);
+    api.on("autoplay:timerset", onAutoplayTimerSet);
     api.on("autoplay:play", onAutoplayPlay);
     api.on("autoplay:stop", onAutoplayStop);
 
     return () => {
       api.off("reInit", onInit);
       api.off("select", onSelect);
-      api.off("autoplay:timerset", onInit);
+      api.off("autoplay:timerset", onAutoplayTimerSet);
       api.off("autoplay:play", onAutoplayPlay);
       api.off("autoplay:stop", onAutoplayStop);
     };

@@ -216,6 +216,7 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Sincronizado o indicador de progresso com o temporizador do Embla, eliminando ciclos duplicados de duracao.
 - Alterados os indicadores inativos para dots circulares e o indicador ativo para uma pill de progresso.
 - Adicionado controle acessivel de pause e play, que pausa simultaneamente o autoplay e a animacao do indicador.
+- Corrigida a retomada do autoplay para que o botao de play reinicie o carrossel e o indicador de duracao sem sobrescrever o estado de reproducao.
 - Incluido o asset `afiliados-background.png` para a evolucao visual da pagina do programa de afiliados.
 - Refinado o enquadramento da foto na secao sobre a E-comtabil.
 
