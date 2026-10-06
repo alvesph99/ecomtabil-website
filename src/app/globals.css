@@ -1072,6 +1072,38 @@ section.special .special-list article:hover svg {
   }
 }
 
+@media (max-width: 1024px) {
+  section.special .special-list article {
+    grid-template-columns: 58px minmax(160px, 0.7fr) minmax(260px, 1.3fr);
+  }
+  section.special .special-list article > span {
+    align-self: center;
+  }
+  section.special .special-list article > svg {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  section.special .special-list article {
+    grid-template-areas:
+      "number title"
+      "number copy";
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: start;
+  }
+  section.special .special-list article > span {
+    grid-area: number;
+    align-self: center;
+  }
+  section.special .special-list article > h3 {
+    grid-area: title;
+  }
+  section.special .special-list article > p {
+    grid-area: copy;
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /* Operational overview                                                       */
 /* -------------------------------------------------------------------------- */
