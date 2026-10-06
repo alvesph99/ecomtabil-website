@@ -200,3 +200,36 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Incluido o banner MEI ao carrossel principal.
 - Adicionado o servico de Certificado digital e definido um asset exclusivo para cada card de servico, incluindo Contabilidade especializada, Fiscal e tributario, ERP, Folha de pagamento, Consultoria e Regularizacao empresarial.
 - Refinadas a composicao das caixas de marketplaces na secao operacional e a escala de titulos e subtitulos da pagina.
+
+### Programa de afiliados e componentes compartilhados
+
+- Criada a rota `/afiliados` com hero, beneficios, etapas, recursos, FAQ, CTA final e formulario responsivo para cadastro de afiliados.
+- Incluidos campos para nome, e-mail, telefone, origem, cupom, area de atuacao e aceite dos termos, com validacao nativa e retorno visual de envio.
+- Extraidos o header e o footer da landing para componentes reutilizaveis, preservando a transicao do header fixo e os links contextuais entre a home e paginas internas.
+- Atualizada a secao sobre com a foto de Andre Braga, um cartao de perfil sobreposto e enquadramento ajustado da imagem.
+- Adicionado o banner `contabilidade-conectada.png` como primeiro slide do carrossel principal.
+- Atualizado o sitemap para incluir a pagina de afiliados.
+
+### Controles e assets do carrossel
+
+- Reduzida para 600px a altura dos banners no desktop e atualizados os arquivos das campanhas para versoes otimizadas.
+- Sincronizado o indicador de progresso com o temporizador do Embla, eliminando ciclos duplicados de duracao.
+- Alterados os indicadores inativos para dots circulares e o indicador ativo para uma pill de progresso.
+- Adicionado controle acessivel de pause e play, que pausa simultaneamente o autoplay e a animacao do indicador.
+- Corrigida a retomada do autoplay para que o botao de play reinicie o carrossel e o indicador de duracao sem sobrescrever o estado de reproducao.
+- Incluido o asset `afiliados-background.png` para a evolucao visual da pagina do programa de afiliados.
+- Refinado o enquadramento da foto na secao sobre a E-comtabil.
+
+### Organizacao dos estilos globais
+
+- Reorganizado o `globals.css` para acompanhar a ordem das secoes da pagina inicial.
+- Agrupados seletores-base, refinamentos e regras responsivas relacionados, sem alterar os valores visuais existentes.
+- Adicionados divisores comentados para facilitar a manutencao dos estilos compartilhados, da home e da pagina de afiliados.
+
+### Conteudo, navegacao e estados institucionais
+
+- Redesenhado o hover dos cards de especializacao com elevacao, destaque de borda e respostas sutis no numero e na seta.
+- Atualizada a hero de `/afiliados` para 600px, usando `afiliados-background.png`, tipografia escura e uma variacao clara do header transparente.
+- Adicionada uma secao de blog na home com tres conteudos editoriais, cards responsivos e navegacao direta pelo link Blog do header.
+- Reformulada a pagina `not-found` com header, footer, mensagem centralizada e CTA para retornar a home.
+- Incluida no footer a navegacao de unidades em Sao Paulo e Minas Gerais, apontando temporariamente para a pagina de indisponibilidade.

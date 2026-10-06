@@ -5,9 +5,15 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import { SiteHeader } from "@/components/site-header";
+
 const AUTOPLAY_DURATION = 6000;
 
 const banners = [
+  {
+    alt: "Ecomtabil: contabilidade conectada à operação do seu e-commerce",
+    image: "/images/banners/contabilidade-conectada.png",
+  },
   {
     alt: "Ecomtabil: contabilidade para empresas de Lucro Real, ecommerce e marketplaces",
     image: "/images/banners/lucro-real.png",
@@ -48,7 +54,8 @@ export function HeroCarousel() {
         delay: AUTOPLAY_DURATION,
         playOnInit: banners.length > 1,
         stopOnInteraction: false,
-        stopOnMouseEnter: true,
+        stopOnFocusIn: false,
+        stopOnMouseEnter: false,
       }),
     [],
   );
@@ -56,9 +63,10 @@ export function HeroCarousel() {
     { align: "start", loop: banners.length > 1 },
     [autoplay],
   );
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [progressKey, setProgressKey] = useState(0);
+  const [isAutoplayPlaying, setIsAutoplayPlaying] = useState(true);
   const hasMultipleBanners = scrollSnaps.length > 1;
 
   const onSelect = useCallback(() => {
@@ -74,28 +82,61 @@ export function HeroCarousel() {
     function onInit() {
       setScrollSnaps(api.scrollSnapList());
       onSelect();
+      setProgressKey((key) => key + 1);
+      setIsAutoplayPlaying(autoplay.isPlaying());
+    }
+
+    function onAutoplayPlay() {
+      setIsAutoplayPlaying(true);
+    }
+
+    function onAutoplayStop() {
+      setIsAutoplayPlaying(false);
+    }
+
+    function onAutoplayTimerSet() {
+      setProgressKey((key) => key + 1);
     }
 
     onInit();
     api.on("reInit", onInit);
     api.on("select", onSelect);
+    api.on("autoplay:timerset", onAutoplayTimerSet);
+    api.on("autoplay:play", onAutoplayPlay);
+    api.on("autoplay:stop", onAutoplayStop);
 
     return () => {
       api.off("reInit", onInit);
       api.off("select", onSelect);
+      api.off("autoplay:timerset", onAutoplayTimerSet);
+      api.off("autoplay:play", onAutoplayPlay);
+      api.off("autoplay:stop", onAutoplayStop);
     };
-  }, [emblaApi, onSelect]);
+  }, [autoplay, emblaApi, onSelect]);
 
-  useEffect(() => {
-    function updateHeader() {
-      setHasScrolled(window.scrollY > 16);
+  function scrollTo(index: number) {
+    emblaApi?.scrollTo(index);
+    autoplay.reset();
+  }
+
+  function scrollPrevious() {
+    emblaApi?.scrollPrev();
+    autoplay.reset();
+  }
+
+  function scrollNext() {
+    emblaApi?.scrollNext();
+    autoplay.reset();
+  }
+
+  function toggleAutoplay() {
+    if (autoplay.isPlaying()) {
+      autoplay.stop();
+      return;
     }
 
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-
-    return () => window.removeEventListener("scroll", updateHeader);
-  }, []);
+    autoplay.play();
+  }
 
   return (
     <section
@@ -104,49 +145,7 @@ export function HeroCarousel() {
       aria-label="Banners em destaque"
       aria-roledescription="carousel"
     >
-      <header
-        className={`site-header${hasScrolled ? " site-header--scrolled" : ""}`}
-      >
-        <div className="nav shell">
-          <a
-            className="site-header__logo"
-            href="#inicio"
-            aria-label="Ecomtabil, início"
-          >
-            <Image
-              className="site-header__logo-white"
-              src="/images/logo-ecomtabil-white.svg"
-              alt=""
-              width={148}
-              height={38}
-              unoptimized
-            />
-            <Image
-              className="site-header__logo-color"
-              src="/images/logo-ecomtabil-color.svg"
-              alt=""
-              width={148}
-              height={38}
-              unoptimized
-            />
-          </a>
-          <nav aria-label="Navegação principal">
-            <a href="#inicio">Home</a>
-            <a href="#sobre">Sobre</a>
-            <a href="/planos">Planos</a>
-            <a href="/blog">Blog</a>
-            <a href="/afiliados">Afiliados</a>
-          </nav>
-          <a
-            className="site-header__client"
-            href="https://onvio.com.br/clientcenter/pt/home"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Área do cliente
-          </a>
-        </div>
-      </header>
+      <SiteHeader transparent />
 
       <div className="banner-carousel__stage">
         <div className="banner-carousel__viewport" ref={emblaRef}>
@@ -169,7 +168,7 @@ export function HeroCarousel() {
         <button
           className="banner-carousel__control banner-carousel__control--previous"
           type="button"
-          onClick={() => emblaApi?.scrollPrev()}
+          onClick={scrollPrevious}
           aria-label="Banner anterior"
           disabled={!hasMultipleBanners}
         >
@@ -178,30 +177,49 @@ export function HeroCarousel() {
         <button
           className="banner-carousel__control banner-carousel__control--next"
           type="button"
-          onClick={() => emblaApi?.scrollNext()}
+          onClick={scrollNext}
           aria-label="Próximo banner"
           disabled={!hasMultipleBanners}
         >
           <Arrow direction="next" />
         </button>
 
-        <div className="banner-carousel__dots" aria-label="Navegação dos banners">
-          {scrollSnaps.map((_, index) => {
-            const isActive = index === selectedIndex;
+        <div className="banner-carousel__indicator-controls">
+          <button
+            className="banner-carousel__autoplay-toggle"
+            type="button"
+            onClick={toggleAutoplay}
+            aria-label={isAutoplayPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
+            aria-pressed={!isAutoplayPlaying}
+          >
+            {isAutoplayPlaying ? (
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                <path d="M7 5v10M13 5v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                <path d="m7.5 5 7 5-7 5V5Z" fill="currentColor" />
+              </svg>
+            )}
+          </button>
+          <div className="banner-carousel__dots" aria-label="Navegação dos banners">
+            {scrollSnaps.map((_, index) => {
+              const isActive = index === selectedIndex;
 
-            return (
-              <button
-                className={`banner-carousel__dot${isActive ? " is-active" : ""}`}
-                type="button"
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                aria-current={isActive ? "true" : undefined}
-                aria-label={`Exibir banner ${index + 1}`}
-              >
-                <span />
-              </button>
-            );
-          })}
+              return (
+                <button
+                  className={`banner-carousel__dot${isActive ? " is-active" : ""}${isAutoplayPlaying ? "" : " is-paused"}`}
+                  type="button"
+                  key={`${index}-${isActive ? progressKey : "idle"}`}
+                  onClick={() => scrollTo(index)}
+                  aria-current={isActive ? "true" : undefined}
+                  aria-label={`Exibir banner ${index + 1}`}
+                >
+                  <span />
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

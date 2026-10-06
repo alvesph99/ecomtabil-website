@@ -1,16 +1,28 @@
 import Link from "next/link";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+
 export default function NotFound() {
   return (
-    <main className="mx-auto flex min-h-dvh max-w-3xl items-center px-6 py-16 sm:px-10">
-      <section aria-labelledby="not-found-title">
-        <p className="text-sm font-semibold tracking-[0.16em] text-[var(--brand)] uppercase">Ecomtabil</p>
-        <h1 id="not-found-title" className="mt-4 text-4xl font-semibold tracking-tight">Pagina nao encontrada.</h1>
-        <p className="mt-4 max-w-prose leading-7 text-[var(--muted)]">O endereco pode estar incorreto ou a pagina ainda nao existe.</p>
-        <Link className="mt-8 inline-block font-semibold text-[var(--brand)] underline underline-offset-4" href="/">
-          Voltar para o inicio
-        </Link>
+    <main className="not-found-page">
+      <SiteHeader rootPath="/" />
+
+      <section className="not-found-content" aria-labelledby="not-found-title">
+        <div className="shell">
+          <p className="marker">Página em construção</p>
+          <h1 id="not-found-title">Estamos trabalhando nisso</h1>
+          <p>
+            Esta página ainda não está disponível. Enquanto preparamos as
+            novidades, você pode continuar navegando pela E-comtabil.
+          </p>
+          <Link className="button" href="/">
+            Voltar para a home
+          </Link>
+        </div>
       </section>
+
+      <SiteFooter rootPath="/" />
     </main>
   );
 }
