@@ -233,3 +233,7 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Adicionada uma secao de blog na home com tres conteudos editoriais, cards responsivos e navegacao direta pelo link Blog do header.
 - Reformulada a pagina `not-found` com header, footer, mensagem centralizada e CTA para retornar a home.
 - Incluida no footer a navegacao de unidades em Sao Paulo e Minas Gerais, apontando temporariamente para a pagina de indisponibilidade.
+
+### Ajustes responsivos
+
+- Aumentado em 20px o espacamento vertical da secao `growth` em telas de ate 800px.

@@ -1413,6 +1413,11 @@ section.whole:after {
   font: 600 clamp(1.25rem, 2.3vw, 2rem)/1.15 "Plus Jakarta Sans";
   letter-spacing: -0.04em;
 }
+@media (max-width: 800px) {
+  .growth {
+    padding-block: calc(clamp(80px, 13vw, 190px) + 40px);
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /* Seller experience                                                          */
