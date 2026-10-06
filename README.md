@@ -218,3 +218,9 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Adicionado controle acessivel de pause e play, que pausa simultaneamente o autoplay e a animacao do indicador.
 - Incluido o asset `afiliados-background.png` para a evolucao visual da pagina do programa de afiliados.
 - Refinado o enquadramento da foto na secao sobre a E-comtabil.
+
+### Organizacao dos estilos globais
+
+- Reorganizado o `globals.css` para acompanhar a ordem das secoes da pagina inicial.
+- Agrupados seletores-base, refinamentos e regras responsivas relacionados, sem alterar os valores visuais existentes.
+- Adicionados divisores comentados para facilitar a manutencao dos estilos compartilhados, da home e da pagina de afiliados.
