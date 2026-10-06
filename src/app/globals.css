@@ -858,15 +858,29 @@ p {
   }
   .intro.intro > div {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 0;
+  }
+  .intro .intro-copy {
+    display: contents;
+  }
+  .intro .intro-copy > h2 {
+    order: 1;
+  }
+  .intro .intro-copy > p {
+    order: 2;
+    margin-top: 22px;
   }
   .intro .intro-art {
+    order: 3;
     justify-self: center;
     min-height: 360px;
     max-width: 510px;
+    margin-top: 38px;
   }
-  .intro .intro-copy > p {
-    margin-top: 22px;
+  .intro .intro-copy > .button {
+    order: 4;
+    justify-self: start;
+    margin-top: 38px;
   }
 }
 @media (max-width: 480px) {
@@ -1527,6 +1541,27 @@ section.whole:after {
   }
 }
 @media (max-width: 800px) {
+  section.seller {
+    gap: 0;
+  }
+  .seller .quote {
+    display: contents;
+  }
+  .seller .quote > span {
+    order: 1;
+  }
+  .seller .quote > h2 {
+    order: 2;
+  }
+  .seller-copy {
+    order: 3;
+    margin-top: 35px;
+  }
+  .seller .quote > .button {
+    order: 4;
+    justify-self: start;
+    margin-top: 35px;
+  }
   .seller-card {
     position: static;
     min-height: 0;
@@ -2520,14 +2555,25 @@ section.ecosystem {
 @media (max-width: 800px) {
   .process.process {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 0;
     padding-block: 88px;
   }
   .process.process .process-intro {
+    display: contents;
     position: static;
   }
   .process.process h2 {
+    order: 1;
     max-width: 580px;
+  }
+  .process.process .steps {
+    order: 2;
+    margin-top: 48px;
+  }
+  .process.process .process-intro__action {
+    order: 3;
+    justify-self: start;
+    margin-top: 32px;
   }
   .process.process .steps article {
     grid-template-columns: 34px minmax(0, 1fr);

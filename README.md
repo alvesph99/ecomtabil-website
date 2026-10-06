@@ -237,3 +237,4 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 ### Ajustes responsivos
 
 - Aumentado em 20px o espacamento vertical da secao `growth` em telas de ate 800px.
+- Reordenados os CTAs das secoes de introducao, seller e processo para aparecerem por ultimo no fluxo mobile.
