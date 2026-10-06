@@ -3,6 +3,9 @@ import { Faq } from "@/components/faq";
 
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_URL;
 const scheduling = process.env.NEXT_PUBLIC_SCHEDULING_URL;
+const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
+  "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
+)}`;
 
 function Arrow() {
   return (
@@ -62,31 +65,43 @@ const expertise = [
 const services = [
   [
     "Contabilidade especializada",
-    "Rotinas contábeis estruturadas para empresas que vivem o ecommerce.",
+    "Rotinas contábeis estruturadas para empresas que vivem o E-commerce.",
+    "accounting",
   ],
   [
     "Fiscal e tributário",
     "Apuração e acompanhamento alinhados à realidade da sua operação.",
+    "tax",
   ],
   [
     "Marketplaces",
     "Conhecimento das particularidades de quem vende nos principais canais digitais.",
+    "marketplaces",
   ],
   [
     "ERP e integrações",
     "Operação, sistemas e contabilidade trabalhando com informações consistentes.",
+    "erp",
   ],
   [
-    "Folha e pró-labore",
+    "Certificado digital",
+    "Emissão e renovação simplificadas para manter a rotina da sua empresa em dia.",
+    "digital-certificate",
+  ],
+  [
+    "Folha de pagamento e pró-labore",
     "Estrutura para acompanhar o crescimento da equipe e dos sócios.",
+    "payroll",
   ],
   [
     "Consultoria",
     "Análise especializada para decisões que vão além da rotina contábil.",
+    "consulting",
   ],
   [
     "Regularização empresarial",
     "Base empresarial organizada para acompanhar o próximo estágio do negócio.",
+    "regularization",
   ],
 ];
 
@@ -97,6 +112,7 @@ const marketplaces = [
   ["Mercado Livre", "/images/marketplaces/mercado-livre-logo.svg"],
   ["Shopee", "/images/marketplaces/shopee-logo.svg"],
   ["Shopify", "/images/marketplaces/shopify-logo.svg"],
+  ["TikTok Shop", "/images/marketplaces/tiktokshop-logo.svg"],
   ["Loja Integrada", "/images/marketplaces/loja-integrada-logo.svg"],
   ["Magalu", "/images/marketplaces/magalu-logo.svg"],
 ];
@@ -108,6 +124,7 @@ const marketplaceBelt = [
   marketplaces[3],
   marketplaces[4],
   marketplaces[5],
+  marketplaces[8],
   marketplaces[3],
   marketplaces[6],
   marketplaces[7],
@@ -127,10 +144,11 @@ export default function HomePage() {
               operação.
             </h2>
             <p>De seller para seller. Com visão de contador.</p>
+            <Cta href={closingWhatsapp}>Agendar um diagnóstico</Cta>
           </div>
           <div
             className="hero-art intro-art"
-            aria-label="Uma operação de ecommerce conectada"
+            aria-label="Uma operação de E-commerce conectada"
           >
             <div className="grid" />
             <div className="orbit orbit-a" />
@@ -179,7 +197,7 @@ export default function HomePage() {
             <div>
               <p className="marker">Conhecimento aplicado à rotina.</p>
               <h2 id="special-title">
-                Seu contador entende de ecommerce ou apenas recebe suas notas?
+                Seu contador entende de E-commerce ou apenas recebe suas notas?
               </h2>
             </div>
             <p>
@@ -211,7 +229,7 @@ export default function HomePage() {
                   A operação inteira, não um problema isolado.
                 </p>
                 <h2 id="whole-title">
-                  Uma operação de ecommerce não deveria ser tratada como uma
+                  Uma operação de E-commerce não deveria ser tratada como uma
                   empresa qualquer.
                 </h2>
               </div>
@@ -222,6 +240,27 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="whole-marketplaces" aria-hidden="true">
+            {[
+              "mercado-livre-box-logo.png",
+              "amazon-box-logo.png",
+              "shopee-box-logo.png",
+              "shopify-box-logo.png",
+              "magalu-box-logo.png",
+              "shein-box-logo.png",
+              "tiktokshop-box-logo.png",
+            ].map((logo) => (
+              <Image
+                key={logo}
+                className="whole-marketplaces__logo"
+                src={`/images/marketplaces-box-logos/${logo}`}
+                alt=""
+                width={150}
+                height={150}
+                sizes="(max-width: 800px) 100px, 120px"
+              />
+            ))}
           </div>
         </section>
       </div>
@@ -280,13 +319,14 @@ export default function HomePage() {
           <h2 id="seller-title">
             Antes de entender seu balanço, nós entendemos sua operação.
           </h2>
+          <Cta href={closingWhatsapp}>Quero Analisar Minha Operação</Cta>
         </div>
         <div className="seller-copy">
           <article className="seller-card">
             <div className="seller-card__image">
               <Image
                 src="/images/seller-operator.png"
-                alt="Operação de ecommerce em uma estação de expedição"
+                alt="Operação de E-commerce em uma estação de expedição"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
               />
@@ -323,7 +363,7 @@ export default function HomePage() {
             <div className="seller-card__image">
               <Image
                 src="/images/seller-operation.png"
-                alt="Rotina de expedição com itens de ecommerce organizados"
+                alt="Rotina de expedição com itens de E-commerce organizados"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
               />
@@ -345,27 +385,41 @@ export default function HomePage() {
           <h2 id="authority-title">
             Experiência contábil.
             <br />
-            <em>Vivência de ecommerce.</em>
+            <em>Vivência de E-commerce.</em>
           </h2>
           <div className="facts">
             <div>
-              <b>+20 anos</b>
-              <span>de experiência contábil</span>
+              <b>Mais de 20 anos</b>
+              <span>em experiência como seller</span>
             </div>
             <div>
-              <b>Seller + Contador</b>
-              <span>visão dos dois lados da operação</span>
+              <b>Seller + Contador + Tributarista</b>
+              <span>visão dos dois lados da sua operação</span>
             </div>
             <div>
-              <b>Ecommerce e Marketplaces</b>
+              <b>E-commerce e Marketplaces</b>
               <span>
                 especialização no ambiente em que nossos clientes vendem
               </span>
             </div>
             <div>
-              <b>Atendimento nacional</b>
+              <b>Planejamento Tributário</b>
               <span>
-                estrutura digital para atender sellers em todo o Brasil
+                decisões tributárias alinhadas ao momento e aos objetivos do
+                negócio
+              </span>
+            </div>
+            <div>
+              <b>Consultoria de E-commerce</b>
+              <span>
+                orientação prática para conectar operação, margem e crescimento
+              </span>
+            </div>
+            <div>
+              <b>Pague Menos Imposto</b>
+              <span>
+                revisão da estrutura tributária para reduzir custos dentro da
+                lei
               </span>
             </div>
           </div>
@@ -380,7 +434,7 @@ export default function HomePage() {
               Trabalhamos com os principais marketplaces do Brasil.
             </h2>
             <p>
-              Especialização contábil para ecommerce que vende nos principais
+              Especialização contábil para E-commerce que vende nos principais
               canais digitais.
             </p>
           </div>
@@ -419,10 +473,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="service-grid">
-            {services.map(([title, description], i) => (
+            {services.map(([title, description, image]) => (
               <article key={title} className="service-card">
                 <div
-                  className={`service-card__image service-card__image--${i % 4}`}
+                  className={`service-card__image service-card__image--${image}`}
                   aria-hidden="true"
                 />
                 <div className="service-card__content">
@@ -436,6 +490,52 @@ export default function HomePage() {
       </section>
 
       <section
+        className="about section"
+        id="sobre"
+        aria-labelledby="about-title"
+      >
+        <div className="about__inner shell">
+          <div className="about__copy">
+            <p className="marker">Sobre nós</p>
+            <h2 id="about-title">
+              Um pouco da história da{" "}
+              <span className="highlight">E- comtabil</span>
+            </h2>
+            <p className="about__lead">
+              Quem vende online precisa de uma contabilidade que entenda sua
+              operação.
+            </p>
+            <p>
+              Por trás da marca está Andre Braga, contador e tributarista, com
+              mais de 20 anos de experiência como seller.
+            </p>
+            <p>
+              Uma trajetória que une conhecimento técnico à experiência prática
+              de quem conhece os desafios dos marketplaces: comissões, fretes,
+              repasses, devoluções e impostos que impactam a margem.
+            </p>
+            <p>
+              Sabemos que faturar mais exige atenção aos números. E que crescer
+              com segurança começa por entender o resultado do negócio.
+            </p>
+            <p>
+              É com essa visão que a E-comtabil se apresenta: contabilidade
+              especializada em e-commerce e marketplaces, com clareza na
+              comunicação e foco na realidade do seller.
+            </p>
+          </div>
+          <div className="about__visual">
+            <Image
+              src="/images/about-us.png"
+              alt="Operação de e-commerce em atividade"
+              fill
+              sizes="(max-width: 800px) calc(100vw - 48px), 44vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
         className="process shell section"
         id="processo"
         aria-labelledby="process-title"
@@ -444,7 +544,9 @@ export default function HomePage() {
           <h2 id="process-title">
             Você não precisa trocar de contador no escuro.
           </h2>
-          <p>Entendemos sua operação antes de falar em plano.</p>
+          <div className="process-intro__action">
+            <Cta href={closingWhatsapp}>Quero Trocar de Contador</Cta>
+          </div>
         </div>
         <div className="steps">
           {[
@@ -481,17 +583,15 @@ export default function HomePage() {
       <section className="closing" aria-labelledby="closing-title">
         <div className="shell">
           <h2 id="closing-title">
-            Simplifique já a gestão contábil do seu negócio online
+            Não deixe a contabilidade limitar seu crescimento.
           </h2>
           <p>
             Receba um diagnóstico gratuito da sua operação e descubra como a
-            E-comtabil pode ajudar.
+            <span style={{ whiteSpace: "nowrap" }}> E-comtabil</span> pode
+            ajudar.
           </p>
           <div className="actions">
-            <Cta href={whatsapp}>Falar com um especialista no WhatsApp</Cta>
-            <Cta href={scheduling} ghost>
-              Agendar uma conversa
-            </Cta>
+            <Cta href={closingWhatsapp}>Agende agora um diagnóstico</Cta>
           </div>
         </div>
       </section>
@@ -513,7 +613,7 @@ export default function HomePage() {
             </a>
             <p>
               Contabilidade especializada para quem vende, integra e cresce no
-              ecommerce.
+              E-commerce.
             </p>
             <div className="socials">
               <a href="#inicio" aria-label="Facebook">
@@ -574,14 +674,14 @@ export default function HomePage() {
           <div className="footer-links">
             <div>
               <h3>Empresa</h3>
-              <a href="#inicio">Sobre nós</a>
+              <a href="#sobre">Sobre nós</a>
               <a href="#especializacao">Nossos serviços</a>
               <a href="#processo">Como funciona</a>
               <a href="#ecossistema">Ecossistema</a>
             </div>
             <div>
               <h3>Serviços</h3>
-              <a href="#especializacao">Contabilidade para ecommerce</a>
+              <a href="#especializacao">Contabilidade para E-commerce</a>
               <a href="#especializacao">Fiscal e tributário</a>
               <a href="#especializacao">ERP e integrações</a>
               <a href="#especializacao">Marketplaces</a>
@@ -590,7 +690,7 @@ export default function HomePage() {
               <h3>Suporte</h3>
               <a href={whatsapp ?? "#inicio"}>Fale conosco</a>
               <a href={scheduling ?? "#inicio"}>Agendar conversa</a>
-              <a href="#processo">Dúvidas frequentes</a>
+              <a href="#faq">Dúvidas frequentes</a>
             </div>
           </div>
         </div>
@@ -606,6 +706,22 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      <a
+        className="whatsapp-float"
+        href={closingWhatsapp}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Agendar um diagnóstico pelo WhatsApp"
+      >
+        <Image
+          src="/images/whatsapp-icon.svg"
+          alt=""
+          aria-hidden="true"
+          width={32}
+          height={32}
+          unoptimized
+        />
+      </a>
     </main>
   );
 }

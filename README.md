@@ -158,3 +158,45 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Mantida a coluna de introducao do processo sticky no desktop enquanto os passos avancam na coluna direita; em telas menores, a secao permanece em fluxo vertical.
 - Atualizados os dados institucionais no footer com a razao social, CNPJ e CRC/SP da empresa.
 - Adicionada uma boundary propria para a secao de operacao, permitindo que ela permaneça sticky somente durante seu trecho de scroll antes de a secao laranja avancar por cima no desktop.
+
+### Hero e carrossel de campanhas
+
+- Substituido o placeholder da hero por um carrossel funcional com Embla Carousel e plugin de autoplay.
+- Adicionados controles laterais, navegacao por dots e suporte a arraste; os controles ficam ativos automaticamente quando houver mais de um banner.
+- Incluidos os banners de Lucro Real e beneficio fiscal em Minas Gerais, exportados em 3840 x 1360 para a hero desktop de 1920 x 680.
+- Mantido o header transparente sobre a arte e aplicado recorte responsivo para telas menores.
+- Reorganizado o CSS da pagina com blocos comentados e seletores relacionados agrupados, preservando os estilos ainda utilizados.
+
+### Ajustes de marketplaces e tipografia
+
+- Incluido o TikTok Shop na esteira animada de marketplaces.
+- Reduzida de forma proporcional a escala dos titulos `h1` e `h2`, incluindo as variacoes de processo, ecossistema, marketplaces e CTA final.
+
+### CTAs e especializacao
+
+- Centralizados os CTAs de conversao no WhatsApp de diagnostico, com mensagem pre-preenchida e sem o agendamento secundario na CTA final.
+- Substituido o texto de apoio da secao de processo por uma CTA para troca de contador.
+- Adicionada uma CTA para analise operacional na secao de vivencia de seller.
+- Ajustados espacamento, icones e numeracao dos cards de especializacao para reforcar a leitura da sequencia.
+- Incluidos assets de logos em caixa para os principais marketplaces, incluindo TikTok Shop.
+
+### Atualizacao visual e WhatsApp
+
+- Atualizados banners da hero e arquivos editoriais relacionados a campanhas da Ecomtabil.
+- Refinadas cores das superfícies escuras e textos de posicionamento para manter consistência na comunicação de E-commerce.
+- Adicionado atalho flutuante de WhatsApp com ícone oficial local, levando ao mesmo diagnóstico com mensagem pré-preenchida usado nos CTAs da página.
+
+### Composicao da operacao
+
+- Adicionadas as logos dos marketplaces em caixas na lateral direita da secao “A operacao inteira, nao um problema isolado.”
+- Ajustada a composicao para manter o texto em destaque e reorganizar as caixas responsivamente abaixo do conteudo em telas menores.
+- Reduzidas discretamente as setas de navegacao do carrossel de banners.
+
+### Conteudo editorial e servicos
+
+- Adicionada a secao "Um pouco da historia da E-comtabil", com conteudo institucional, imagem editorial e navegacao direta pelo header e footer.
+- Atualizados os links de suporte para o FAQ e para a Area do cliente no Onvio; incluidos CTAs de diagnostico nas secoes de introducao e encerramento.
+- Expandida a secao de autoridade com Planejamento Tributario, Consultoria de E-commerce e Pague Menos Imposto.
+- Incluido o banner MEI ao carrossel principal.
+- Adicionado o servico de Certificado digital e definido um asset exclusivo para cada card de servico, incluindo Contabilidade especializada, Fiscal e tributario, ERP, Folha de pagamento, Consultoria e Regularizacao empresarial.
+- Refinadas a composicao das caixas de marketplaces na secao operacional e a escala de titulos e subtitulos da pagina.

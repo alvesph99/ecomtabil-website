@@ -1,36 +1,209 @@
 "use client";
 
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-type Banner = {
-  image: string;
-  alt: string;
-  href?: string;
-};
+const AUTOPLAY_DURATION = 6000;
 
-const banners: Banner[] = [];
+const banners = [
+  {
+    alt: "Ecomtabil: contabilidade para empresas de Lucro Real, ecommerce e marketplaces",
+    image: "/images/banners/lucro-real.png",
+  },
+  {
+    alt: "Ecomtabil: benefício fiscal para operações de ecommerce em Minas Gerais",
+    image: "/images/banners/beneficio-fiscal-minas-gerais.png",
+  },
+  {
+    alt: "Ecomtabil: plano MEI para organizar a contabilidade do seu ecommerce",
+    image: "/images/banners/mei-ao-full.png",
+  },
+];
 
 function Arrow({ direction }: { direction: "previous" | "next" }) {
-  return <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d={direction === "next" ? "M3 10h13m-5-5 5 5-5 5" : "M17 10H4m5 5-5-5 5-5"} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+  const path =
+    direction === "next"
+      ? "M3 10h13m-5-5 5 5-5 5"
+      : "M17 10H4m5 5-5-5 5-5";
+
+  return (
+    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+      <path
+        d={path}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
 }
 
 export function HeroCarousel() {
+  const autoplay = useMemo(
+    () =>
+      Autoplay({
+        delay: AUTOPLAY_DURATION,
+        playOnInit: banners.length > 1,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+      }),
+    [],
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { align: "start", loop: banners.length > 1 },
+    [autoplay],
+  );
   const [hasScrolled, setHasScrolled] = useState(false);
-  const hasBanners = banners.length > 0;
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const hasMultipleBanners = scrollSnaps.length > 1;
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
-    const updateHeader = () => setHasScrolled(window.scrollY > 16);
+    if (!emblaApi) return;
+    const api = emblaApi;
+
+    function onInit() {
+      setScrollSnaps(api.scrollSnapList());
+      onSelect();
+    }
+
+    onInit();
+    api.on("reInit", onInit);
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("reInit", onInit);
+      api.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    function updateHeader() {
+      setHasScrolled(window.scrollY > 16);
+    }
+
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
+
     return () => window.removeEventListener("scroll", updateHeader);
   }, []);
 
-  return <section className="banner-carousel" id="inicio" aria-label="Banners em destaque" aria-roledescription="carousel">
-    <header className={`site-header${hasScrolled ? " site-header--scrolled" : ""}`}><div className="nav shell"><a className="site-header__logo" href="#inicio" aria-label="Ecomtabil, início"><Image className="site-header__logo-white" src="/images/logo-ecomtabil-white.svg" alt="" width={148} height={38} unoptimized /><Image className="site-header__logo-color" src="/images/logo-ecomtabil-color.svg" alt="" width={148} height={38} unoptimized /></a><nav aria-label="Navegação principal"><a href="#inicio">Home</a><a href="/sobre">Sobre</a><a href="/planos">Planos</a><a href="/blog">Blog</a><a href="/afiliados">Afiliados</a></nav><a className="site-header__client" href="/area-do-cliente">Área do cliente</a></div></header>
-    <div className="shell banner-carousel__stage">
-      {hasBanners ? <div className="banner-carousel__slide"><Image src={banners[0].image} alt={banners[0].alt} fill sizes="(max-width: 800px) 100vw, 1180px" /></div> : <div className="banner-carousel__placeholder"><div className="banner-carousel__placeholder-grid" /><div><span>Banner 01</span><strong>Área reservada para campanhas, anúncios e conteúdos em destaque.</strong></div><p>Os criativos serão adicionados aqui.</p></div>}
-    </div>
-    <div className="banner-carousel__footer shell"><span>{hasBanners ? "01 / 01" : "Carrossel preparado"}</span><div className="banner-carousel__arrows"><button type="button" aria-label="Banner anterior" disabled><Arrow direction="previous" /></button><button type="button" aria-label="Próximo banner" disabled><Arrow direction="next" /></button></div></div>
-  </section>;
+  return (
+    <section
+      className="banner-carousel"
+      id="inicio"
+      aria-label="Banners em destaque"
+      aria-roledescription="carousel"
+    >
+      <header
+        className={`site-header${hasScrolled ? " site-header--scrolled" : ""}`}
+      >
+        <div className="nav shell">
+          <a
+            className="site-header__logo"
+            href="#inicio"
+            aria-label="Ecomtabil, início"
+          >
+            <Image
+              className="site-header__logo-white"
+              src="/images/logo-ecomtabil-white.svg"
+              alt=""
+              width={148}
+              height={38}
+              unoptimized
+            />
+            <Image
+              className="site-header__logo-color"
+              src="/images/logo-ecomtabil-color.svg"
+              alt=""
+              width={148}
+              height={38}
+              unoptimized
+            />
+          </a>
+          <nav aria-label="Navegação principal">
+            <a href="#inicio">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="/planos">Planos</a>
+            <a href="/blog">Blog</a>
+            <a href="/afiliados">Afiliados</a>
+          </nav>
+          <a
+            className="site-header__client"
+            href="https://onvio.com.br/clientcenter/pt/home"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Área do cliente
+          </a>
+        </div>
+      </header>
+
+      <div className="banner-carousel__stage">
+        <div className="banner-carousel__viewport" ref={emblaRef}>
+          <div className="banner-carousel__container">
+            {banners.map((banner, index) => (
+              <div className="banner-carousel__slide" key={banner.image}>
+                <Image
+                  src={banner.image}
+                  alt={banner.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button
+          className="banner-carousel__control banner-carousel__control--previous"
+          type="button"
+          onClick={() => emblaApi?.scrollPrev()}
+          aria-label="Banner anterior"
+          disabled={!hasMultipleBanners}
+        >
+          <Arrow direction="previous" />
+        </button>
+        <button
+          className="banner-carousel__control banner-carousel__control--next"
+          type="button"
+          onClick={() => emblaApi?.scrollNext()}
+          aria-label="Próximo banner"
+          disabled={!hasMultipleBanners}
+        >
+          <Arrow direction="next" />
+        </button>
+
+        <div className="banner-carousel__dots" aria-label="Navegação dos banners">
+          {scrollSnaps.map((_, index) => {
+            const isActive = index === selectedIndex;
+
+            return (
+              <button
+                className={`banner-carousel__dot${isActive ? " is-active" : ""}`}
+                type="button"
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index)}
+                aria-current={isActive ? "true" : undefined}
+                aria-label={`Exibir banner ${index + 1}`}
+              >
+                <span />
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
