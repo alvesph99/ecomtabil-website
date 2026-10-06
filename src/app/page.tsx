@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Faq } from "@/components/faq";
+import { SiteFooter } from "@/components/site-footer";
 
-const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_URL;
-const scheduling = process.env.NEXT_PUBLIC_SCHEDULING_URL;
 const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
   "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
 )}`;
@@ -525,12 +524,25 @@ export default function HomePage() {
             </p>
           </div>
           <div className="about__visual">
-            <Image
-              src="/images/about-us.png"
-              alt="Operação de e-commerce em atividade"
-              fill
-              sizes="(max-width: 800px) calc(100vw - 48px), 44vw"
-            />
+            <div className="about__image">
+              <Image
+                src="/images/andre-contador-especialista.jpeg"
+                alt="Imagem do CEO da E-comtabil, Andre Braga, contador e tributarista com mais de 20 anos de experiência como seller"
+                fill
+                sizes="(max-width: 800px) calc(100vw - 48px), 44vw"
+              />
+            </div>
+            <aside className="about__profile" aria-label="Sobre André Braga">
+              <div>
+                <strong>André Braga</strong>
+                <span>CEO da E-comtabil</span>
+                <span>Contador e Tributarista</span>
+                <span>Seller há mais de 20 anos</span>
+              </div>
+              <p>
+                André iniciou sua carreira como seller no Mercado Livre no início dos anos 2000.
+              </p>
+            </aside>
           </div>
         </div>
       </section>
@@ -595,117 +607,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <footer className="site-footer">
-        <div className="footer-main shell">
-          <div className="footer-brand">
-            <a
-              className="footer-logo"
-              href="#inicio"
-              aria-label="Ecomtabil, início"
-            >
-              <Image
-                src="/images/logo-ecomtabil-white.svg"
-                alt="Ecomtabil"
-                width={190}
-                height={48}
-                unoptimized
-              />
-            </a>
-            <p>
-              Contabilidade especializada para quem vende, integra e cresce no
-              E-commerce.
-            </p>
-            <div className="socials">
-              <a href="#inicio" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M14 8h3V4h-3c-3.1 0-5 1.9-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-              <a href="#inicio" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect
-                    x="3"
-                    y="3"
-                    width="18"
-                    height="18"
-                    rx="5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-                </svg>
-              </a>
-              <a href="#inicio" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M6.2 8.6H2.7V21h3.5V8.6ZM4.5 3A2.1 2.1 0 1 0 4.5 7a2.1 2.1 0 0 0 0-4ZM21.3 13.8c0-3.7-2-5.4-4.6-5.4-2.1 0-3.1 1.2-3.6 2v-1.8H9.6V21h3.5v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h3.6v-7.2Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-              <a href="#inicio" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1C2 9.1 2 12 2 12s0 2.9.4 4.8a3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1C22 14.9 22 12 22 12s0-2.9-.4-4.8ZM10 15.4V8.6l5.7 3.4-5.7 3.4Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div className="footer-company">
-              <strong>Multi BPO E-Comtabil LTDA</strong>
-              <span>Atendimento especializado em todo o Brasil.</span>
-              <span>CNPJ N° 65.298.538/0001-70</span>
-              <span>CRC/SP N° 364.261</span>
-            </div>
-          </div>
-          <div className="footer-links">
-            <div>
-              <h3>Empresa</h3>
-              <a href="#sobre">Sobre nós</a>
-              <a href="#especializacao">Nossos serviços</a>
-              <a href="#processo">Como funciona</a>
-              <a href="#ecossistema">Ecossistema</a>
-            </div>
-            <div>
-              <h3>Serviços</h3>
-              <a href="#especializacao">Contabilidade para E-commerce</a>
-              <a href="#especializacao">Fiscal e tributário</a>
-              <a href="#especializacao">ERP e integrações</a>
-              <a href="#especializacao">Marketplaces</a>
-            </div>
-            <div>
-              <h3>Suporte</h3>
-              <a href={whatsapp ?? "#inicio"}>Fale conosco</a>
-              <a href={scheduling ?? "#inicio"}>Agendar conversa</a>
-              <a href="#faq">Dúvidas frequentes</a>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom shell">
-          <span>
-            © {new Date().getFullYear()} Ecomtabil. Todos os direitos
-            reservados.
-          </span>
-          <div>
-            <a href="#inicio">Termos de uso</a>
-            <a href="#inicio">Política de privacidade</a>
-            <a href={whatsapp ?? "#inicio"}>Contato</a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
       <a
         className="whatsapp-float"
         href={closingWhatsapp}

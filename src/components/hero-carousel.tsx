@@ -5,9 +5,15 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import { SiteHeader } from "@/components/site-header";
+
 const AUTOPLAY_DURATION = 6000;
 
 const banners = [
+  {
+    alt: "Ecomtabil: contabilidade conectada à operação do seu e-commerce",
+    image: "/images/banners/contabilidade-conectada.png",
+  },
   {
     alt: "Ecomtabil: contabilidade para empresas de Lucro Real, ecommerce e marketplaces",
     image: "/images/banners/lucro-real.png",
@@ -56,7 +62,6 @@ export function HeroCarousel() {
     { align: "start", loop: banners.length > 1 },
     [autoplay],
   );
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const hasMultipleBanners = scrollSnaps.length > 1;
@@ -86,17 +91,6 @@ export function HeroCarousel() {
     };
   }, [emblaApi, onSelect]);
 
-  useEffect(() => {
-    function updateHeader() {
-      setHasScrolled(window.scrollY > 16);
-    }
-
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-
-    return () => window.removeEventListener("scroll", updateHeader);
-  }, []);
-
   return (
     <section
       className="banner-carousel"
@@ -104,49 +98,7 @@ export function HeroCarousel() {
       aria-label="Banners em destaque"
       aria-roledescription="carousel"
     >
-      <header
-        className={`site-header${hasScrolled ? " site-header--scrolled" : ""}`}
-      >
-        <div className="nav shell">
-          <a
-            className="site-header__logo"
-            href="#inicio"
-            aria-label="Ecomtabil, início"
-          >
-            <Image
-              className="site-header__logo-white"
-              src="/images/logo-ecomtabil-white.svg"
-              alt=""
-              width={148}
-              height={38}
-              unoptimized
-            />
-            <Image
-              className="site-header__logo-color"
-              src="/images/logo-ecomtabil-color.svg"
-              alt=""
-              width={148}
-              height={38}
-              unoptimized
-            />
-          </a>
-          <nav aria-label="Navegação principal">
-            <a href="#inicio">Home</a>
-            <a href="#sobre">Sobre</a>
-            <a href="/planos">Planos</a>
-            <a href="/blog">Blog</a>
-            <a href="/afiliados">Afiliados</a>
-          </nav>
-          <a
-            className="site-header__client"
-            href="https://onvio.com.br/clientcenter/pt/home"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Área do cliente
-          </a>
-        </div>
-      </header>
+      <SiteHeader transparent />
 
       <div className="banner-carousel__stage">
         <div className="banner-carousel__viewport" ref={emblaRef}>

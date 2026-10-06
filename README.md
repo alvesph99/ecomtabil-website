@@ -200,3 +200,12 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Incluido o banner MEI ao carrossel principal.
 - Adicionado o servico de Certificado digital e definido um asset exclusivo para cada card de servico, incluindo Contabilidade especializada, Fiscal e tributario, ERP, Folha de pagamento, Consultoria e Regularizacao empresarial.
 - Refinadas a composicao das caixas de marketplaces na secao operacional e a escala de titulos e subtitulos da pagina.
+
+### Programa de afiliados e componentes compartilhados
+
+- Criada a rota `/afiliados` com hero, beneficios, etapas, recursos, FAQ, CTA final e formulario responsivo para cadastro de afiliados.
+- Incluidos campos para nome, e-mail, telefone, origem, cupom, area de atuacao e aceite dos termos, com validacao nativa e retorno visual de envio.
+- Extraidos o header e o footer da landing para componentes reutilizaveis, preservando a transicao do header fixo e os links contextuais entre a home e paginas internas.
+- Atualizada a secao sobre com a foto de Andre Braga, um cartao de perfil sobreposto e enquadramento ajustado da imagem.
+- Adicionado o banner `contabilidade-conectada.png` como primeiro slide do carrossel principal.
+- Atualizado o sitemap para incluir a pagina de afiliados.
