@@ -209,3 +209,12 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Atualizada a secao sobre com a foto de Andre Braga, um cartao de perfil sobreposto e enquadramento ajustado da imagem.
 - Adicionado o banner `contabilidade-conectada.png` como primeiro slide do carrossel principal.
 - Atualizado o sitemap para incluir a pagina de afiliados.
+
+### Controles e assets do carrossel
+
+- Reduzida para 600px a altura dos banners no desktop e atualizados os arquivos das campanhas para versoes otimizadas.
+- Sincronizado o indicador de progresso com o temporizador do Embla, eliminando ciclos duplicados de duracao.
+- Alterados os indicadores inativos para dots circulares e o indicador ativo para uma pill de progresso.
+- Adicionado controle acessivel de pause e play, que pausa simultaneamente o autoplay e a animacao do indicador.
+- Incluido o asset `afiliados-background.png` para a evolucao visual da pagina do programa de afiliados.
+- Refinado o enquadramento da foto na secao sobre a E-comtabil.

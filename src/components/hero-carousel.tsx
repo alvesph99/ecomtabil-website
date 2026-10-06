@@ -54,7 +54,8 @@ export function HeroCarousel() {
         delay: AUTOPLAY_DURATION,
         playOnInit: banners.length > 1,
         stopOnInteraction: false,
-        stopOnMouseEnter: true,
+        stopOnFocusIn: false,
+        stopOnMouseEnter: false,
       }),
     [],
   );
@@ -64,6 +65,8 @@ export function HeroCarousel() {
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [progressKey, setProgressKey] = useState(0);
+  const [isAutoplayPlaying, setIsAutoplayPlaying] = useState(true);
   const hasMultipleBanners = scrollSnaps.length > 1;
 
   const onSelect = useCallback(() => {
@@ -79,17 +82,57 @@ export function HeroCarousel() {
     function onInit() {
       setScrollSnaps(api.scrollSnapList());
       onSelect();
+      setProgressKey((key) => key + 1);
+      setIsAutoplayPlaying(autoplay.isPlaying());
+    }
+
+    function onAutoplayPlay() {
+      setIsAutoplayPlaying(true);
+    }
+
+    function onAutoplayStop() {
+      setIsAutoplayPlaying(false);
     }
 
     onInit();
     api.on("reInit", onInit);
     api.on("select", onSelect);
+    api.on("autoplay:timerset", onInit);
+    api.on("autoplay:play", onAutoplayPlay);
+    api.on("autoplay:stop", onAutoplayStop);
 
     return () => {
       api.off("reInit", onInit);
       api.off("select", onSelect);
+      api.off("autoplay:timerset", onInit);
+      api.off("autoplay:play", onAutoplayPlay);
+      api.off("autoplay:stop", onAutoplayStop);
     };
-  }, [emblaApi, onSelect]);
+  }, [autoplay, emblaApi, onSelect]);
+
+  function scrollTo(index: number) {
+    emblaApi?.scrollTo(index);
+    autoplay.reset();
+  }
+
+  function scrollPrevious() {
+    emblaApi?.scrollPrev();
+    autoplay.reset();
+  }
+
+  function scrollNext() {
+    emblaApi?.scrollNext();
+    autoplay.reset();
+  }
+
+  function toggleAutoplay() {
+    if (autoplay.isPlaying()) {
+      autoplay.stop();
+      return;
+    }
+
+    autoplay.play();
+  }
 
   return (
     <section
@@ -121,7 +164,7 @@ export function HeroCarousel() {
         <button
           className="banner-carousel__control banner-carousel__control--previous"
           type="button"
-          onClick={() => emblaApi?.scrollPrev()}
+          onClick={scrollPrevious}
           aria-label="Banner anterior"
           disabled={!hasMultipleBanners}
         >
@@ -130,30 +173,49 @@ export function HeroCarousel() {
         <button
           className="banner-carousel__control banner-carousel__control--next"
           type="button"
-          onClick={() => emblaApi?.scrollNext()}
+          onClick={scrollNext}
           aria-label="Próximo banner"
           disabled={!hasMultipleBanners}
         >
           <Arrow direction="next" />
         </button>
 
-        <div className="banner-carousel__dots" aria-label="Navegação dos banners">
-          {scrollSnaps.map((_, index) => {
-            const isActive = index === selectedIndex;
+        <div className="banner-carousel__indicator-controls">
+          <button
+            className="banner-carousel__autoplay-toggle"
+            type="button"
+            onClick={toggleAutoplay}
+            aria-label={isAutoplayPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
+            aria-pressed={!isAutoplayPlaying}
+          >
+            {isAutoplayPlaying ? (
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                <path d="M7 5v10M13 5v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                <path d="m7.5 5 7 5-7 5V5Z" fill="currentColor" />
+              </svg>
+            )}
+          </button>
+          <div className="banner-carousel__dots" aria-label="Navegação dos banners">
+            {scrollSnaps.map((_, index) => {
+              const isActive = index === selectedIndex;
 
-            return (
-              <button
-                className={`banner-carousel__dot${isActive ? " is-active" : ""}`}
-                type="button"
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                aria-current={isActive ? "true" : undefined}
-                aria-label={`Exibir banner ${index + 1}`}
-              >
-                <span />
-              </button>
-            );
-          })}
+              return (
+                <button
+                  className={`banner-carousel__dot${isActive ? " is-active" : ""}${isAutoplayPlaying ? "" : " is-paused"}`}
+                  type="button"
+                  key={`${index}-${isActive ? progressKey : "idle"}`}
+                  onClick={() => scrollTo(index)}
+                  aria-current={isActive ? "true" : undefined}
+                  aria-label={`Exibir banner ${index + 1}`}
+                >
+                  <span />
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
