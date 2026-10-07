@@ -256,3 +256,9 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - A hero de `/afiliados` passou a seguir a mesma linguagem: copy em HTML, tag com icone, destaques em laranja e teal, tipografia escura sobre o banner claro e versoes de imagem para desktop e dispositivos de ate 800px.
 - No desktop, a hero de afiliados mantem 600px de altura; entre 801px e 1199px, apenas a imagem recebe ajuste horizontal. No mobile e tablet, a copy ocupa o topo da arte vertical e as duas acoes ficam na base, com botoes de 46px e contraste preservado.
 - Para novas paginas com banner, mantenha texto e CTAs em HTML, escolha o tema de copy conforme o prefixo `dark-` ou `light-` do asset e forneca uma arte vertical quando a composicao horizontal nao preservar a leitura em telas menores.
+
+### Navegacao mobile
+
+- Reduzida a logo do header compartilhado em telas de ate 800px e adicionada uma sidebar acionada pelo menu hamburguer com os mesmos links da navegacao desktop e o acesso a Area do cliente.
+- A sidebar usa o elemento nativo `dialog`, permite fechamento pelo botao, pelo fundo ou por `Esc`, devolve o foco ao acionador e respeita `prefers-reduced-motion`.
+- O hamburguer tem fundo solido sobre o header transparente, com contraste adaptado a banners claros ou escuros; depois da rolagem, volta ao estilo contornado do header branco.
