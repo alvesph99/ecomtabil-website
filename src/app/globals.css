@@ -752,25 +752,28 @@ p {
     --banner-tag-background: #073344ad;
   }
   .banner-carousel__copy {
-    top: 72px;
+    top: 0;
+    bottom: 0;
     left: 24px;
     right: 24px;
     width: auto;
     flex-direction: column;
     align-items: center;
-    gap: 11px;
+    gap: 18px;
     max-width: 420px;
     margin-inline: auto;
+    padding-top: 96px;
+    padding-bottom: 60px;
     text-align: center;
     transform: none;
   }
   .banner-carousel__eyebrow {
     padding: 6px 11px;
-    font-size: 12px;
+    font-size: 10px;
   }
   .banner-carousel__eyebrow svg {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
   }
   .banner-carousel__copy h2 {
     font-size: clamp(1.5rem, 6.5vw, 2.15rem);
@@ -779,9 +782,11 @@ p {
   .banner-carousel__copy p {
     font-size: 14px;
     line-height: 1.32;
+    margin-top: 8px;
   }
   .banner-carousel__copy .button {
-    margin-top: 6px;
+    min-height: 46px;
+    margin-top: auto;
   }
   .banner-carousel__control {
     top: 75%;
@@ -3137,48 +3142,47 @@ section.ecosystem {
   position: relative;
   isolation: isolate;
   height: 600px;
-  min-height: 600px;
-  display: grid;
-  align-items: center;
   overflow: hidden;
   background-image: url("/images/banners/light-afiliados-background.webp");
-  background-position: center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--ink);
+  --banner-copy-teal: #008e83;
+  --banner-tag-color: #19767a;
+  --banner-tag-background: #fff;
 }
 .affiliate-hero__content {
   position: relative;
   z-index: 1;
-  padding-right: min(48vw, 860px);
-  padding-block: clamp(64px, 7vw, 84px);
-}
-.affiliate-hero .marker {
-  margin-bottom: 12px;
-  color: #167f83;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: min(40vw, 650px);
 }
 .affiliate-hero h1 {
   max-width: 650px;
-  font-size: clamp(2.25rem, 3.4vw, 3.65rem);
-  line-height: 1;
-  letter-spacing: -0.075em;
-}
-.affiliate-hero h1 em {
-  color: #157e83;
+  margin-top: 20px;
+  font-size: clamp(2.25rem, 3.35vw, 3.75rem);
+  line-height: 1.01;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 .affiliate-hero__content > p:not(.marker) {
   max-width: 540px;
-  margin-top: 18px;
-  color: #425359;
-  font-size: clamp(16px, 1.15vw, 18px);
-  line-height: 1.55;
+  margin-top: 20px;
+  color: #263238;
+  font-size: clamp(16px, 1.15vw, 19px);
+  line-height: 1.35;
 }
 .affiliate-hero__actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 22px;
-  margin-top: 24px;
+  margin-top: 28px;
 }
 .affiliate-hero__secondary {
   display: inline-flex;
@@ -3528,19 +3532,48 @@ section.ecosystem {
   background: var(--light-ink);
   border-color: var(--closing-bg);
 }
+@media (min-width: 801px) and (max-width: 1199px) {
+  .affiliate-hero {
+    background-position: 25% top;
+  }
+}
 
 @media (max-width: 800px) {
   .affiliate-hero {
-    height: auto;
-    min-height: 600px;
-    background-position: 36% center;
+    height: 900px;
+    background-image: url("/images/banners/light-afiliados-background-mobile.webp");
+    background-position: center top;
   }
   .affiliate-hero__content {
-    padding-right: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px 0 36px;
+    text-align: center;
   }
   .affiliate-hero h1 {
-    max-width: 560px;
-    font-size: clamp(2rem, 8vw, 2.9rem);
+    max-width: 650px;
+    font-size: clamp(2rem, 4vw, 2.3rem);
+  }
+  .affiliate-hero__content > p:not(.marker) {
+    margin-top: 26px;
+  }
+  .affiliate-hero__actions {
+    width: min(100%, 420px);
+    flex-direction: column;
+    gap: 14px;
+    margin-top: auto;
+  }
+  .affiliate-hero__actions .button {
+    width: 100%;
+    min-height: 46px;
+  }
+  .affiliate-hero__secondary {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+    border: 1px solid #aebcbb;
+    border-radius: 999px;
+    background: #fffffff0;
   }
   .affiliate-section-heading,
   .affiliate-steps__inner,
@@ -3563,17 +3596,36 @@ section.ecosystem {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+  .affiliate-hero {
+    height: clamp(800px, 180vw, 900px);
+  }
+  .affiliate-hero__content {
+    padding: 96px 0 36px;
+  }
+  .affiliate-hero .banner-carousel__eyebrow {
+    padding: 6px 11px;
+    font-size: 10px;
+  }
+  .affiliate-hero .banner-carousel__eyebrow svg {
+    width: 15px;
+    height: 15px;
+  }
+  .affiliate-hero h1 {
+    margin-top: 18px;
+    font-size: clamp(1.5rem, 6.5vw, 2.15rem);
+    line-height: 1.04;
+  }
   .affiliate-hero__content > p:not(.marker) {
-    font-size: 16px;
+    margin-top: 26px;
+    font-size: 14px;
+    line-height: 1.32;
   }
   .affiliate-hero__actions {
-    align-items: stretch;
-    gap: 18px;
-  }
-  .affiliate-hero__actions .button {
     width: 100%;
   }
+}
+@media (max-width: 560px) {
   .affiliate-form__row {
     grid-template-columns: 1fr;
     gap: 26px;
@@ -3835,10 +3887,5 @@ section.ecosystem {
 
   .process.process .process-intro__action {
     width: 100%;
-  }
-
-  .affiliate-hero__actions .button {
-    flex: 0 0 auto;
-    width: auto;
   }
 }

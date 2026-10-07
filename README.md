@@ -241,7 +241,7 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 
 ### Refinamentos mobile e banners por dispositivo
 
-- Padronizados os CTAs com largura total abaixo de 600px, exceto o CTA da hero de afiliados e os botoes do header. Corrigida a largura do CTA da secao de processo.
+- Padronizados os CTAs com largura total abaixo de 600px, exceto os botoes do header. Corrigida a largura do CTA da secao de processo.
 - Corrigidos o padding dos cards pares de autoridade e a leitura do card de `+20 anos` abaixo de 800px.
 - Limitado o efeito sticky da secao operacional a telas a partir de 1250px. Entre 801px e 1200px, ampliado o espacamento interno e reduzida a largura maxima do titulo.
 - Refinados o espacamento da secao laranja e a tipografia responsiva do FAQ.
@@ -249,3 +249,10 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Os arquivos seguem o padrao `dark-<campanha>.webp` ou `light-<campanha>.webp`, com `-mobile` antes da extensao para a versao vertical. O tema da campanha define as cores da copy e do header transparente; quando a arte mobile tem outro tema (como a primeira campanha), configure tambem `mobileTheme`. Para adicionar ou trocar um banner, atualize os caminhos, os temas, o icone e a copy no array `banners` de `src/components/hero-carousel.tsx`.
 - Entre 601px e 1199px, somente a arte desktop recebe um enquadramento horizontal ajustado; a copy permanece na mesma posicao.
 - A faixa tablet ainda usa a arte desktop e pode receber uma composicao especifica em uma proxima etapa.
+
+### Padrao de banners e hero de afiliados
+
+- Na hero mobile do carrossel, tag, titulo e descricao ficam na area superior da imagem, com espacos distintos entre tag e titulo e entre titulo e paragrafo. O CTA de 46px permanece na base do banner, acima dos controles de progresso.
+- A hero de `/afiliados` passou a seguir a mesma linguagem: copy em HTML, tag com icone, destaques em laranja e teal, tipografia escura sobre o banner claro e versoes de imagem para desktop e dispositivos de ate 800px.
+- No desktop, a hero de afiliados mantem 600px de altura; entre 801px e 1199px, apenas a imagem recebe ajuste horizontal. No mobile e tablet, a copy ocupa o topo da arte vertical e as duas acoes ficam na base, com botoes de 46px e contraste preservado.
+- Para novas paginas com banner, mantenha texto e CTAs em HTML, escolha o tema de copy conforme o prefixo `dark-` ou `light-` do asset e forneca uma arte vertical quando a composicao horizontal nao preservar a leitura em telas menores.

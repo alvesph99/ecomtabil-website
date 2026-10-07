@@ -94,9 +94,16 @@ export default function AffiliatePage() {
 
       <section className="affiliate-hero">
         <div className="affiliate-hero__content shell">
+          <span className="banner-carousel__eyebrow">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M10 13.5a4 4 0 0 0 6 .4l2.6-2.6a4 4 0 0 0-5.7-5.7l-1.5 1.5M14 10.5a4 4 0 0 0-6-.4l-2.6 2.6a4 4 0 0 0 5.7 5.7l1.5-1.5" />
+            </svg>
+            Programa de afiliados
+          </span>
           <h1>
-            Ganhe dinheiro indicando a melhor contabilidade para{" "}
-            <em>E-commerce.</em>
+            <span className="banner-carousel__highlight--orange">Ganhe dinheiro</span>{" "}
+            indicando a melhor contabilidade para{" "}
+            <span className="banner-carousel__highlight--teal">E-commerce.</span>
           </h1>
           <p>
             Seja um afiliado E-comtabil e ganhe comissões atrativas por cada
