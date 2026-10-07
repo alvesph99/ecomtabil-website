@@ -122,12 +122,12 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
           </div>
           <div>
             <h3>Unidades</h3>
-            <Link href="/unidades">Matriz | Alphaville - SP</Link>
-            <Link href="/unidades">São Paulo - SP</Link>
-            <Link href="/unidades">Araraquara - SP</Link>
+            <Link href="/unidades/alphaville">Matriz | Alphaville - SP</Link>
+            <Link href="/unidades/sao-paulo">São Paulo - SP</Link>
+            <Link href="/unidades/araraquara">Araraquara - SP</Link>
             <Link href="/ibitinga">Ibitinga - SP</Link>
-            <Link href="/unidades">Extrema - MG</Link>
-            <Link href="/unidades">Nova Serrana - MG</Link>
+            <Link href="/unidades/extrema">Extrema - MG</Link>
+            <Link href="/unidades/nova-serrana">Nova Serrana - MG</Link>
           </div>
         </div>
       </div>

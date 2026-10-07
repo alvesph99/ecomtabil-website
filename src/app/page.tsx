@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Faq } from "@/components/faq";
 import { SiteFooter } from "@/components/site-footer";
+import { UnitsGrid } from "@/components/units-grid";
 
 const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
   "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
@@ -561,7 +562,8 @@ export default function HomePage() {
                 <span>Seller há mais de 20 anos</span>
               </div>
               <p>
-                André iniciou sua carreira como seller no Mercado Livre no início dos anos 2000.
+                André iniciou sua carreira como seller no Mercado Livre no
+                início dos anos 2000.
               </p>
             </aside>
           </div>
@@ -582,8 +584,8 @@ export default function HomePage() {
               </h2>
             </div>
             <p>
-              Conteúdos práticos sobre contabilidade, tributação e gestão para
-              a rotina de E-commerce.
+              Conteúdos práticos sobre contabilidade, tributação e gestão para a
+              rotina de E-commerce.
             </p>
           </div>
 
@@ -654,6 +656,27 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section
+        className="units-section section"
+        id="unidades"
+        aria-labelledby="units-title"
+      >
+        <div className="shell">
+          <div className="units-section__heading">
+            <h2 id="units-title">
+              Uma <span className="highlight">E- comtabil</span> mais perto de
+              você.
+            </h2>
+            <p>
+              A mesma especialização em e-commerce, com presença em diferentes
+              regiões. Encontre a unidade mais próxima da sua operação.
+            </p>
+          </div>
+          <UnitsGrid />
+          <p className="units-section__note">Imagens ilustrativas da rotina de e-commerce.</p>
         </div>
       </section>
 
