@@ -245,5 +245,7 @@ Em producao, coloque Nginx ou Caddy na frente do Next.js para terminar HTTPS, en
 - Corrigidos o padding dos cards pares de autoridade e a leitura do card de `+20 anos` abaixo de 800px.
 - Limitado o efeito sticky da secao operacional a telas a partir de 1250px. Entre 801px e 1200px, ampliado o espacamento interno e reduzida a largura maxima do titulo.
 - Refinados o espacamento da secao laranja e a tipografia responsiva do FAQ.
-- O carrossel Embla agora associa a cada campanha uma arte mobile em `public/images/banners/` com o sufixo `-mobile`. Ate 600px, titulo, descricao e CTA em HTML ficam centralizados sobre a area livre superior da imagem; acima disso, permanece o banner desktop.
-- As quatro artes mobile atuais medem 1200 x 1800 px. Para adicionar ou trocar uma campanha, atualize os caminhos e a copy no array `banners` de `src/components/hero-carousel.tsx`. A faixa tablet ainda usa a arte desktop e pode receber uma composicao especifica em uma proxima etapa.
+- O carrossel Embla usa artes sem texto embutido para desktop e mobile; tag com icone, titulo com destaques, descricao e CTA sao renderizados em HTML nos dois tamanhos. Ate 600px, a copy fica centralizada sobre a area livre superior da imagem.
+- Os arquivos seguem o padrao `dark-<campanha>.webp` ou `light-<campanha>.webp`, com `-mobile` antes da extensao para a versao vertical. O tema da campanha define as cores da copy e do header transparente; quando a arte mobile tem outro tema (como a primeira campanha), configure tambem `mobileTheme`. Para adicionar ou trocar um banner, atualize os caminhos, os temas, o icone e a copy no array `banners` de `src/components/hero-carousel.tsx`.
+- Entre 601px e 1199px, somente a arte desktop recebe um enquadramento horizontal ajustado; a copy permanece na mesma posicao.
+- A faixa tablet ainda usa a arte desktop e pode receber uma composicao especifica em uma proxima etapa.
