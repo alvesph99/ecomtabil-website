@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const questions = [
+const defaultQuestions = [
   [
     "Como funciona a contabilidade para ecommerce?",
     "Acompanhamos a operação considerando vendas, marketplaces, integrações, documentos fiscais e obrigações contábeis. O ponto de partida é entender como sua empresa vende hoje.",
@@ -27,9 +27,19 @@ const questions = [
     "Posso abrir ou regularizar minha empresa com a Ecomtabil?",
     "Sim. Avaliamos a situação da empresa e orientamos os próximos passos para abertura, regularização ou mudança de estrutura, conforme cada caso.",
   ],
-];
+] as const;
 
-export function Faq() {
+type FaqProps = {
+  questions?: readonly (readonly [string, string])[];
+  title?: string;
+  description?: string;
+};
+
+export function Faq({
+  questions = defaultQuestions,
+  title = "Perguntas frequentes",
+  description = "Tire suas dúvidas sobre uma contabilidade preparada para a rotina do ecommerce.",
+}: FaqProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -60,11 +70,8 @@ export function Faq() {
           ))}
         </div>
         <div className="faq__intro">
-          <h2 id="faq-title">Perguntas frequentes</h2>
-          <p>
-            Tire suas dúvidas sobre uma contabilidade preparada para a rotina do
-            ecommerce.
-          </p>
+          <h2 id="faq-title">{title}</h2>
+          <p>{description}</p>
         </div>
       </div>
     </section>

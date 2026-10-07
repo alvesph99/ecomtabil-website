@@ -125,7 +125,7 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
             <Link href="/unidades">Matriz | Alphaville - SP</Link>
             <Link href="/unidades">São Paulo - SP</Link>
             <Link href="/unidades">Araraquara - SP</Link>
-            <Link href="/unidades">Ibitinga - SP</Link>
+            <Link href="/ibitinga">Ibitinga - SP</Link>
             <Link href="/unidades">Extrema - MG</Link>
             <Link href="/unidades">Nova Serrana - MG</Link>
           </div>
