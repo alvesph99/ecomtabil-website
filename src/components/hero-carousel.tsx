@@ -9,24 +9,58 @@ import { SiteHeader } from "@/components/site-header";
 
 const AUTOPLAY_DURATION = 6000;
 
-const banners = [
+type Banner = {
+  alt: string;
+  image: string;
+  mobileImage: string;
+  mobileEyebrow: string;
+  mobileTitle: string;
+  mobileDescription: string;
+  mobileTheme?: "light";
+};
+
+const banners: Banner[] = [
   {
     alt: "Ecomtabil: contabilidade conectada à operação do seu e-commerce",
     image: "/images/banners/contabilidade-conectada.png",
+    mobileImage: "/images/banners/contabilidade-conectada-mobile.png",
+    mobileEyebrow: "Contabilidade conectada à sua operação",
+    mobileTitle: "A contabilidade certa para o seu negócio",
+    mobileDescription:
+      "Base contábil, fiscal e cadastral para avançar com segurança nos marketplaces.",
+    mobileTheme: "light",
   },
   {
     alt: "Ecomtabil: contabilidade para empresas de Lucro Real, ecommerce e marketplaces",
     image: "/images/banners/lucro-real.png",
+    mobileImage: "/images/banners/lucro-real-mobile.png",
+    mobileEyebrow: "Especialistas em Lucro Real",
+    mobileTitle: "Sua operação cresceu. Sua contabilidade precisa acompanhar.",
+    mobileDescription:
+      "Contabilidade especializada em Lucro Real, E-commerce e marketplaces.",
   },
   {
     alt: "Ecomtabil: benefício fiscal para operações de ecommerce em Minas Gerais",
     image: "/images/banners/beneficio-fiscal-minas-gerais.png",
+    mobileImage: "/images/banners/beneficio-fiscal-minas-gerais-mobile.png",
+    mobileEyebrow: "Benefício fiscal em Minas Gerais",
+    mobileTitle: "Pague menos impostos com oportunidades fiscais em MG.",
+    mobileDescription:
+      "Entenda como uma estrutura fiscal adequada pode reduzir seus custos tributários.",
   },
   {
     alt: "Ecomtabil: plano MEI para organizar a contabilidade do seu ecommerce",
     image: "/images/banners/mei-ao-full.png",
+    mobileImage: "/images/banners/mei-ao-full-mobile.png",
+    mobileEyebrow: "Do MEI ao fulfillment",
+    mobileTitle: "Quer entrar para o Full? Seu próximo passo está aqui.",
+    mobileDescription:
+      "Prepare sua base contábil, fiscal e cadastral para avançar nos marketplaces.",
   },
 ];
+const diagnosticWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
+  "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
+)}`;
 
 function Arrow({ direction }: { direction: "previous" | "next" }) {
   const path =
@@ -151,15 +185,37 @@ export function HeroCarousel() {
         <div className="banner-carousel__viewport" ref={emblaRef}>
           <div className="banner-carousel__container">
             {banners.map((banner, index) => (
-              <div className="banner-carousel__slide" key={banner.image}>
-                <Image
-                  src={banner.image}
-                  alt={banner.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 1920px) 100vw, 1920px"
-                  unoptimized
-                />
+              <div
+                className={`banner-carousel__slide${banner.mobileTheme === "light" ? " banner-carousel__slide--light" : ""}`}
+                key={banner.image}
+              >
+                <picture>
+                  <source media="(max-width: 600px)" srcSet={banner.mobileImage} />
+                  <Image
+                    src={banner.image}
+                    alt={banner.alt}
+                    fill
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    sizes="(max-width: 1920px) 100vw, 1920px"
+                    unoptimized
+                  />
+                </picture>
+                <div className="banner-carousel__mobile-copy">
+                  <span className="banner-carousel__mobile-eyebrow">
+                    {banner.mobileEyebrow}
+                  </span>
+                  <h2>{banner.mobileTitle}</h2>
+                  <p>{banner.mobileDescription}</p>
+                  <a
+                    className="button"
+                    href={diagnosticWhatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Agendar um diagnóstico
+                  </a>
+                </div>
               </div>
             ))}
           </div>
