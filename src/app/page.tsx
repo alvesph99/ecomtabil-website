@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Faq } from "@/components/faq";
 import { SiteFooter } from "@/components/site-footer";
+import { UnitsGrid } from "@/components/units-grid";
 
 const closingWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponent(
   "Olá! Quero agendar um diagnóstico gratuito da minha operação de E-commerce.",
@@ -49,7 +50,7 @@ const expertise = [
   ],
   [
     "ERP",
-    "Gestão, fiscal e contábil precisam trabalhar com informações consistentes, não em silos.",
+    "Integramos as informações da sua operação para manter a gestão, o fiscal e a contabilidade alinhados.",
   ],
   [
     "Tributação",
@@ -156,7 +157,7 @@ export default function HomePage() {
       <HeroCarousel />
 
       <section className="intro shell section" aria-labelledby="intro-title">
-        <p className="marker">A Ecomtabil nasceu dentro desse universo.</p>
+        <p className="marker">A E-comtabil nasceu dentro desse universo.</p>
         <div>
           <div className="intro-copy">
             <h2 id="intro-title">
@@ -164,7 +165,7 @@ export default function HomePage() {
               operação.
             </h2>
             <p>De seller para seller. Com visão de contador.</p>
-            <Cta href={closingWhatsapp}>Agendar um diagnóstico</Cta>
+            <Cta href={closingWhatsapp}>Fale agora com um Especialista</Cta>
           </div>
           <div
             className="hero-art intro-art"
@@ -221,7 +222,7 @@ export default function HomePage() {
               </h2>
             </div>
             <p>
-              A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
+              A E-comtabil trabalha com empresas que vivem o comércio eletrônico
               todos os dias. Nossa especialização está em entender as
               particularidades de operações que vendem por marketplaces, lojas
               próprias e diferentes canais digitais.
@@ -256,8 +257,12 @@ export default function HomePage() {
               <div>
                 <p>
                   Quando a operação cresce, fiscal, ERP, estoque e logística
-                  deixam de funcionar isoladamente.
+                  deixam de funcionar isoladamente, sua empresa precisa de um
+                  especialista.
                 </p>
+                <div className="whole__action">
+                  <Cta href={closingWhatsapp}>Quero trocar de contador</Cta>
+                </div>
               </div>
             </div>
           </div>
@@ -308,7 +313,7 @@ export default function HomePage() {
               para atender às exigências desse novo estágio.
             </p>
             <p>
-              A Ecomtabil conhece esse caminho e ajuda sua empresa a identificar
+              A E-comtabil conhece esse caminho e ajuda sua empresa a identificar
               e organizar os pontos necessários para avançar com mais segurança.
             </p>
             <Cta href={whatsapp}>Conversar com um especialista</Cta>
@@ -325,11 +330,14 @@ export default function HomePage() {
               precisa para crescer.
             </h2>
           </div>
-          <p>
-            Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
-            integrações. Mais decisões tributárias. Mais responsabilidade sobre
-            margem e fluxo de caixa.
-          </p>
+          <div className="growth__detail">
+            <p>
+              Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
+              integrações. Mais decisões tributárias. Mais responsabilidade
+              sobre margem e fluxo de caixa.
+            </p>
+            <Cta href={closingWhatsapp}>Trocar de contador</Cta>
+          </div>
         </div>
       </section>
 
@@ -339,7 +347,7 @@ export default function HomePage() {
           <h2 id="seller-title">
             Antes de entender seu balanço, nós entendemos sua operação.
           </h2>
-          <Cta href={closingWhatsapp}>Quero Analisar Minha Operação</Cta>
+          <Cta href={closingWhatsapp}>Falar agora com um Especialista</Cta>
         </div>
         <div className="seller-copy">
           <article className="seller-card">
@@ -491,6 +499,7 @@ export default function HomePage() {
                 Especialização para diferentes partes da sua operação.
               </h2>
             </div>
+            <Cta href={closingWhatsapp}>Fale com um Especialista</Cta>
           </div>
           <div className="service-grid">
             {services.map(([title, description, image]) => (
@@ -561,7 +570,8 @@ export default function HomePage() {
                 <span>Seller há mais de 20 anos</span>
               </div>
               <p>
-                André iniciou sua carreira como seller no Mercado Livre no início dos anos 2000.
+                André iniciou sua carreira como seller no Mercado Livre no
+                início dos anos 2000.
               </p>
             </aside>
           </div>
@@ -582,8 +592,8 @@ export default function HomePage() {
               </h2>
             </div>
             <p>
-              Conteúdos práticos sobre contabilidade, tributação e gestão para
-              a rotina de E-commerce.
+              Conteúdos práticos sobre contabilidade, tributação e gestão para a
+              rotina de E-commerce.
             </p>
           </div>
 
@@ -654,6 +664,89 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section
+        className="reach-section section"
+        aria-labelledby="reach-title"
+      >
+        <div className="shell">
+          <div className="reach-section__heading">
+            <p className="marker">Presença e proximidade</p>
+            <h2 id="reach-title">
+              Sua operação pode estar em qualquer lugar. Nossa equipe está ao
+              seu lado.
+            </h2>
+            <p>
+              Atendimento contábil para sellers de todo o Brasil, com pessoas
+              preparadas para entender a rotina de quem vende online.
+            </p>
+          </div>
+          <div className="reach-section__grid">
+            <article className="reach-card">
+              <div className="reach-card__visual reach-card__visual--map">
+                <Image
+                  src="/images/national-coverage-map.webp"
+                  alt="Ilustração do mapa do Brasil com pontos conectados"
+                  width={1000}
+                  height={1000}
+                  sizes="(max-width: 800px) calc(100vw - 48px), 45vw"
+                />
+              </div>
+              <div className="reach-card__body">
+                <p className="marker">Onde seu negócio estiver</p>
+                <h3>Atendimento em nível nacional</h3>
+                <p>
+                  De diferentes regiões do país, você encontra a mesma
+                  especialização em e-commerce e marketplaces para apoiar sua
+                  operação.
+                </p>
+              </div>
+            </article>
+            <article className="reach-card">
+              <div className="reach-card__visual reach-card__visual--team">
+                <Image
+                  src="/images/human-support-team.webp"
+                  alt="Imagem ilustrativa de profissionais colaborando em um escritório"
+                  fill
+                  sizes="(max-width: 800px) calc(100vw - 48px), 45vw"
+                />
+                <span>Imagem ilustrativa</span>
+              </div>
+              <div className="reach-card__body">
+                <p className="marker">Conversa de verdade</p>
+                <h3>Atendimento realizado por humanos</h3>
+                <p>
+                  Nossa equipe atende das 7h às 23h, de segunda a sábado, para
+                  ouvir suas dúvidas e orientar o próximo passo.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div className="reach-section__action">
+            <Cta href={closingWhatsapp}>Fale com um especialista</Cta>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="units-section section"
+        id="unidades"
+        aria-labelledby="units-title"
+      >
+        <div className="shell">
+          <div className="units-section__heading">
+            <h2 id="units-title">
+              Uma <span className="highlight">E- comtabil</span> mais perto de
+              você.
+            </h2>
+            <p>
+              A mesma especialização em e-commerce, com presença em diferentes
+              regiões. Encontre a unidade mais próxima da sua operação.
+            </p>
+          </div>
+          <UnitsGrid />
         </div>
       </section>
 

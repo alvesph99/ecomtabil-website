@@ -26,8 +26,13 @@ export function SiteHeader({
     { label: "Home", href: toHome("#inicio") },
     { label: "Sobre", href: toHome("#sobre") },
     { label: "Planos", href: "/planos" },
+    { label: "Unidades", href: "/unidades" },
     { label: "Blog", href: toHome("#blog") },
-    { label: "Afiliados", href: "/afiliados", current: activeLink === "affiliates" },
+    {
+      label: "Afiliados",
+      href: "/afiliados",
+      current: activeLink === "affiliates",
+    },
   ];
 
   useEffect(() => {
@@ -75,18 +80,45 @@ export function SiteHeader({
       className={`site-header${lightBackground ? " site-header--on-light" : ""}${hasScrolled ? " site-header--scrolled" : ""}`}
     >
       <div className="nav shell">
-        <Link className="site-header__logo" href={toHome("#inicio")} aria-label="Ecomtabil, início">
-          <Image className="site-header__logo-white" src="/images/logo-ecomtabil-white.svg" alt="" width={148} height={38} unoptimized />
-          <Image className="site-header__logo-color" src="/images/logo-ecomtabil-color.svg" alt="" width={148} height={38} unoptimized />
+        <Link
+          className="site-header__logo"
+          href={toHome("#inicio")}
+          aria-label="Ecomtabil, início"
+        >
+          <Image
+            className="site-header__logo-white"
+            src="/images/logo-ecomtabil-white.svg"
+            alt=""
+            width={148}
+            height={38}
+            unoptimized
+          />
+          <Image
+            className="site-header__logo-color"
+            src="/images/logo-ecomtabil-color.svg"
+            alt=""
+            width={148}
+            height={38}
+            unoptimized
+          />
         </Link>
         <nav aria-label="Navegação principal">
           {navigation.map(({ label, href, current }) => (
-            <Link key={label} href={href} aria-current={current ? "page" : undefined}>
+            <Link
+              key={label}
+              href={href}
+              aria-current={current ? "page" : undefined}
+            >
               {label}
             </Link>
           ))}
         </nav>
-        <a className="site-header__client" href="https://onvio.com.br/clientcenter/pt/home" target="_blank" rel="noreferrer">
+        <a
+          className="site-header__client"
+          href="https://onvio.com.br/clientcenter/pt/home"
+          target="_blank"
+          rel="noreferrer"
+        >
           Área do cliente
         </a>
         <button
@@ -117,15 +149,30 @@ export function SiteHeader({
       >
         <div className="site-header__drawer-heading">
           <span>Menu</span>
-          <button type="button" aria-label="Fechar menu" onClick={closeMenu} autoFocus>
+          <button
+            type="button"
+            aria-label="Fechar menu"
+            onClick={closeMenu}
+            autoFocus
+          >
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="M5 5l14 14M19 5 5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path
+                d="M5 5l14 14M19 5 5 19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           </button>
         </div>
         <nav className="site-header__drawer-nav" aria-label="Navegação mobile">
           {navigation.map(({ label, href, current }) => (
-            <Link key={label} href={href} aria-current={current ? "page" : undefined} onClick={closeMenu}>
+            <Link
+              key={label}
+              href={href}
+              aria-current={current ? "page" : undefined}
+              onClick={closeMenu}
+            >
               {label}
             </Link>
           ))}

@@ -17,6 +17,7 @@ type Banner = {
   icon: "document" | "money" | "location" | "warehouse";
   title: { text: string; tone?: "orange" | "teal" }[];
   description: string;
+  ctaText?: string;
   theme: "light" | "dark";
   mobileTheme?: "light" | "dark";
 };
@@ -30,12 +31,13 @@ const banners: Banner[] = [
     icon: "document",
     title: [
       { text: "A " },
-      { text: "contabilidade certa", tone: "orange" },
+      { text: "Contabilidade Certa", tone: "orange" },
       { text: " para o " },
-      { text: "seu negócio", tone: "teal" },
+      { text: "seu E- commerce", tone: "teal" },
     ],
     description:
-      "Base contábil, fiscal e cadastral para avançar com segurança nos marketplaces.",
+      "Um escritório de contabilidade que entende de E-commerce e Marketplaces faz toda a diferença no negócio.",
+    ctaText: "Fale com um Especialista",
     theme: "light",
     mobileTheme: "dark",
   },
@@ -46,9 +48,9 @@ const banners: Banner[] = [
     eyebrow: "Especialistas em Lucro Real",
     icon: "money",
     title: [
-      { text: "Sua operação cresceu.", tone: "orange" },
-      { text: " Sua " },
-      { text: "contabilidade precisa acompanhar.", tone: "teal" },
+      { text: "Sua Operação Cresceu.", tone: "orange" },
+      { text: " Sua Contabilidade" },
+      { text: " Precisa Acompanhar.", tone: "teal" },
     ],
     description:
       "Contabilidade especializada em Lucro Real, E-commerce e marketplaces.",
@@ -57,31 +59,33 @@ const banners: Banner[] = [
   {
     alt: "Mapa de Minas Gerais ao lado de uma operação de ecommerce",
     image: "/images/banners/dark-beneficio-fiscal-minas-gerais.webp",
-    mobileImage: "/images/banners/dark-beneficio-fiscal-minas-gerais-mobile.webp",
+    mobileImage:
+      "/images/banners/dark-beneficio-fiscal-minas-gerais-mobile.webp",
     eyebrow: "Benefício fiscal em Minas Gerais",
     icon: "location",
     title: [
-      { text: "Pague menos impostos", tone: "orange" },
+      { text: "Pague Menos Impostos", tone: "orange" },
       { text: " com " },
-      { text: "oportunidades fiscais em MG.", tone: "teal" },
+      { text: "Benefício Fiscal em Minas Gerais.", tone: "teal" },
     ],
     description:
-      "Entenda como uma estrutura fiscal adequada pode reduzir seus custos tributários.",
+      "Entenda como uma estrutura fiscal adequada pode reduzir seus impostos.",
     theme: "dark",
   },
   {
     alt: "Centro de fulfillment com produtos prontos para expedição",
     image: "/images/banners/dark-mei-ao-full.webp",
     mobileImage: "/images/banners/dark-mei-ao-full-mobile.webp",
-    eyebrow: "Do MEI ao fulfillment",
+    eyebrow: "Do MEI ao Fulfillment",
     icon: "warehouse",
     title: [
-      { text: "Quer entrar para o Full?", tone: "orange" },
+      { text: "Quer Entrar para o Full?", tone: "orange" },
       { text: " Seu " },
-      { text: "próximo passo está aqui.", tone: "teal" },
+      { text: "Próximo Passo Está Aqui.", tone: "teal" },
     ],
     description:
       "Prepare sua base contábil, fiscal e cadastral para avançar nos marketplaces.",
+    ctaText: "Fale com um Especialista",
     theme: "dark",
   },
 ];
@@ -91,9 +95,7 @@ const diagnosticWhatsapp = `https://wa.me/5511980883377?text=${encodeURIComponen
 
 function Arrow({ direction }: { direction: "previous" | "next" }) {
   const path =
-    direction === "next"
-      ? "M3 10h13m-5-5 5 5-5 5"
-      : "M17 10H4m5 5-5-5 5-5";
+    direction === "next" ? "M3 10h13m-5-5 5 5-5 5" : "M17 10H4m5 5-5-5 5-5";
 
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
@@ -238,7 +240,10 @@ export function HeroCarousel() {
       aria-label="Banners em destaque"
       aria-roledescription="carousel"
     >
-      <SiteHeader transparent lightBackground={banners[selectedIndex].theme === "light"} />
+      <SiteHeader
+        transparent
+        lightBackground={banners[selectedIndex].theme === "light"}
+      />
 
       <div className="banner-carousel__stage">
         <div className="banner-carousel__viewport" ref={emblaRef}>
@@ -249,7 +254,10 @@ export function HeroCarousel() {
                 key={banner.image}
               >
                 <picture>
-                  <source media="(max-width: 600px)" srcSet={banner.mobileImage} />
+                  <source
+                    media="(max-width: 600px)"
+                    srcSet={banner.mobileImage}
+                  />
                   <Image
                     src={banner.image}
                     alt={banner.alt}
@@ -268,7 +276,10 @@ export function HeroCarousel() {
                   <h2>
                     {banner.title.map(({ text, tone }, partIndex) =>
                       tone ? (
-                        <span className={`banner-carousel__highlight--${tone}`} key={partIndex}>
+                        <span
+                          className={`banner-carousel__highlight--${tone}`}
+                          key={partIndex}
+                        >
                           {text}
                         </span>
                       ) : (
@@ -283,9 +294,26 @@ export function HeroCarousel() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Agendar um diagnóstico
+                    {banner.ctaText ?? "Agendar um diagnóstico"}
                   </a>
                 </div>
+                {index === 0 && (
+                  <aside
+                    className="banner-carousel__profile"
+                    aria-label="Sobre André Braga"
+                  >
+                    <div>
+                      <strong>André Braga</strong>
+                      <span>CEO da E-comtabil</span>
+                      <span>Contador e Tributarista</span>
+                      <span>Seller há mais de 20 anos</span>
+                    </div>
+                    <p>
+                      André iniciou sua carreira como seller no Mercado Livre no
+                      início dos anos 2000.
+                    </p>
+                  </aside>
+                )}
               </div>
             ))}
           </div>
@@ -315,12 +343,19 @@ export function HeroCarousel() {
             className="banner-carousel__autoplay-toggle"
             type="button"
             onClick={toggleAutoplay}
-            aria-label={isAutoplayPlaying ? "Pausar carrossel" : "Reproduzir carrossel"}
+            aria-label={
+              isAutoplayPlaying ? "Pausar carrossel" : "Reproduzir carrossel"
+            }
             aria-pressed={!isAutoplayPlaying}
           >
             {isAutoplayPlaying ? (
               <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
-                <path d="M7 5v10M13 5v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path
+                  d="M7 5v10M13 5v10"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
               </svg>
             ) : (
               <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
@@ -328,7 +363,10 @@ export function HeroCarousel() {
               </svg>
             )}
           </button>
-          <div className="banner-carousel__dots" aria-label="Navegação dos banners">
+          <div
+            className="banner-carousel__dots"
+            aria-label="Navegação dos banners"
+          >
             {scrollSnaps.map((_, index) => {
               const isActive = index === selectedIndex;
 

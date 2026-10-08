@@ -15,23 +15,42 @@ export function AffiliateForm() {
       <div className="affiliate-form__row">
         <label>
           Nome completo <span aria-hidden="true">*</span>
-          <input name="name" type="text" autoComplete="name" placeholder="Digite seu nome completo" required />
+          <input
+            name="name"
+            type="text"
+            autoComplete="name"
+            placeholder="Digite seu nome completo"
+            required
+          />
         </label>
         <label>
           E-mail <span aria-hidden="true">*</span>
-          <input name="email" type="email" autoComplete="email" placeholder="seu@email.com" required />
+          <input
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="seu@email.com"
+            required
+          />
         </label>
       </div>
 
       <label>
         Telefone
-        <input name="phone" type="tel" autoComplete="tel" placeholder="(00) 00000-0000" />
+        <input
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="(00) 00000-0000"
+        />
       </label>
 
       <label>
         Como conheceu o programa?
         <select name="source" defaultValue="">
-          <option value="" disabled>Selecione uma opção</option>
+          <option value="" disabled>
+            Selecione uma opção
+          </option>
           <option value="instagram">Instagram</option>
           <option value="indicacao">Indicação</option>
           <option value="google">Google</option>
@@ -42,17 +61,26 @@ export function AffiliateForm() {
       <div className="affiliate-form__row">
         <label>
           Cupom de desconto <span aria-hidden="true">*</span>
-          <input name="coupon" type="text" placeholder="Crie o nome do seu cupom" required />
+          <input
+            name="coupon"
+            type="text"
+            placeholder="Crie o nome do seu cupom"
+            required
+          />
         </label>
         <label>
           Qual é a sua área de atuação? <span aria-hidden="true">*</span>
           <select name="area" defaultValue="" required>
-            <option value="" disabled>Selecione uma opção</option>
-            <option value="ecommerce">E-commerce</option>
-            <option value="marketing">Marketing</option>
+            <option value="" disabled>
+              Selecione uma opção
+            </option>
+            <option value="ecommerce">Gestor de E-commerce</option>
+            <option value="marketing">Marketing Digital</option>
             <option value="contabilidade">Contabilidade</option>
             <option value="consultoria">Consultoria</option>
-            <option value="outro">Outra</option>
+            <option value="influenciador">Influenciador digital</option>
+            <option value="prestador-servicos">Prestador de serviços</option>
+            <option value="outro">Outros</option>
           </select>
         </label>
       </div>
@@ -60,15 +88,19 @@ export function AffiliateForm() {
       <label className="affiliate-form__terms">
         <input name="terms" type="checkbox" required />
         <span>
-          Li e aceito os <a href="#termos">termos e condições</a> do programa de afiliados <b aria-hidden="true">*</b>
+          Li e aceito os <a href="#termos">termos e condições</a> do programa de
+          afiliados <b aria-hidden="true">*</b>
         </span>
       </label>
 
       <div className="affiliate-form__footer">
-        <button className="affiliate-form__submit" type="submit">Quero ser afiliado</button>
+        <button className="affiliate-form__submit" type="submit">
+          Quero ser afiliado
+        </button>
         {submitted && (
           <p className="affiliate-form__feedback" aria-live="polite">
-            Obrigado pelo interesse. Em breve entraremos em contato para concluir seu cadastro.
+            Obrigado pelo interesse. Em breve entraremos em contato para
+            concluir seu cadastro.
           </p>
         )}
       </div>

@@ -122,12 +122,12 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
           </div>
           <div>
             <h3>Unidades</h3>
-            <Link href="/unidades">Matriz | Alphaville - SP</Link>
-            <Link href="/unidades">São Paulo - SP</Link>
-            <Link href="/unidades">Araraquara - SP</Link>
-            <Link href="/unidades">Ibitinga - SP</Link>
-            <Link href="/unidades">Extrema - MG</Link>
-            <Link href="/unidades">Nova Serrana - MG</Link>
+            <Link href="/unidades/alphaville">Matriz | Alphaville - SP</Link>
+            <Link href="/unidades/sao-paulo">São Paulo - SP</Link>
+            <Link href="/unidades/araraquara">Araraquara - SP</Link>
+            <Link href="/ibitinga">Ibitinga - SP</Link>
+            <Link href="/unidades/extrema">Extrema - MG</Link>
+            <Link href="/unidades/nova-serrana">Nova Serrana - MG</Link>
           </div>
         </div>
       </div>
@@ -140,6 +140,17 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
           <Link href={toHome("#inicio")}>Política de privacidade</Link>
           <a href={whatsapp ?? toHome("#inicio")}>Contato</a>
         </div>
+      </div>
+      <div className="footer-machine-addresses">
+        <address>
+          Rua São Bento, 1778 | Centro<br />
+          Araraquara - SP<br />
+          CEP 14801-300
+        </address>
+        <address>
+          Alameda Araguaia 2044 | Conj. 910 - Bloco 1<br />
+          Alphaville, Barueri - SP | CEP 06455-000
+        </address>
       </div>
     </footer>
   );
