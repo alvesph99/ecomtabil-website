@@ -35,6 +35,8 @@ jobs:
         run: npm ci
 
       - name: Build Next.js
+        env:
+          NEXT_PUBLIC_SITE_URL: https://alvesph99.github.io/ecomtabil-website
         run: npm run build
 
       - name: Setup Pages
