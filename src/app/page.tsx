@@ -50,7 +50,7 @@ const expertise = [
   ],
   [
     "ERP",
-    "Gestão, fiscal e contábil precisam trabalhar com informações consistentes, não em silos.",
+    "Integramos as informações da sua operação para manter a gestão, o fiscal e a contabilidade alinhados.",
   ],
   [
     "Tributação",
@@ -157,7 +157,7 @@ export default function HomePage() {
       <HeroCarousel />
 
       <section className="intro shell section" aria-labelledby="intro-title">
-        <p className="marker">A Ecomtabil nasceu dentro desse universo.</p>
+        <p className="marker">A E-comtabil nasceu dentro desse universo.</p>
         <div>
           <div className="intro-copy">
             <h2 id="intro-title">
@@ -165,7 +165,7 @@ export default function HomePage() {
               operação.
             </h2>
             <p>De seller para seller. Com visão de contador.</p>
-            <Cta href={closingWhatsapp}>Agendar um diagnóstico</Cta>
+            <Cta href={closingWhatsapp}>Fale agora com um Especialista</Cta>
           </div>
           <div
             className="hero-art intro-art"
@@ -222,7 +222,7 @@ export default function HomePage() {
               </h2>
             </div>
             <p>
-              A Ecomtabil trabalha com empresas que vivem o comércio eletrônico
+              A E-comtabil trabalha com empresas que vivem o comércio eletrônico
               todos os dias. Nossa especialização está em entender as
               particularidades de operações que vendem por marketplaces, lojas
               próprias e diferentes canais digitais.
@@ -257,8 +257,12 @@ export default function HomePage() {
               <div>
                 <p>
                   Quando a operação cresce, fiscal, ERP, estoque e logística
-                  deixam de funcionar isoladamente.
+                  deixam de funcionar isoladamente, sua empresa precisa de um
+                  especialista.
                 </p>
+                <div className="whole__action">
+                  <Cta href={closingWhatsapp}>Quero trocar de contador</Cta>
+                </div>
               </div>
             </div>
           </div>
@@ -309,7 +313,7 @@ export default function HomePage() {
               para atender às exigências desse novo estágio.
             </p>
             <p>
-              A Ecomtabil conhece esse caminho e ajuda sua empresa a identificar
+              A E-comtabil conhece esse caminho e ajuda sua empresa a identificar
               e organizar os pontos necessários para avançar com mais segurança.
             </p>
             <Cta href={whatsapp}>Conversar com um especialista</Cta>
@@ -326,11 +330,14 @@ export default function HomePage() {
               precisa para crescer.
             </h2>
           </div>
-          <p>
-            Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
-            integrações. Mais decisões tributárias. Mais responsabilidade sobre
-            margem e fluxo de caixa.
-          </p>
+          <div className="growth__detail">
+            <p>
+              Mais pedidos. Mais canais. Mais produtos. Mais estados. Mais
+              integrações. Mais decisões tributárias. Mais responsabilidade
+              sobre margem e fluxo de caixa.
+            </p>
+            <Cta href={closingWhatsapp}>Trocar de contador</Cta>
+          </div>
         </div>
       </section>
 
@@ -340,7 +347,7 @@ export default function HomePage() {
           <h2 id="seller-title">
             Antes de entender seu balanço, nós entendemos sua operação.
           </h2>
-          <Cta href={closingWhatsapp}>Quero Analisar Minha Operação</Cta>
+          <Cta href={closingWhatsapp}>Falar agora com um Especialista</Cta>
         </div>
         <div className="seller-copy">
           <article className="seller-card">
@@ -492,6 +499,7 @@ export default function HomePage() {
                 Especialização para diferentes partes da sua operação.
               </h2>
             </div>
+            <Cta href={closingWhatsapp}>Fale com um Especialista</Cta>
           </div>
           <div className="service-grid">
             {services.map(([title, description, image]) => (
@@ -676,7 +684,6 @@ export default function HomePage() {
             </p>
           </div>
           <UnitsGrid />
-          <p className="units-section__note">Imagens ilustrativas da rotina de e-commerce.</p>
         </div>
       </section>
 

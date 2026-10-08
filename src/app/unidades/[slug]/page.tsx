@@ -41,7 +41,7 @@ export default async function UnitPage({ params }: Props) {
               <h1 id="unit-title">Unidade {unit.title}</h1>
               <p>Uma equipe que entende a rotina de quem vende online, com atendimento contábil voltado a operações de e-commerce.</p>
               <p>Conte como sua operação funciona hoje. Vamos entender seus canais de venda, seu momento e o tipo de apoio contábil de que você precisa.</p>
-              <a className="button" href={unitWhatsapp(unit.title)} target="_blank" rel="noreferrer">
+              <a className="button" href={unitWhatsapp(unit)} target="_blank" rel="noreferrer">
                 Falar com a unidade {unit.title}
                 <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>

@@ -17,6 +17,7 @@ type Banner = {
   icon: "document" | "money" | "location" | "warehouse";
   title: { text: string; tone?: "orange" | "teal" }[];
   description: string;
+  ctaText?: string;
   theme: "light" | "dark";
   mobileTheme?: "light" | "dark";
 };
@@ -32,10 +33,11 @@ const banners: Banner[] = [
       { text: "A " },
       { text: "Contabilidade Certa", tone: "orange" },
       { text: " para o " },
-      { text: "Seu Negócio", tone: "teal" },
+      { text: "seu E- commerce", tone: "teal" },
     ],
     description:
-      "Base contábil, fiscal e cadastral para avançar com segurança nos marketplaces.",
+      "Um escritório de contabilidade que entende de E-commerce e Marketplaces faz toda a diferença no negócio.",
+    ctaText: "Fale com um Especialista",
     theme: "light",
     mobileTheme: "dark",
   },
@@ -64,10 +66,10 @@ const banners: Banner[] = [
     title: [
       { text: "Pague Menos Impostos", tone: "orange" },
       { text: " com " },
-      { text: "Oportunidades Fiscais em Minas Gerais.", tone: "teal" },
+      { text: "Benefício Fiscal em Minas Gerais.", tone: "teal" },
     ],
     description:
-      "Entenda como uma estrutura fiscal adequada pode reduzir seus custos tributários.",
+      "Entenda como uma estrutura fiscal adequada pode reduzir seus impostos.",
     theme: "dark",
   },
   {
@@ -83,6 +85,7 @@ const banners: Banner[] = [
     ],
     description:
       "Prepare sua base contábil, fiscal e cadastral para avançar nos marketplaces.",
+    ctaText: "Fale com um Especialista",
     theme: "dark",
   },
 ];
@@ -291,9 +294,26 @@ export function HeroCarousel() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Agendar um diagnóstico
+                    {banner.ctaText ?? "Agendar um diagnóstico"}
                   </a>
                 </div>
+                {index === 0 && (
+                  <aside
+                    className="banner-carousel__profile"
+                    aria-label="Sobre André Braga"
+                  >
+                    <div>
+                      <strong>André Braga</strong>
+                      <span>CEO da E-comtabil</span>
+                      <span>Contador e Tributarista</span>
+                      <span>Seller há mais de 20 anos</span>
+                    </div>
+                    <p>
+                      André iniciou sua carreira como seller no Mercado Livre no
+                      início dos anos 2000.
+                    </p>
+                  </aside>
+                )}
               </div>
             ))}
           </div>

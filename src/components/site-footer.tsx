@@ -141,6 +141,17 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
           <a href={whatsapp ?? toHome("#inicio")}>Contato</a>
         </div>
       </div>
+      <div className="footer-machine-addresses">
+        <address>
+          Rua São Bento, 1778 | Centro<br />
+          Araraquara - SP<br />
+          CEP 14801-300
+        </address>
+        <address>
+          Alameda Araguaia 2044 | Conj. 910 - Bloco 1<br />
+          Alphaville, Barueri - SP | CEP 06455-000
+        </address>
+      </div>
     </footer>
   );
 }

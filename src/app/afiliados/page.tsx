@@ -14,7 +14,7 @@ const benefits = [
   [
     "01",
     "Comissões atrativas",
-    "Ganhe comissões competitivas por cada indicação convertida em cliente.",
+    "Ganhe comissões atraentes por cada indicação convertida em cliente.",
   ],
   [
     "02",
@@ -101,9 +101,13 @@ export default function AffiliatePage() {
             Programa de afiliados
           </span>
           <h1>
-            <span className="banner-carousel__highlight--orange">Ganhe dinheiro</span>{" "}
+            <span className="banner-carousel__highlight--orange">
+              Ganhe dinheiro
+            </span>{" "}
             indicando a melhor contabilidade para{" "}
-            <span className="banner-carousel__highlight--teal">E-commerce.</span>
+            <span className="banner-carousel__highlight--teal">
+              E-commerce.
+            </span>
           </h1>
           <p>
             Seja um afiliado E-comtabil e ganhe comissões atrativas por cada

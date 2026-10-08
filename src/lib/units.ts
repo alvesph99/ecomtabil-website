@@ -4,7 +4,7 @@ export const units = [
     title: "Matriz | Alphaville - SP",
     detail: "Alphaville, São Paulo",
     state: "SP",
-    image: "/images/contabilidade-especializada.webp",
+    image: "/images/unidades/alphaville.webp",
     href: "/unidades/alphaville",
   },
   {
@@ -12,7 +12,7 @@ export const units = [
     title: "São Paulo - SP",
     detail: "Capital paulista",
     state: "SP",
-    image: "/images/consultoria.jpg",
+    image: "/images/unidades/sao-paulo.webp",
     href: "/unidades/sao-paulo",
   },
   {
@@ -20,7 +20,7 @@ export const units = [
     title: "Araraquara - SP",
     detail: "Interior de São Paulo",
     state: "SP",
-    image: "/images/seller-operator.png",
+    image: "/images/unidades/araraquara.webp",
     href: "/unidades/araraquara",
   },
   {
@@ -28,7 +28,7 @@ export const units = [
     title: "Ibitinga - SP",
     detail: "Perto de quem vende para o Brasil",
     state: "SP",
-    image: "/images/seller-operation.png",
+    image: "/images/unidades/ibitinga.webp",
     href: "/ibitinga",
   },
   {
@@ -36,7 +36,7 @@ export const units = [
     title: "Extrema - MG",
     detail: "Sul de Minas Gerais",
     state: "MG",
-    image: "/images/service-packing.png",
+    image: "/images/unidades/extrema.webp",
     href: "/unidades/extrema",
   },
   {
@@ -44,13 +44,17 @@ export const units = [
     title: "Nova Serrana - MG",
     detail: "Minas Gerais",
     state: "MG",
-    image: "/images/service-analytics.png",
+    image: "/images/unidades/nova-serrana.webp",
     href: "/unidades/nova-serrana",
   },
 ] as const;
 
-export function unitWhatsapp(title: string) {
-  const url = new URL(process.env.NEXT_PUBLIC_WHATSAPP_URL || "https://wa.me/5511980883377");
-  url.searchParams.set("text", `Olá! Quero falar com a unidade ${title} da E-comtabil.`);
+export function unitWhatsapp(unit: (typeof units)[number]) {
+  const phone =
+    unit.slug === "ibitinga" || unit.slug === "araraquara"
+      ? "5516996535785"
+      : "5511980883377";
+  const url = new URL(`https://wa.me/${phone}`);
+  url.searchParams.set("text", `Olá! Quero falar com a unidade ${unit.title} da E-comtabil.`);
   return url.toString();
 }
