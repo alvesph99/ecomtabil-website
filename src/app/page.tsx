@@ -668,6 +668,69 @@ export default function HomePage() {
       </section>
 
       <section
+        className="reach-section section"
+        aria-labelledby="reach-title"
+      >
+        <div className="shell">
+          <div className="reach-section__heading">
+            <p className="marker">Presença e proximidade</p>
+            <h2 id="reach-title">
+              Sua operação pode estar em qualquer lugar. Nossa equipe está ao
+              seu lado.
+            </h2>
+            <p>
+              Atendimento contábil para sellers de todo o Brasil, com pessoas
+              preparadas para entender a rotina de quem vende online.
+            </p>
+          </div>
+          <div className="reach-section__grid">
+            <article className="reach-card">
+              <div className="reach-card__visual reach-card__visual--map">
+                <Image
+                  src="/images/national-coverage-map.webp"
+                  alt="Ilustração do mapa do Brasil com pontos conectados"
+                  width={1000}
+                  height={1000}
+                  sizes="(max-width: 800px) calc(100vw - 48px), 45vw"
+                />
+              </div>
+              <div className="reach-card__body">
+                <p className="marker">Onde seu negócio estiver</p>
+                <h3>Atendimento em nível nacional</h3>
+                <p>
+                  De diferentes regiões do país, você encontra a mesma
+                  especialização em e-commerce e marketplaces para apoiar sua
+                  operação.
+                </p>
+              </div>
+            </article>
+            <article className="reach-card">
+              <div className="reach-card__visual reach-card__visual--team">
+                <Image
+                  src="/images/human-support-team.webp"
+                  alt="Imagem ilustrativa de profissionais colaborando em um escritório"
+                  fill
+                  sizes="(max-width: 800px) calc(100vw - 48px), 45vw"
+                />
+                <span>Imagem ilustrativa</span>
+              </div>
+              <div className="reach-card__body">
+                <p className="marker">Conversa de verdade</p>
+                <h3>Atendimento realizado por humanos</h3>
+                <p>
+                  Nossa equipe atende das 7h às 23h, de segunda a sábado, para
+                  ouvir suas dúvidas e orientar o próximo passo.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div className="reach-section__action">
+            <Cta href={closingWhatsapp}>Fale com um especialista</Cta>
+          </div>
+        </div>
+      </section>
+
+      <section
         className="units-section section"
         id="unidades"
         aria-labelledby="units-title"
