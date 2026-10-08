@@ -9,3 +9,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "/sitemap.xml",
   };
 }
+export const dynamic = "force-static";
