@@ -106,15 +106,15 @@ const services = [
 ];
 
 const marketplaces = [
-  ["AliExpress", "/images/marketplaces/aliexpress-logo.svg"],
-  ["Amazon", "/images/marketplaces/amazon-logo.svg"],
-  ["Shein", "/images/marketplaces/shein-logo.svg"],
-  ["Mercado Livre", "/images/marketplaces/mercado-livre-logo.svg"],
-  ["Shopee", "/images/marketplaces/shopee-logo.svg"],
-  ["Shopify", "/images/marketplaces/shopify-logo.svg"],
-  ["TikTok Shop", "/images/marketplaces/tiktokshop-logo.svg"],
-  ["Loja Integrada", "/images/marketplaces/loja-integrada-logo.svg"],
-  ["Magalu", "/images/marketplaces/magalu-logo.svg"],
+  ["AliExpress", "/ecomtabil-website/images/marketplaces/aliexpress-logo.svg"],
+  ["Amazon", "/ecomtabil-website/images/marketplaces/amazon-logo.svg"],
+  ["Shein", "/ecomtabil-website/images/marketplaces/shein-logo.svg"],
+  ["Mercado Livre", "/ecomtabil-website/images/marketplaces/mercado-livre-logo.svg"],
+  ["Shopee", "/ecomtabil-website/images/marketplaces/shopee-logo.svg"],
+  ["Shopify", "/ecomtabil-website/images/marketplaces/shopify-logo.svg"],
+  ["TikTok Shop", "/ecomtabil-website/images/marketplaces/tiktokshop-logo.svg"],
+  ["Loja Integrada", "/ecomtabil-website/images/marketplaces/loja-integrada-logo.svg"],
+  ["Magalu", "/ecomtabil-website/images/marketplaces/magalu-logo.svg"],
 ];
 
 const marketplaceBelt = [
@@ -135,19 +135,19 @@ const blogPosts = [
     category: "Tributação",
     readingTime: "6 min de leitura",
     title: "Lucro Real para E-commerce: quando esse regime faz sentido?",
-    image: "/images/service-analytics.png",
+    image: "/ecomtabil-website/images/service-analytics.png",
   },
   {
     category: "Marketplaces",
     readingTime: "5 min de leitura",
     title: "Como vender em marketplaces sem perder sua margem de vista",
-    image: "/images/marketplaces-image.png",
+    image: "/ecomtabil-website/images/marketplaces-image.png",
   },
   {
     category: "Gestão",
     readingTime: "7 min de leitura",
     title: "ERP e contabilidade: por que integrar os dados da operação?",
-    image: "/images/erp-integracoes.png",
+    image: "/ecomtabil-website/images/erp-integracoes.png",
   },
 ];
 
@@ -176,7 +176,7 @@ export default function HomePage() {
             <div className="orbit orbit-b" />
             <div className="hub">
               <Image
-                src="/images/ecomtabil-logo-white.svg"
+                src="/ecomtabil-website/images/ecomtabil-logo-white.svg"
                 alt="Ecomtabil"
                 width={66}
                 height={66}
@@ -279,7 +279,7 @@ export default function HomePage() {
               <Image
                 key={logo}
                 className="whole-marketplaces__logo"
-                src={`/images/marketplaces-box-logos/${logo}`}
+                src={`/ecomtabil-website/images/marketplaces-box-logos/${logo}`}
                 alt=""
                 width={150}
                 height={150}
@@ -353,7 +353,7 @@ export default function HomePage() {
           <article className="seller-card">
             <div className="seller-card__image">
               <Image
-                src="/images/seller-operator.png"
+                src="/ecomtabil-website/images/seller-operator.png"
                 alt="Operação de E-commerce em uma estação de expedição"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
@@ -370,7 +370,7 @@ export default function HomePage() {
           <article className="seller-card seller-card--years">
             <div className="seller-card__image">
               <Image
-                src="/images/seller-experience.png"
+                src="/ecomtabil-website/images/seller-experience.png"
                 alt="Mesa de trabalho com documentos e ferramentas contábeis"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
@@ -390,7 +390,7 @@ export default function HomePage() {
           <article className="seller-card">
             <div className="seller-card__image">
               <Image
-                src="/images/seller-operation.png"
+                src="/ecomtabil-website/images/seller-operation.png"
                 alt="Rotina de expedição com itens de E-commerce organizados"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 94px), 34vw"
@@ -556,7 +556,7 @@ export default function HomePage() {
           <div className="about__visual">
             <div className="about__image">
               <Image
-                src="/images/andre-contador-especialista.jpeg"
+                src="/ecomtabil-website/images/andre-contador-especialista.jpeg"
                 alt="Imagem do CEO da E-comtabil, Andre Braga, contador e tributarista com mais de 20 anos de experiência como seller"
                 fill
                 sizes="(max-width: 800px) calc(100vw - 48px), 44vw"
@@ -687,7 +687,7 @@ export default function HomePage() {
             <article className="reach-card">
               <div className="reach-card__visual reach-card__visual--map">
                 <Image
-                  src="/images/national-coverage-map.webp"
+                  src="/ecomtabil-website/images/national-coverage-map.webp"
                   alt="Ilustração do mapa do Brasil com pontos conectados"
                   width={1000}
                   height={1000}
@@ -707,7 +707,7 @@ export default function HomePage() {
             <article className="reach-card">
               <div className="reach-card__visual reach-card__visual--team">
                 <Image
-                  src="/images/human-support-team.webp"
+                  src="/ecomtabil-website/images/human-support-team.webp"
                   alt="Imagem ilustrativa de profissionais colaborando em um escritório"
                   fill
                   sizes="(max-width: 800px) calc(100vw - 48px), 45vw"
@@ -776,7 +776,7 @@ export default function HomePage() {
         aria-label="Agendar um diagnóstico pelo WhatsApp"
       >
         <Image
-          src="/images/whatsapp-icon.svg"
+          src="/ecomtabil-website/images/whatsapp-icon.svg"
           alt=""
           aria-hidden="true"
           width={32}

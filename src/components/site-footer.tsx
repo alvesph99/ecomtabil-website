@@ -21,7 +21,7 @@ export function SiteFooter({ rootPath = "" }: SiteFooterProps) {
             aria-label="Ecomtabil, início"
           >
             <Image
-              src="/images/logo-ecomtabil-white.svg"
+              src="/ecomtabil-website/images/logo-ecomtabil-white.svg"
               alt="Ecomtabil"
               width={190}
               height={48}

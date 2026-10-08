@@ -25,8 +25,8 @@ type Banner = {
 const banners: Banner[] = [
   {
     alt: "Contador em um ambiente de trabalho de ecommerce",
-    image: "/images/banners/light-contabilidade-conectada.webp",
-    mobileImage: "/images/banners/dark-contabilidade-conectada-mobile.webp",
+    image: "/ecomtabil-website/images/banners/light-contabilidade-conectada.webp",
+    mobileImage: "/ecomtabil-website/images/banners/dark-contabilidade-conectada-mobile.webp",
     eyebrow: "Contabilidade conectada à sua operação",
     icon: "document",
     title: [
@@ -43,8 +43,8 @@ const banners: Banner[] = [
   },
   {
     alt: "Painel de vendas online com alertas de marketplaces",
-    image: "/images/banners/dark-lucro-real.webp",
-    mobileImage: "/images/banners/dark-lucro-real-mobile.webp",
+    image: "/ecomtabil-website/images/banners/dark-lucro-real.webp",
+    mobileImage: "/ecomtabil-website/images/banners/dark-lucro-real-mobile.webp",
     eyebrow: "Especialistas em Lucro Real",
     icon: "money",
     title: [
@@ -58,9 +58,9 @@ const banners: Banner[] = [
   },
   {
     alt: "Mapa de Minas Gerais ao lado de uma operação de ecommerce",
-    image: "/images/banners/dark-beneficio-fiscal-minas-gerais.webp",
+    image: "/ecomtabil-website/images/banners/dark-beneficio-fiscal-minas-gerais.webp",
     mobileImage:
-      "/images/banners/dark-beneficio-fiscal-minas-gerais-mobile.webp",
+      "/ecomtabil-website/images/banners/dark-beneficio-fiscal-minas-gerais-mobile.webp",
     eyebrow: "Benefício fiscal em Minas Gerais",
     icon: "location",
     title: [
@@ -74,8 +74,8 @@ const banners: Banner[] = [
   },
   {
     alt: "Centro de fulfillment com produtos prontos para expedição",
-    image: "/images/banners/dark-mei-ao-full.webp",
-    mobileImage: "/images/banners/dark-mei-ao-full-mobile.webp",
+    image: "/ecomtabil-website/images/banners/dark-mei-ao-full.webp",
+    mobileImage: "/ecomtabil-website/images/banners/dark-mei-ao-full-mobile.webp",
     eyebrow: "Do MEI ao Fulfillment",
     icon: "warehouse",
     title: [

@@ -2271,28 +2271,28 @@ section.marketplaces {
   background-position: center;
 }
 .service-card .service-card__image--accounting {
-  background-image: url("/images/contabilidade-especializada.webp");
+  background-image: url("/ecomtabil-website/images/contabilidade-especializada.webp");
 }
 .service-card .service-card__image--tax {
-  background-image: url("/images/fiscal-tributario.png");
+  background-image: url("/ecomtabil-website/images/fiscal-tributario.png");
 }
 .service-card .service-card__image--marketplaces {
-  background-image: url("/images/marketplaces-image.png");
+  background-image: url("/ecomtabil-website/images/marketplaces-image.png");
 }
 .service-card .service-card__image--erp {
-  background-image: url("/images/erp-integracoes.png");
+  background-image: url("/ecomtabil-website/images/erp-integracoes.png");
 }
 .service-card .service-card__image--digital-certificate {
-  background-image: url("/images/digital-certificate.webp");
+  background-image: url("/ecomtabil-website/images/digital-certificate.webp");
 }
 .service-card .service-card__image--payroll {
-  background-image: url("/images/folha-de-pagamento.png");
+  background-image: url("/ecomtabil-website/images/folha-de-pagamento.png");
 }
 .service-card .service-card__image--consulting {
-  background-image: url("/images/consultoria.jpg");
+  background-image: url("/ecomtabil-website/images/consultoria.jpg");
 }
 .service-card .service-card__image--regularization {
-  background-image: url("/images/regularizacao-empresarial.jpg");
+  background-image: url("/ecomtabil-website/images/regularizacao-empresarial.jpg");
 }
 
 section.ecosystem {
@@ -2341,7 +2341,7 @@ section.ecosystem {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background-image: url("/images/ecommerce-operations-triptych.png");
+  background-image: url("/ecomtabil-website/images/ecommerce-operations-triptych.png");
   background-size: 300% 100%;
   filter: saturate(0.82) contrast(1.05);
   transition:
@@ -3709,7 +3709,7 @@ section.ecosystem {
   isolation: isolate;
   height: 600px;
   overflow: hidden;
-  background-image: url("/images/banners/light-afiliados-background.webp");
+  background-image: url("/ecomtabil-website/images/banners/light-afiliados-background.webp");
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4107,7 +4107,7 @@ section.ecosystem {
 @media (max-width: 800px) {
   .affiliate-hero {
     height: 900px;
-    background-image: url("/images/banners/light-afiliados-background-mobile.webp");
+    background-image: url("/ecomtabil-website/images/banners/light-afiliados-background-mobile.webp");
     background-position: center top;
   }
   .affiliate-hero__content {

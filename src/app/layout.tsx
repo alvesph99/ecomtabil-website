@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   description: "Contabilidade especializada em ecommerce, marketplaces e ERPs.",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
-      { url: "/images/favicon-white.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+      { url: "/ecomtabil-website/icon.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/ecomtabil-website/images/favicon-white.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
     ],
   },
   robots: {

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Contabilidade online em Ibitinga para e-commerce",
   description: "Contabilidade para sellers de Ibitinga: marketplaces, ERP, fiscal e planejamento tributário. Conheça a Ecomtabil e solicite um diagnóstico da sua operação.",
   alternates: { canonical: "/ibitinga" },
-  openGraph: { title: "De Ibitinga para o Brasil. Sua contabilidade acompanha.", description: "Contabilidade especializada em e-commerce com a proximidade que seu negócio precisa.", url: "/ibitinga", locale: "pt_BR", type: "website", images: [{ url: "/images/seller-operation.png", width: 1536, height: 1024, alt: "Operação de e-commerce" }] },
+  openGraph: { title: "De Ibitinga para o Brasil. Sua contabilidade acompanha.", description: "Contabilidade especializada em e-commerce com a proximidade que seu negócio precisa.", url: "/ibitinga", locale: "pt_BR", type: "website", images: [{ url: "/ecomtabil-website/images/seller-operation.png", width: 1536, height: 1024, alt: "Operação de e-commerce" }] },
 };
 
 function Icon({ name = "check" }: { name?: string }) {
@@ -53,7 +53,7 @@ export default function IbitingaPage() {
               <p className="ibi-micro">Conversa inicial gratuita. Sem compromisso.</p>
             </div>
             <div className="ibi-hero-visual">
-              <Image src="/images/seller-operation.png" alt="Profissional organizando a operação de uma loja online" width={1536} height={1024} priority sizes="(max-width: 800px) 100vw, 48vw" />
+              <Image src="/ecomtabil-website/images/seller-operation.png" alt="Profissional organizando a operação de uma loja online" width={1536} height={1024} priority sizes="(max-width: 800px) 100vw, 48vw" />
               <div className="ibi-photo-note"><span className="ibi-icon"><Icon name="box" /></span><div><strong>Seu próximo pedido pode ir longe.</strong><span>Sua contabilidade precisa acompanhar.</span></div></div>
               <span className="ibi-local-stamp"><Icon name="pin" /> Ibitinga, SP <small>Daqui para o Brasil.</small></span>
             </div>
@@ -63,7 +63,7 @@ export default function IbitingaPage() {
 
         <section className="ibi-marketplaces shell" aria-label="Canais de venda que fazem parte da nossa especialização">
           <p>A sua operação passa por aqui.<br /><strong>A nossa especialização também.</strong></p>
-          <div>{[["Mercado Livre", "mercado-livre"], ["Shopee", "shopee"], ["Amazon", "amazon"], ["Magalu", "magalu"], ["Shopify", "shopify"]].map(([name, file]) => <Image key={file} src={`/images/marketplaces/${file}-logo.svg`} alt={name} width={110} height={42} />)}</div>
+          <div>{[["Mercado Livre", "mercado-livre"], ["Shopee", "shopee"], ["Amazon", "amazon"], ["Magalu", "magalu"], ["Shopify", "shopify"]].map(([name, file]) => <Image key={file} src={`/ecomtabil-website/images/marketplaces/${file}-logo.svg`} alt={name} width={110} height={42} />)}</div>
         </section>
 
         <section className="section ibi-white" id="rotina"><div className="shell">
@@ -77,13 +77,13 @@ export default function IbitingaPage() {
         </div></section>
 
         <section className="section ibi-city"><div className="shell ibi-split">
-          <div className="ibi-editorial-image"><Image src="/images/service-packing.png" alt="Preparação de produtos e embalagens para envio de pedidos online" width={1024} height={1024} sizes="(max-width: 800px) 100vw, 45vw" /><span>Produzir aqui. Vender para todo lugar.</span></div>
+          <div className="ibi-editorial-image"><Image src="/ecomtabil-website/images/service-packing.png" alt="Preparação de produtos e embalagens para envio de pedidos online" width={1024} height={1024} sizes="(max-width: 800px) 100vw, 45vw" /><span>Produzir aqui. Vender para todo lugar.</span></div>
           <div className="ibi-copy"><p className="marker">Do bordado ao e-commerce</p><h2>Ibitinga aprendeu a vender para <em>o Brasil inteiro.</em></h2><p>O bordado, a cama, a mesa e o banho ganharam uma nova vitrine. Hoje, uma loja de Ibitinga pode receber pedidos de todo o país sem sair da cidade.</p><p>O comércio evoluiu. Vieram mais canais, mais notas, novas formas de entrega e decisões que já não cabem em uma contabilidade genérica.</p><p><strong>Sua empresa pode ter raízes locais e uma operação nacional. A contabilidade precisa entender as duas coisas.</strong></p><Cta>Quero uma contabilidade que me acompanhe</Cta></div>
         </div></section>
 
         <section className="section ibi-white" id="sobre-ibitinga"><div className="shell ibi-authority">
           <div className="ibi-copy"><p className="marker">De seller para seller</p><h2>Não aprendemos e-commerce só para atender sellers.<br /><em>Nós já éramos sellers.</em></h2><p>A Ecomtabil une conhecimento contábil e tributário à experiência prática de quem vive o comércio online.</p><p>À frente está <strong>André Braga, contador e tributarista com mais de 20 anos de experiência como seller.</strong> Alguém que conhece tanto os números quanto os desafios do outro lado do balcão digital.</p><ul className="ibi-checks"><li><Icon />Vivência com marketplaces e operações digitais</li><li><Icon />Visão contábil, fiscal e tributária do negócio</li><li><Icon />Atendimento próximo, com linguagem de seller</li></ul></div>
-          <figure className="ibi-portrait"><Image src="/images/andre-contador-especialista.jpeg" alt="André Braga, à frente da Ecomtabil" width={800} height={900} sizes="(max-width: 800px) 100vw, 40vw" /><figcaption><strong>André Braga</strong><span>Contador, tributarista e seller.</span></figcaption></figure>
+          <figure className="ibi-portrait"><Image src="/ecomtabil-website/images/andre-contador-especialista.jpeg" alt="André Braga, à frente da Ecomtabil" width={800} height={900} sizes="(max-width: 800px) 100vw, 40vw" /><figcaption><strong>André Braga</strong><span>Contador, tributarista e seller.</span></figcaption></figure>
         </div></section>
 
         <section className="section ibi-services" id="servicos"><div className="shell"><div className="ibi-heading"><h2>Da rotina fiscal às decisões que fazem sua operação <em>avançar.</em></h2><p>Especialização para o seu momento: da primeira estrutura à gestão de uma operação com múltiplos canais.</p></div><div className="ibi-service-grid">{services.map(([icon, title, description]) => <article key={title}><span className="ibi-icon"><Icon name={icon} /></span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="ibi-section-action"><Cta>Entender o que minha empresa precisa</Cta></div></div></section>

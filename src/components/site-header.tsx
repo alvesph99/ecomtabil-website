@@ -87,7 +87,7 @@ export function SiteHeader({
         >
           <Image
             className="site-header__logo-white"
-            src="/images/logo-ecomtabil-white.svg"
+            src="/ecomtabil-website/images/logo-ecomtabil-white.svg"
             alt=""
             width={148}
             height={38}
@@ -95,7 +95,7 @@ export function SiteHeader({
           />
           <Image
             className="site-header__logo-color"
-            src="/images/logo-ecomtabil-color.svg"
+            src="/ecomtabil-website/images/logo-ecomtabil-color.svg"
             alt=""
             width={148}
             height={38}

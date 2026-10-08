@@ -4,7 +4,7 @@ export const units = [
     title: "Matriz | Alphaville - SP",
     detail: "Alphaville, São Paulo",
     state: "SP",
-    image: "/images/unidades/alphaville.webp",
+    image: "/ecomtabil-website/images/unidades/alphaville.webp",
     href: "/unidades/alphaville",
   },
   {
@@ -12,7 +12,7 @@ export const units = [
     title: "São Paulo - SP",
     detail: "Capital paulista",
     state: "SP",
-    image: "/images/unidades/sao-paulo.webp",
+    image: "/ecomtabil-website/images/unidades/sao-paulo.webp",
     href: "/unidades/sao-paulo",
   },
   {
@@ -20,7 +20,7 @@ export const units = [
     title: "Araraquara - SP",
     detail: "Interior de São Paulo",
     state: "SP",
-    image: "/images/unidades/araraquara.webp",
+    image: "/ecomtabil-website/images/unidades/araraquara.webp",
     href: "/unidades/araraquara",
   },
   {
@@ -28,7 +28,7 @@ export const units = [
     title: "Ibitinga - SP",
     detail: "Perto de quem vende para o Brasil",
     state: "SP",
-    image: "/images/unidades/ibitinga.webp",
+    image: "/ecomtabil-website/images/unidades/ibitinga.webp",
     href: "/ibitinga",
   },
   {
@@ -36,7 +36,7 @@ export const units = [
     title: "Extrema - MG",
     detail: "Sul de Minas Gerais",
     state: "MG",
-    image: "/images/unidades/extrema.webp",
+    image: "/ecomtabil-website/images/unidades/extrema.webp",
     href: "/unidades/extrema",
   },
   {
@@ -44,7 +44,7 @@ export const units = [
     title: "Nova Serrana - MG",
     detail: "Minas Gerais",
     state: "MG",
-    image: "/images/unidades/nova-serrana.webp",
+    image: "/ecomtabil-website/images/unidades/nova-serrana.webp",
     href: "/unidades/nova-serrana",
   },
 ] as const;
